@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <ul class="indexMenu" v-if="isHomepage">
-      <li class="menuList"><a @click="goIndex('me')"><span class="menuFont">关于我们</span></a></li>
+      <li class="menuList"><a @click="goIndex('meindex')"><span class="menuFont">关于我</span></a></li>
       <li class="menuList"><a @click="goIndex('utils')"><span class="menuFont">在线工具</span></a></li>
       <li class="menuList"><a @click="goIndex('resources')"><span class="menuFont">资源中心</span></a></li>
       <li class="menuList"><a @click="goIndex('index')"><span class="menuFont">首页</span></a></li>
-      <div class="logoDiv"><div class="logoImg"><img class="logo" src="./assets/logo.png"/></div><span class="logoTitle">欢迎访问CodeZero</span></div>
+      <div class="logoDiv"><div class="logoImg"><img class="logo" src="./assets/logoHomePage.png"/></div><span class="logoTitle">欢迎访问CodeZero</span></div>
     </ul>
     <router-view/>
-    <ul class="indexFoot">
+    <ul class="indexFoot" v-if="isHomepage">
       <span class="footFont">©2021 CodeZero</span>
     </ul>
   </div>
@@ -25,9 +25,17 @@ export default {
   components: {
     homepage
   },
-  data() {
-    return {
-      isHomepage: true
+  data(){
+    return{
+      isHomepage:true
+    }
+  },
+  created: function(){
+    //页面初始化判断缓存中是否有首页标识
+    if(this.$route.name === 'homepage'){
+      this.isHomepage = true;
+    }else{
+      this.isHomepage = false;
     }
   },
   methods:{
@@ -37,13 +45,16 @@ export default {
     },
     //路由变化
     routerChange:function(to,from){
+      console.log(to.path);
+      console.log(from.path);
       if(from.path==='/'&&to.path!=='/'){
         this.isHomepage = false;
       }
       if(from.path!=='/'&&to.path==='/'){
         this.isHomepage = true;
       }
-    }
+    },
+
   }
 }
 </script>
@@ -92,8 +103,10 @@ export default {
     margin-top:80px;
   }
   .logo{
-    height: 100px;
-    width: 100px;
+    width: auto;
+    height: auto;
+    max-width: 25%;
+    max-height: 25%;
   }
   .logoImg{
     margin-left: 80px;
