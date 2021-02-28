@@ -47,10 +47,11 @@
             </Card>
           </Col>
         </Row>
+        <!-- 最新留言 -->
         <Row style="background:rgba(238,238,238,0.5);padding:20px">
           <Col span="24">
             <Card shadow>
-              <p slot="title" class="me-index-title-font">最新互动</p>
+              <p slot="title" class="me-index-title-font">最新留言</p>
               <p class="me-index-content-font"></p>
             </Card>
           </Col>
@@ -124,7 +125,7 @@
 
   .me-index-body {
     width: 100%;
-    height: 520px;
+    height: 500px;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
   }
