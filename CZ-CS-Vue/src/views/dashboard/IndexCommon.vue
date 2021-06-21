@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <div style="background-color: #ececec; padding: 20px;">
+      <div style="padding: 20px;">
         <a-row :gutter="16">
           <a-col :span="6">
             <a-card>
@@ -32,7 +32,7 @@
           </a-col>
           <a-col :span="6">
             <a-col :span="12">
-              <a-card><img></a-card>
+              <a-card>123</a-card>
             </a-col>
             <a-col :span="12">123</a-col>
           </a-col>
@@ -43,17 +43,17 @@
       <br>
     </div>
     <div>
-      <div style="background-color: #ececec; padding: 20px;">
+      <div style="padding: 20px;">
         <a-row :gutter="16">
-          <a-col :span="4">
+          <a-col :span="6">
             <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
               <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -63,12 +63,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -78,12 +78,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -93,12 +93,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -124,15 +124,15 @@
               </a-collapse-panel>
             </a-collapse>
           </a-col>
-          <a-col :span="4">
+          <a-col :span="6">
             <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
               <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -142,12 +142,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -157,12 +157,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -172,12 +172,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -187,12 +187,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="5" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -203,15 +203,15 @@
               </a-collapse-panel>
             </a-collapse>
           </a-col>
-          <a-col :span="4">
+          <a-col :span="6">
             <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
               <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -221,12 +221,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -236,12 +236,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -251,12 +251,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -266,12 +266,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="5" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -282,15 +282,15 @@
               </a-collapse-panel>
             </a-collapse>
           </a-col>
-          <a-col :span="4">
+          <a-col :span="6">
             <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
               <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -300,12 +300,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -315,12 +315,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -330,12 +330,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -345,170 +345,12 @@
                 </a-card>
               </a-collapse-panel>
               <a-collapse-panel key="5" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
+                <a-card hoverable>
                   <img
                     slot="cover"
                     alt="example"
                     src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-            </a-collapse>
-          </a-col>
-          <a-col :span="4">
-            <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
-              <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="5" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-            </a-collapse>
-          </a-col>
-          <a-col :span="4">
-            <a-collapse default-active-key="1" :bordered="false" accordion class="news-list">
-              <a-collapse-panel key="1" header="This is panel header 1" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="2" header="This is panel header 2" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="3" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="4" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
-                  />
-                  <a-card-meta title="Europe Street beat">
-                    <template slot="description">
-                      www.instagram.com
-                    </template>
-                  </a-card-meta>
-                </a-card>
-              </a-collapse-panel>
-              <a-collapse-panel key="5" header="This is panel header 3" :showArrow="false">
-                <a-card hoverable style="width: 230px">
-                  <img
-                    slot="cover"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    style="width: 230px;height: 180px"
+                    style="width: 100%;height: 180px"
                   />
                   <a-card-meta title="Europe Street beat">
                     <template slot="description">
@@ -721,7 +563,8 @@
   }
 
   .calender {
-    height: 60px;
+    height: 54px;
+    margin-left: -20px;
     background-color: #FFFFFF;
     border-color: #FFFFFF;
   }
