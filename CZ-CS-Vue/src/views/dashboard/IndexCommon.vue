@@ -17,9 +17,7 @@
                   <p> 宜：{{calender.huangli.yi}}</p>
                   <p> 忌：{{calender.huangli.ji}}</p>
                 </template>
-                <a-button type="primary">
-                  <span class="calender-span">现在是：{{calender.date}}  {{calender.nowTime}}</span>
-                </a-button>
+                <span class="calender-span">现在是：{{calender.date}}  {{calender.nowTime}}</span>
               </a-popover>
             </a-card>
           </a-col>
@@ -31,10 +29,29 @@
             </a-card>
           </a-col>
           <a-col :span="6">
-            <a-col :span="12">
-              <a-card><img></a-card>
-            </a-col>
-            <a-col :span="12">123</a-col>
+              <a-card>
+                <a-col :span="12">
+                  <img :src="weather.imgSrc" class="mainWeather">
+                  <a-popover class="calender" title="未来几天天气" placement="right">
+                    <template slot="content">
+                      <p>{{weather.future[0].date}}:{{weather.future[0].weather}}。温度：{{weather.future[0].temperature}}。{{weather.future[0].direct}}</p>
+                      <p>{{weather.future[1].date}}:{{weather.future[1].weather}}。温度：{{weather.future[1].temperature}}。{{weather.future[1].direct}}</p>
+                      <p>{{weather.future[2].date}}:{{weather.future[2].weather}}。温度：{{weather.future[2].temperature}}。{{weather.future[2].direct}}</p>
+                      <p>{{weather.future[3].date}}:{{weather.future[3].weather}}。温度：{{weather.future[3].temperature}}。{{weather.future[3].direct}}</p>
+                    </template>
+                    <a-button type="primary" class="weatherPopover">
+                      <span class="weather-span">今天天气：{{weather.today.weather}}</span>
+                    </a-button>
+                  </a-popover>
+                </a-col>
+                <a-col :span="12">
+                    <span>温度：{{weather.today.temperature}}</span><br>
+                    <span>湿度：{{weather.today.humidity}}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;空气质量：{{weather.today.aqi}}</span><br>
+                    <span>{{weather.today.direct}}{{weather.today.power}}</span><br>
+                    <span>白天：{{weather.today.wid.day}}</span><img class="subWeather" :src="weather.today.wid.dayImg"><br>
+                    <span>晚上：{{weather.today.wid.night}}</span><img class="subWeather" :src="weather.today.wid.nightImg">
+                </a-col>
+              </a-card>
           </a-col>
           <a-col :span="6">
           </a-col>
@@ -532,12 +549,32 @@
   import { mapGetters } from 'vuex'
   import { getNowFormatDate } from '@/utils/DateUtil'
   import axios from 'axios'
+  import { getEnumValue } from '../../utils/util'
+
   const os = require('os')
 
   export default {
     name: 'IndexCommon',
     data() {
       return {
+        imgs:{
+          qing: require('../../assets/images/weather/qing.png'),
+          duoyun: require('../../assets/images/weather/duoyun.png'),
+          yin: require('../../assets/images/weather/yin.png'),
+          yuzhuanqing: require('../../assets/images/weather/yuzhuanqing.png'),
+          leizhenyu: require('../../assets/images/weather/leizhenyu.png'),
+          bingbao: require('../../assets/images/weather/bingbao.png'),
+          yujiaxue: require('../../assets/images/weather/yujiaxue.png'),
+          xiaoyu: require('../../assets/images/weather/xiaoyu.png'),
+          zhongyu: require('../../assets/images/weather/zhongyu.png'),
+          dayu: require('../../assets/images/weather/dayu.png'),
+          xiaoxue: require('../../assets/images/weather/xiaoxue.png'),
+          zhongxue: require('../../assets/images/weather/zhongxue.png'),
+          daxue: require('../../assets/images/weather/daxue.png'),
+          wu: require('../../assets/images/weather/wu.png'),
+          san: require('../../assets/images/weather/san.png'),
+          duoyunzhuanqing: require('../../assets/images/weather/duoyunzhuanqing.png'),
+        },
         welcome: '你好',
         ip: "",
         country:"",
@@ -560,8 +597,71 @@
         },
         weather:{
           imgSrc:"",
-          today:{},
-          future:[]
+          today:{
+            date:"",
+            temperature:"",
+            humidity:"",
+            weather:"",
+            wid:{
+              day:"",
+              dayImg:"",
+              night:"",
+              nightImg:"",
+            },
+            direct:"",
+            power:"",
+            aqi:""
+          },
+          future:[
+            {
+              date:"",
+              temperature:"",
+              weather:"",
+              wid:{
+                day:"",
+                dayImg:"",
+                night:"",
+                nightImg:"",
+              },
+              direct:""
+            },
+            {
+              date:"",
+              temperature:"",
+              weather:"",
+              wid:{
+                day:"",
+                dayImg:"",
+                night:"",
+                nightImg:"",
+              },
+              direct:""
+            },
+            {
+              date:"",
+              temperature:"",
+              weather:"",
+              wid:{
+                day:"",
+                dayImg:"",
+                night:"",
+                nightImg:"",
+              },
+              direct:""
+            },
+            {
+              date:"",
+              temperature:"",
+              weather:"",
+              wid:{
+                day:"",
+                dayImg:"",
+                night:"",
+                nightImg:"",
+              },
+              direct:""
+            }
+          ]
         }
       }
     },
@@ -627,6 +727,7 @@
         }else{
           this.getLocationFromNet(ip)
         }
+        this.getWeather(this.city)
       },
       //获取地址及运营商信息
       getLocationFromNet(ip){
@@ -708,6 +809,200 @@
           second = '0' + second
         }
         this.calender.nowTime = hour + ':' + minute + ':' + second
+      },
+      getWeather(city){
+        let date = new Date()
+        let h = date.getHours()
+        if(localStorage.getItem("weatherInfo")){
+          let weatherInfo = JSON.parse(localStorage.getItem("weatherInfo"))
+          if(weatherInfo.today.date && weatherInfo.today.date === getNowFormatDate()){
+            //今天
+            this.weather.today.date = getNowFormatDate()
+            this.weather.imgSrc = h>12?this.transformWeatherImg(weatherInfo.today.wid.night):this.transformWeatherImg(weatherInfo.today.wid.day)
+            this.weather.today.temperature = weatherInfo.today.temperature
+            this.weather.today.humidity = weatherInfo.today.humidity
+            this.weather.today.weather = weatherInfo.today.weather
+            this.weather.today.wid.day = weatherInfo.today.day
+            this.weather.today.wid.dayImg = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.day))
+            this.weather.today.wid.night = weatherInfo.today.night
+            this.weather.today.wid.nightImg = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.night))
+            this.weather.today.direct = weatherInfo.today.direct
+            this.weather.today.power = weatherInfo.today.power
+            this.weather.today.aqi = weatherInfo.today.aqi
+            //明天
+            this.weather.future[0].date = weatherInfo.future[0].date
+            this.weather.future[0].temperature = weatherInfo.future[0].temperature
+            this.weather.future[0].weather = weatherInfo.future[0].weather
+            this.weather.future[0].wid.day = weatherInfo.future[0].wid.day
+            this.weather.future[0].wid.dayImg = weatherInfo.future[0].wid.dayImg
+            this.weather.future[0].wid.night = weatherInfo.future[0].wid.night
+            this.weather.future[0].wid.nightImg = weatherInfo.future[0].wid.nightImg
+            this.weather.future[0].direct = weatherInfo.future[0].direct
+            //后天
+            this.weather.future[1].date = weatherInfo.future[1].date
+            this.weather.future[1].temperature = weatherInfo.future[1].temperature
+            this.weather.future[1].weather = weatherInfo.future[1].weather
+            this.weather.future[1].wid.day = weatherInfo.future[1].wid.day
+            this.weather.future[1].wid.dayImg = weatherInfo.future[1].wid.dayImg
+            this.weather.future[1].wid.night = weatherInfo.future[1].wid.night
+            this.weather.future[1].wid.nightImg = weatherInfo.future[1].wid.nightImg
+            this.weather.future[1].direct = weatherInfo.future[1].direct
+            //大后天
+            this.weather.future[2].date = weatherInfo.future[2].date
+            this.weather.future[2].temperature = weatherInfo.future[2].temperature
+            this.weather.future[2].weather = weatherInfo.future[2].weather
+            this.weather.future[2].wid.day = weatherInfo.future[2].wid.day
+            this.weather.future[2].wid.dayImg = weatherInfo.future[2].wid.dayImg
+            this.weather.future[2].wid.night = weatherInfo.future[2].wid.night
+            this.weather.future[2].wid.nightImg = weatherInfo.future[2].wid.nightImg
+            this.weather.future[2].direct = weatherInfo.future[2].direct
+            //大大后天
+            this.weather.future[3].date = weatherInfo.future[3].date
+            this.weather.future[3].temperature = weatherInfo.future[3].temperature
+            this.weather.future[3].weather = weatherInfo.future[3].weather
+            this.weather.future[3].wid.day = weatherInfo.future[3].wid.day
+            this.weather.future[3].wid.dayImg = weatherInfo.future[3].wid.dayImg
+            this.weather.future[3].wid.night = weatherInfo.future[3].wid.night
+            this.weather.future[3].wid.nightImg = weatherInfo.future[3].wid.nightImg
+            this.weather.future[3].direct = weatherInfo.future[3].direct
+          }else{
+            this.getWeatherFromNet(city)
+          }
+        }else{
+          this.getWeatherFromNet(city)
+        }
+      },
+      getWeatherFromNet(city){
+        let cityName = encodeURI(city.substring(0,city.length-1))
+        let weatherUrl = Vue.prototype.JuHe.weatherUrl + '?key=' + Vue.prototype.JuHe.weatherKey + '&city=' + cityName
+        axios.get(weatherUrl, {
+          dataType: 'jsonp',
+          crossDomain: true,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Access-Control-Allow-Origin': '*'
+          }
+        }).then(res => {
+          console.log("天气返回")
+          console.log(res)
+          if(res.data.error_code==0){
+            localStorage.removeItem("weatherInfo")
+            //今天
+            this.weather.today.date = getNowFormatDate()
+            this.weather.imgSrc = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",res.data.result.realtime.info))
+            this.weather.today.temperature = res.data.result.future[0].temperature
+            this.weather.today.humidity = res.data.result.realtime.humidity
+            this.weather.today.weather = res.data.result.future[0].weather
+            this.weather.today.wid.day = getEnumValue(Vue.prototype.JuHe.weatherArray,"wid","weather",res.data.result.future[0].wid.day)
+            this.weather.today.wid.dayImg = this.transformWeatherImg(res.data.result.future[0].wid.day)
+            this.weather.today.wid.night = getEnumValue(Vue.prototype.JuHe.weatherArray,"wid","weather",res.data.result.future[0].wid.night)
+            this.weather.today.wid.nightImg = this.transformWeatherImg(res.data.result.future[0].wid.night)
+            this.weather.today.direct = res.data.result.future[0].direct
+            this.weather.today.power = res.data.result.realtime.power
+            this.weather.today.aqi = res.data.result.realtime.aqi
+            //明天
+            this.weather.future[0].date = res.data.result.future[1].date
+            this.weather.future[0].temperature = res.data.result.future[1].temperature
+            this.weather.future[0].weather = res.data.result.future[1].weather
+            this.weather.future[0].wid.day = res.data.result.future[1].wid.day
+            this.weather.future[0].wid.dayImg = this.transformWeatherImg(res.data.result.future[1].wid.day)
+            this.weather.future[0].wid.night = res.data.result.future[1].wid.night
+            this.weather.future[0].wid.nightImg = this.transformWeatherImg(res.data.result.future[1].wid.night)
+            this.weather.future[0].direct = res.data.result.future[1].direct
+            //后天
+            this.weather.future[1].date = res.data.result.future[2].date
+            this.weather.future[1].temperature = res.data.result.future[2].temperature
+            this.weather.future[1].weather = res.data.result.future[2].weather
+            this.weather.future[1].wid.day = res.data.result.future[2].wid.day
+            this.weather.future[1].wid.dayImg = this.transformWeatherImg(res.data.result.future[2].wid.day)
+            this.weather.future[1].wid.night = res.data.result.future[2].wid.night
+            this.weather.future[1].wid.nightImg = this.transformWeatherImg(res.data.result.future[2].wid.night)
+            this.weather.future[1].direct = res.data.result.future[2].direct
+            //大后天
+            this.weather.future[2].date = res.data.result.future[3].date
+            this.weather.future[2].temperature = res.data.result.future[3].temperature
+            this.weather.future[2].weather = res.data.result.future[3].weather
+            this.weather.future[2].wid.day = res.data.result.future[3].wid.day
+            this.weather.future[2].wid.dayImg = this.transformWeatherImg(res.data.result.future[3].wid.day)
+            this.weather.future[2].wid.night = res.data.result.future[3].wid.night
+            this.weather.future[2].wid.nightImg = this.transformWeatherImg(res.data.result.future[3].wid.night)
+            this.weather.future[2].direct = res.data.result.future[3].direct
+            //大大后天
+            this.weather.future[3].date = res.data.result.future[4].date
+            this.weather.future[3].temperature = res.data.result.future[4].temperature
+            this.weather.future[3].weather = res.data.result.future[4].weather
+            this.weather.future[3].wid.day = res.data.result.future[4].wid.day
+            this.weather.future[3].wid.dayImg = this.transformWeatherImg(res.data.result.future[4].wid.day)
+            this.weather.future[3].wid.night = res.data.result.future[4].wid.night
+            this.weather.future[3].wid.nightImg = this.transformWeatherImg(res.data.result.future[4].wid.night)
+            this.weather.future[3].direct = res.data.result.future[4].direct
+            localStorage.setItem("weatherInfo",JSON.stringify(this.weather))
+          }
+        })
+      },
+      transformWeatherImg(code){
+        switch(code){
+          //晴
+          case"00":
+            return this.imgs.qing
+          //多云
+          case"01":
+            return this.imgs.duoyun
+          //阴
+          case"02":
+            return this.imgs.yin
+          //阵雨
+          case"03":
+            return this.imgs.yuzhuanqing
+          //雷阵雨
+          case"04":
+            return this.imgs.leizhenyu
+          //雷阵雨伴有冰雹
+          case"05":
+            return this.imgs.bingbao
+          //雨夹雪&冻雨
+          case"06":
+            return this.imgs.yujiaxue
+          case"19":
+            return this.imgs.yujiaxue
+          //小雨
+          case"07":
+            return this.imgs.xiaoyu
+          //中雨
+          case"08":
+            return this.imgs.zhongyu
+          //大雨&暴雨&大暴雨&特大暴雨
+          case"09":
+            return this.imgs.dayu
+          case"10":
+            return this.imgs.dayu
+          case"11":
+            return this.imgs.dayu
+          case"12":
+            return this.imgs.dayu
+          //阵雪&小雪
+          case"13":
+            return this.imgs.xiaoxue
+          case"14":
+            return this.imgs.xiaoxue
+          //中雪
+          case"15":
+            return this.imgs.zhongxue
+          //大雪&暴雪
+          case"16":
+            return this.imgs.daxue
+          case"17":
+            return this.imgs.daxue
+          //雾
+          case"18":
+            return this.imgs.wu
+          //沙尘暴
+          case"20":
+            return this.imgs.san
+          default:
+            return this.imgs.duoyunzhuanqing
+        }
       }
 
     }
@@ -730,7 +1025,21 @@
     color:#1890FF;
     font-size: 20px;
   }
-  .weather{
-    margin-right: 0px;
+
+  .mainWeather{
+    height: 100px;
+    width: 100px;
+  }
+  .subWeather{
+    height: 30px;
+    width: 30px;
+  }
+  .weatherPopover{
+    height:0px;
+  }
+  .weather-span {
+    color:#1890FF;
+    font-size: 16px;
+    margin-left: -20px;
   }
 </style>

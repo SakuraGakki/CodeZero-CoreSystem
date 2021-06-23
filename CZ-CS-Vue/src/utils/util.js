@@ -560,3 +560,20 @@ export function removeArrayElement(array, prod, value) {
     array.splice(index, 1);
   }
 }
+
+/**
+ * 获取码表对象的码值
+ * @param array 码表数组对象
+ * @param codeKey 码字段名
+ * @param valueKey 值字段名
+ * @param code 目标码
+ * @return value 返回码值
+ **/
+export function getEnumValue(array,codeKey,valueKey,code){
+  for( let i = 0;i<array.length; i++){
+    let obj = array[i]
+    if(obj[codeKey] === code){
+      return obj[valueKey]
+    }
+  }
+}

@@ -9,7 +9,7 @@
     </ul>
     <router-view/>
     <ul class="indexFoot" v-if="isHomepage">
-      <span class="footFont">©2021 CodeZero</span>
+      <span class="footFont">Copyright &copy; 2021 CodeZero</span>
     </ul>
   </div>
 </template>
