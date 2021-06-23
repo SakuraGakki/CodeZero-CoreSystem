@@ -6,6 +6,7 @@
           <a-col :span="6">
             <a-card>
               <h1>{{welcome}} {{nickname()}}</h1>
+              <br>
               <a-popover class="calender" title="老黄历" placement="right">
                 <template slot="content">
                   <p>阴历：{{calender.huangli.yinli}}</p>
@@ -39,9 +40,8 @@
                       <p>{{weather.future[2].date}}:{{weather.future[2].weather}}。温度：{{weather.future[2].temperature}}。{{weather.future[2].direct}}</p>
                       <p>{{weather.future[3].date}}:{{weather.future[3].weather}}。温度：{{weather.future[3].temperature}}。{{weather.future[3].direct}}</p>
                     </template>
-                    <a-button type="primary" class="weatherPopover">
-                      <span class="weather-span">今天天气：{{weather.today.weather}}</span>
-                    </a-button>
+                    <br>
+                    <span class="weather-span">今天天气：{{weather.today.weather}}</span>
                   </a-popover>
                 </a-col>
                 <a-col :span="12">
@@ -57,7 +57,6 @@
           </a-col>
         </a-row>
       </div>
-      <br>
     </div>
     <div>
       <div style="padding: 20px;">
@@ -664,9 +663,9 @@
             this.weather.today.temperature = weatherInfo.today.temperature
             this.weather.today.humidity = weatherInfo.today.humidity
             this.weather.today.weather = weatherInfo.today.weather
-            this.weather.today.wid.day = weatherInfo.today.day
+            this.weather.today.wid.day = weatherInfo.today.wid.day
             this.weather.today.wid.dayImg = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.day))
-            this.weather.today.wid.night = weatherInfo.today.night
+            this.weather.today.wid.night = weatherInfo.today.wid.night
             this.weather.today.wid.nightImg = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.night))
             this.weather.today.direct = weatherInfo.today.direct
             this.weather.today.power = weatherInfo.today.power
@@ -726,8 +725,6 @@
             'Access-Control-Allow-Origin': '*'
           }
         }).then(res => {
-          console.log("天气返回")
-          console.log(res)
           if(res.data.error_code==0){
             localStorage.removeItem("weatherInfo")
             //今天
@@ -865,23 +862,23 @@
   }
 
   .calender-span {
+    margin-left: -8px;
     color:#1890FF;
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .mainWeather{
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
+    margin-top:-22px;
   }
   .subWeather{
     height: 30px;
     width: 30px;
   }
-  .weatherPopover{
-    height:0px;
-  }
+
   .weather-span {
-    color:#1890FF;
+    color: #1890ff;
     font-size: 16px;
     margin-left: -20px;
   }
