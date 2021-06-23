@@ -54,6 +54,9 @@
               </a-card>
           </a-col>
           <a-col :span="6">
+            <a-card>
+
+            </a-card>
           </a-col>
         </a-row>
       </div>
@@ -659,7 +662,7 @@
           if(weatherInfo.today.date && weatherInfo.today.date === getNowFormatDate()){
             //今天
             this.weather.today.date = getNowFormatDate()
-            this.weather.imgSrc = h>12?this.transformWeatherImg(weatherInfo.today.wid.night):this.transformWeatherImg(weatherInfo.today.wid.day)
+            this.weather.imgSrc = h>12?this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.night)):this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.day))
             this.weather.today.temperature = weatherInfo.today.temperature
             this.weather.today.humidity = weatherInfo.today.humidity
             this.weather.today.weather = weatherInfo.today.weather
@@ -729,7 +732,7 @@
             localStorage.removeItem("weatherInfo")
             //今天
             this.weather.today.date = getNowFormatDate()
-            this.weather.imgSrc = this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",res.data.result.realtime.info))
+            this.weather.imgSrc = this.transformWeatherImg(res.data.result.realtime.wid)
             this.weather.today.temperature = res.data.result.future[0].temperature
             this.weather.today.humidity = res.data.result.realtime.humidity
             this.weather.today.weather = res.data.result.future[0].weather
@@ -862,9 +865,9 @@
   }
 
   .calender-span {
-    margin-left: -8px;
+    margin-left: -6px;
     color:#1890FF;
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .mainWeather{
