@@ -391,7 +391,7 @@
 <script>
   import Vue from 'vue'
   import { mapGetters } from 'vuex'
-  import { getNowFormatDate } from '@/utils/DateUtil'
+  import { getNowFormatDate,getNowFormatTime } from '@/utils/DateUtil'
   import axios from 'axios'
   import { getEnumValue } from '../../utils/util'
 
@@ -401,6 +401,7 @@
     name: 'IndexCommon',
     data() {
       return {
+        //天气图片引入
         imgs:{
           qing: require('../../assets/images/weather/qing.png'),
           duoyun: require('../../assets/images/weather/duoyun.png'),
@@ -513,6 +514,7 @@
       this.getWelcome()
       this.getCalender()
       this.getIp()
+
     },
     mounted() {
       this.getNowTime()
@@ -560,6 +562,7 @@
         })
 
       },
+      //获取地点信息
       getLocation(ip){
         //先从缓存中获取
         if(localStorage.getItem(ip)){
@@ -595,6 +598,7 @@
           }
         })
       },
+      //获取老黄历信息
       getCalender(){
         if(localStorage.getItem("huangliInfo")){
           let huangliInfo = JSON.parse(localStorage.getItem("huangliInfo"))
@@ -611,7 +615,7 @@
         }
       },
       getCalenderFromNet() {
-        let calenderUrl = Vue.prototype.JuHe.laohuangliUrl + '?key=' + Vue.prototype.JuHe.laohuangliKey + '&date=' + getNowFormatDate()
+        let calenderUrl = Vue.prototype.JuHe.laohuangliUrl + '?key=' + Vue.prototype.JuHe.laohuangliKey + '&date=' + getNowFormatDate("YYYY-MM-DD")
         axios.get(calenderUrl, {
           dataType: 'jsonp',
           crossDomain: true,
@@ -635,33 +639,26 @@
           }
         })
       },
+      //获取服务器时间
       getNowTime() {
-        this.calender.date = getNowFormatDate().split('-')[0] + '年' + getNowFormatDate().split('-')[1] + '月' + getNowFormatDate().split('-')[2] + '日'
+        this.calender.date = getNowFormatDate("YYYY") + '年' + getNowFormatDate("MM") + '月' + getNowFormatDate("DD") + '日'
         var _this = this
         this.timer = setInterval(() => {
           _this.currentTime()
         }, 1000)
       },
       currentTime() {
-        let hour = new Date().getHours()
-        let minute = new Date().getMinutes()
-        if (minute < 10) {
-          minute = '0' + minute
-        }
-        let second = new Date().getSeconds()
-        if (second < 10) {
-          second = '0' + second
-        }
-        this.calender.nowTime = hour + ':' + minute + ':' + second
+        this.calender.nowTime = getNowFormatTime("hh:mm:ss")
       },
+      //获取天气信息
       getWeather(city){
         let date = new Date()
         let h = date.getHours()
         if(localStorage.getItem("weatherInfo")){
           let weatherInfo = JSON.parse(localStorage.getItem("weatherInfo"))
-          if(weatherInfo.today.date && weatherInfo.today.date === getNowFormatDate()){
+          if(weatherInfo.today.date && weatherInfo.today.date === getNowFormatDate("YYYY-MM-DD")){
             //今天
-            this.weather.today.date = getNowFormatDate()
+            this.weather.today.date = getNowFormatDate("YYYY-MM-DD")
             this.weather.imgSrc = h>12?this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.night)):this.transformWeatherImg(getEnumValue(Vue.prototype.JuHe.weatherArray,"weather","wid",weatherInfo.today.wid.day))
             this.weather.today.temperature = weatherInfo.today.temperature
             this.weather.today.humidity = weatherInfo.today.humidity
@@ -731,7 +728,7 @@
           if(res.data.error_code==0){
             localStorage.removeItem("weatherInfo")
             //今天
-            this.weather.today.date = getNowFormatDate()
+            this.weather.today.date = getNowFormatDate("YYYY-MM-DD")
             this.weather.imgSrc = this.transformWeatherImg(res.data.result.realtime.wid)
             this.weather.today.temperature = res.data.result.future[0].temperature
             this.weather.today.humidity = res.data.result.realtime.humidity
@@ -783,6 +780,7 @@
           }
         })
       },
+      //根据天气代码获取天气图片地址
       transformWeatherImg(code){
         switch(code){
           //晴
@@ -845,6 +843,10 @@
           default:
             return this.imgs.duoyunzhuanqing
         }
+      },
+      //获取历史上的今天信息
+      getHistoryToday(){
+
       }
 
     }
