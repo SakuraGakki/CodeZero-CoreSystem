@@ -403,6 +403,7 @@
       return {
         //天气图片引入
         imgs:{
+          dafeng: require('../../assets/images/weather/dafeng.png'),
           qing: require('../../assets/images/weather/qing.png'),
           duoyun: require('../../assets/images/weather/duoyun.png'),
           yin: require('../../assets/images/weather/yin.png'),
@@ -571,10 +572,11 @@
           this.province = locationInfo.Province
           this.city = locationInfo.City
           this.ISP = locationInfo.Isp
+          this.getWeather(this.city)
         }else{
           this.getLocationFromNet(ip)
         }
-        this.getWeather(this.city)
+
       },
       //获取地址及运营商信息
       getLocationFromNet(ip){
@@ -595,6 +597,7 @@
             this.city = res.data.result.City
             this.ISP = res.data.result.Isp
             localStorage.setItem(ip,JSON.stringify(res.data.result))
+            this.getWeather(this.city)
           }
         })
       },
@@ -809,10 +812,12 @@
           //小雨
           case"07":
             return this.imgs.xiaoyu
-          //中雨
+          //中雨&&小到中雨
           case"08":
             return this.imgs.zhongyu
-          //大雨&暴雨&大暴雨&特大暴雨
+          case"21":
+            return this.imgs.zhongyu
+          //大雨&暴雨&大暴雨&特大暴雨&中到大雨&大到暴雨&暴雨到大暴雨&大暴雨到特大暴雨
           case"09":
             return this.imgs.dayu
           case"10":
@@ -821,25 +826,47 @@
             return this.imgs.dayu
           case"12":
             return this.imgs.dayu
+          case"22":
+            return this.imgs.dayu
+          case"23":
+            return this.imgs.dayu
+          case"24":
+            return this.imgs.dayu
+          case"25":
+            return this.imgs.dayu
           //阵雪&小雪
           case"13":
             return this.imgs.xiaoxue
           case"14":
             return this.imgs.xiaoxue
-          //中雪
+          //中雪&小到中雪
           case"15":
             return this.imgs.zhongxue
-          //大雪&暴雪
+          case"26":
+            return this.imgs.zhongxue
+          //大雪&暴雪&中到大雪&大到暴雪
           case"16":
             return this.imgs.daxue
           case"17":
             return this.imgs.daxue
-          //雾
+          case"27":
+            return this.imgs.daxue
+          case"28":
+            return this.imgs.daxue
+          //雾&霾
           case"18":
             return this.imgs.wu
-          //沙尘暴
+          case"53":
+            return this.imgs.wu
+          //沙尘暴&浮尘&扬沙
           case"20":
-            return this.imgs.san
+            return this.imgs.dafeng
+          case"29":
+            return this.imgs.dafeng
+          case"30":
+            return this.imgs.dafeng
+          case"31":
+            return this.imgs.dafeng
           default:
             return this.imgs.duoyunzhuanqing
         }
