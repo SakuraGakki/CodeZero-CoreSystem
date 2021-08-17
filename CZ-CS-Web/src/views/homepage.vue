@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+
 export default {
   name: 'HomePage',
   data () {

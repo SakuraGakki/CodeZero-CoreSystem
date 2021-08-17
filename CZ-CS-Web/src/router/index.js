@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import homepage from '@/components/homepage'
-import index from '@/components/index/index'
-import me from '@/components/me/me'
-import MeIndex from '@/components/me/index'
-import MeBlog from '@/components/me/blog'
-import MeArcicle from '@/components/me/article'
-import resources from '@/components/resources/resources'
-import utils from '@/components/utils/utils'
+import homepage from '@/views/homepage'
+import me from '@/views/me/me'
+import MeIndex from '@/views/me/index'
+import MeBlog from '@/views/me/blog'
+import MeArcicle from '@/views/me/article'
+import resources from '@/views/resources/resources'
+import utils from '@/views/utils/utils'
 
 Vue.use(Router)
 
@@ -17,11 +16,6 @@ export default new Router({
       path: '/',
       name: 'homepage',
       component: homepage
-    },
-    {
-      path: '/index',
-      name: 'index',
-      component: index
     },
     {
       path: '/me',

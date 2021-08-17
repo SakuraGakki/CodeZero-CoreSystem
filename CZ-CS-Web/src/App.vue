@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <ul class="indexMenu" v-if="isHomepage">
-      <li class="menuList"><a @click="goIndex('meindex')"><span class="menuFont">关于我</span></a></li>
-      <li class="menuList"><a @click="goIndex('utils')"><span class="menuFont">在线工具</span></a></li>
-      <li class="menuList"><a @click="goIndex('resources')"><span class="menuFont">资源中心</span></a></li>
-      <li class="menuList"><a @click="goIndex('index')"><span class="menuFont">首页</span></a></li>
+<!--      <li class="menuList"><a @click="goIndex('utils')"><span class="menuFont">在线工具</span></a></li>-->
+<!--      <li class="menuList"><a @click="goIndex('resources')"><span class="menuFont">资源中心</span></a></li>-->
+      <li class="menuList"><a @click="goIndex('meindex')"><span class="menuFont">首页</span></a></li>
       <div class="logoDiv"><div class="logoImg"><img class="logo" src="./assets/logoHomePage.png"/></div><span class="logoTitle">欢迎访问CodeZero</span></div>
     </ul>
     <router-view/>
@@ -15,7 +14,7 @@
 </template>
 
 <script>
-import homepage from './components/homepage'
+import homepage from './views/homepage'
 export default {
   name: 'App',
   //监听

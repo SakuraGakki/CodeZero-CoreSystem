@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import router from './router'
+import $ajax from 'axios'
+
 /* 引入viewui */
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
@@ -11,6 +13,7 @@ import 'view-design/dist/styles/iview.css'
 
 Vue.use(ViewUI)
 Vue.use(VueRouter);
+Vue.use($ajax)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
