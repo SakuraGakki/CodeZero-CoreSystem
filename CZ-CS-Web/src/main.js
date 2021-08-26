@@ -10,11 +10,14 @@ import $ajax from 'axios'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 
+import { BaseUrl } from "./config/config";
+
 
 Vue.use(ViewUI)
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 Vue.use($ajax)
 Vue.config.productionTip = false
+Vue.config.BaseUrl = BaseUrl
 
 /* eslint-disable no-new */
 new Vue({
