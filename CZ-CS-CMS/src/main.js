@@ -3,50 +3,69 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store'
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
 import iView from 'iview'
-import i18n from '@/locale'
-import config from '@/config'
-import importDirective from '@/directive'
-import { directive as clickOutside } from 'v-click-outside-x'
-import installPlugin from '@/plugin'
-import './index.less'
-import '@/assets/icons/iconfont.css'
-import TreeTable from 'tree-table-vue'
-import VOrgTree from 'v-org-tree'
-import 'v-org-tree/dist/v-org-tree.css'
-// 实际打包时应该不引入mock
-/* eslint-disable */
-if (process.env.NODE_ENV !== 'production') require('@/mock')
+Vue.use(iView)
+import api from './api/index.js'
+Vue.use(api)
+import store from './store'
+import Cookies from 'js-cookie'
+import 'iview/dist/styles/iview.css' // 使用 CSS
+import './assets/styles/layout/layout.less' // 引入布局样式
+import './assets/styles/cover/cover.less' // 覆盖样式
+import './assets/styles/base/base.less'
 
-Vue.use(iView, {
-  i18n: (key, value) => i18n.t(key, value)
+import * as filters from './common/filter'
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
-Vue.use(TreeTable)
-Vue.use(VOrgTree)
-/**
- * @description 注册admin内置插件
- */
-installPlugin(Vue)
-/**
- * @description 生产环境关掉提示
- */
+
+var winWidth = document.documentElement.clientWidth
+if (winWidth <= 600) {
+  store.commit('CLOSE_SLIDEBAR')
+} else {
+  store.commit('OPEN_SLIDEBAR')
+}
+window.onresize = function () {
+  winWidth = document.documentElement.clientWidth
+  if (winWidth <= 600) {
+    store.commit('CLOSE_SLIDEBAR')
+  } else {
+    store.commit('OPEN_SLIDEBAR')
+  }
+}
+
+import zhLocale from 'iview/src/locale/lang/zh-CN'
+import enLocale from 'iview/src/locale/lang/en-US'
+import twLocale from 'iview/src/locale/lang/zh-TW'
+
+let lang = Cookies.getJSON('lang')
+if (lang && lang === 'CN') {
+  Vue.config.lang = 'zh-CN'
+  store.commit('SET_LANG', 'CN')
+} else if (lang && lang === 'EN') {
+  store.commit('SET_LANG', 'EN')
+  Vue.config.lang = 'en-US'
+} else {
+  Vue.config.lang = 'zh-TW'
+  store.commit('SET_LANG', 'TW')
+}
+
+Vue.locale('zh-CN', zhLocale)
+Vue.locale('en-US', enLocale)
+Vue.locale('zh-TW', twLocale)
+// 开启debug模式
+Vue.config.debug = true
+// import $ from 'jquery'
 Vue.config.productionTip = false
-/**
- * @description 全局注册应用配置
- */
-Vue.prototype.$config = config
-/**
- * 注册指令
- */
-importDirective(Vue)
-Vue.directive('clickOutside', clickOutside)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  i18n,
   store,
-  render: h => h(App)
+  template: '<App/>',
+  components: {App}
 })
