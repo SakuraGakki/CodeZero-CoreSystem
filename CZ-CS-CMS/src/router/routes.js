@@ -1,17 +1,18 @@
 import Home from '@/components/layout/Home'
 import Index from '@/components/views/Index'
 
-const Chart = () => import('@/components/views/Chart')
-const NotFound = () => import('@/components/pages/NotFound')
-const Register = () => import('@/components/pages/Register')
-const E404 = () => import('@/components/pages/E404')
-const Icon = () => import('@/components/pages/Icon')
-const Login = () => import('@/components/pages/Login')
-const Table = () => import('@/components/views/Table')
-const UserInfo = () => import('@/components/views/UserInfo')
-const List = () => import('@/components/views/List')
-const Filter = () => import('@/components/pages/Filter')
-const Lock = () => import('@/components/layout/base/Lock')
+
+import Chart from '@/components/views/Chart'
+import NotFound from '@/components/pages/NotFound'
+import Register from '@/components/pages/Register'
+import E404 from '@/components/pages/E404'
+import Icon from '@/components/pages/Icon'
+import Login from '@/components/pages/Login'
+import Table from '@/components/views/Table'
+import UserInfo from '@/components/views/UserInfo'
+import List from '@/components/views/List'
+import Filter from '@/components/pages/Filter'
+import Lock from '@/components/layout/base/Lock'
 
 const routes = [
   {
