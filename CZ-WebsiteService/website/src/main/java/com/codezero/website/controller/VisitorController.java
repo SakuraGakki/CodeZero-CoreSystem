@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 访问信息相关接口
  */
 @RestController
-@RequestMapping("/visitor")
+@RequestMapping("website/visitor")
 public class VisitorController {
 
     @Autowired

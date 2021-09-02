@@ -6,6 +6,7 @@
 
     <modules>
         <module>website</module>
+        <module>gateway</module>
     </modules>
 
     <groupId>org.codezero</groupId>
