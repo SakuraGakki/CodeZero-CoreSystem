@@ -14,7 +14,7 @@
   "当生成html文件时 是否加密请求的url 默认不加密": "",
   "md5EncryptedHtmlName": false,
   "项目名称": "",
-  "projectName": "Website",
+  "projectName": "CMS",
   "跳过 transient 字段 默认true 非必须": "",
   "skipTransientField": true,
   "数据字典 非必须": "",
@@ -46,7 +46,7 @@
       "status": "available",
       "author": "CodeZero",
       "revisionTime": "2021-9-9",
-      "remarks": "门户网站"
+      "remarks": "门户网站管理系统"
     }
   ],
 
