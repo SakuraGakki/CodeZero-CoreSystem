@@ -2,15 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gateway" />
         <module name="website" />
+        <module name="cms" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="cms" target="1.8" />
       <module name="CZ-WebsiteService" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="website" target="1.8" />
@@ -19,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="--encoding UTF-8" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cms" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="website" options="-parameters" />
     </option>

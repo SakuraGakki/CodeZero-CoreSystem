@@ -21,8 +21,8 @@ public class VisitorService {
     @Autowired
     VisitorMapper visitorMapper;
 
-    public BaseResponse getNum(){
-        BaseResponse baseResponse = new BaseResponse();
+    public BaseResponse<VisitorNumResponse> getNum(){
+        BaseResponse<VisitorNumResponse> baseResponse = new BaseResponse();
         VisitorNum visitorNum = new VisitorNum();
         visitorNum.setDate(DateUtils.getDateByString());
         List<VisitorNum> list = visitorMapper.queryVisitorNum(visitorNum);
@@ -34,8 +34,8 @@ public class VisitorService {
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public BaseResponse uptNum(VisitorNumRequest visitorNumRequest){
-        BaseResponse baseResponse = new BaseResponse();
+    public BaseResponse<String> uptNum(VisitorNumRequest visitorNumRequest){
+        BaseResponse<String> baseResponse = new BaseResponse();
         try {
             //首先判断今天是否有数据
             VisitorNum visitorNum = new VisitorNum();
@@ -71,6 +71,7 @@ public class VisitorService {
         }catch (Exception e){
             e.printStackTrace();
         }
+        baseResponse.setData("更新数据成功！");
         return baseResponse;
     }
 }

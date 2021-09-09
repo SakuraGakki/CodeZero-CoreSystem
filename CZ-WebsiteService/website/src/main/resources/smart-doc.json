@@ -1,0 +1,81 @@
+{
+  "项目地址":"",
+  "serverUrl": "http://59.110.218.235:8000/",
+  "开启严格检查 开启严格检查后 要求public method必须加注释 默认false":"",
+  "isStrict": false,
+  "设置所有文档在一个文件": "",
+  "allInOne": true,
+  "文档保存路径": "",
+  "outPath": "./src/main/resources/smart-doc",
+  "是否覆盖原来的md文档 allinone：true有效":"",
+  "coverOld": true,
+  "当有多个module时使用 非必须": "",
+  "packageFilters": "",
+  "当生成html文件时 是否加密请求的url 默认不加密": "",
+  "md5EncryptedHtmlName": false,
+  "项目名称": "",
+  "projectName": "Website",
+  "跳过 transient 字段 默认true 非必须": "",
+  "skipTransientField": true,
+  "数据字典 非必须": "",
+  "dataDictionaries": [
+    {
+      "字典名称": "",
+      "title": "title",
+      "字典包含的枚举类型 参考 https://github.com/shalousun/api-doc-test/blob/master/src/main/java/com/power/doc/enums/ErrorCodeEnum.java": "",
+      "enumClassName": "com.power.doc.enums.ErrorCodeEnum",
+      "枚举的value": "",
+      "codeField": "code",
+      "枚举的desc": "",
+      "descField": "desc"
+    }
+  ],
+
+  "错误码字典  配置同上 非必须": "",
+  "errorCodeDictionaries": [{
+    "title": "title",
+    "enumClassName": "com.power.doc.enums.ErrorCodeEnum",
+    "codeField": "codeField",
+    "descField": "descField"
+  }],
+
+  "allinone：true时 有效 设置更改日志 非必须": "",
+  "revisionLogs": [
+    {
+      "version": "1.0",
+      "status": "available",
+      "author": "CodeZero",
+      "revisionTime": "2021-9-9",
+      "remarks": "desc"
+    }
+  ],
+
+  "通用返回示例  非必须": "",
+  "customResponseFields": [
+    {
+      "name": "status",
+      "desc": "状态码",
+      "ownerClassName": "BaseResponse",
+      "value": 0
+    }
+  ],
+
+  "全局请求头设置 非必须": "",
+  "requestHeaders": [
+    {
+      "name": "token",
+      "type": "string",
+      "desc": "desc",
+      "required": false,
+      "since": "-"
+    }
+  ],
+
+  "扫描路径 默认扫描本项目src/main/java 多个module时需要添加path": "",
+  "sourceCodePaths": [
+    {
+      "path": "src/main/java",
+      "desc": "测试"
+    }
+  ]
+}
