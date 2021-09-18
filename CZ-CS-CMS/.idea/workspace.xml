@@ -20,52 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="变更CMS工程">
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_buffer_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_codec_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_common_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_handler_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_resolver_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_transport_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_3_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_68.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_68.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_server_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_springframework_spring_webflux_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/src/main/java/com/codezero/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/gateway/src/test/java/com/codezero/gateway/GatewayApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +61,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.jscs" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -111,6 +79,12 @@
       <updated>1629957002970</updated>
       <workItem from="1629957004672" duration="307000" />
       <workItem from="1629957445613" duration="6888000" />
+      <workItem from="1630998480444" duration="2238000" />
+      <workItem from="1631174315086" duration="514000" />
+      <workItem from="1631762129032" duration="6261000" />
+      <workItem from="1631867986585" duration="430000" />
+      <workItem from="1631868596956" duration="467000" />
+      <workItem from="1631931787773" duration="4302000" />
     </task>
     <task id="LOCAL-00001" summary="变更CMS工程">
       <created>1629959412217</created>
@@ -146,6 +120,10 @@
       <screen x="0" y="25" width="1680" height="975" />
     </state>
     <state x="703" y="409" key="#ESLint/0.25.1680.975@0.25.1680.975" timestamp="1629957140361" />
+    <state x="304" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1631868494535">
+      <screen x="0" y="25" width="1680" height="975" />
+    </state>
+    <state x="304" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.975@0.25.1680.975" timestamp="1631868494535" />
     <state x="2376" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1629960852708">
       <screen x="1680" y="25" width="1920" height="1055" />
     </state>
@@ -174,13 +152,15 @@
       <screen x="1680" y="25" width="1920" height="1055" />
     </state>
     <state x="2149" y="188" key="SettingsEditor/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629962509392" />
-    <state x="2339" y="185" width="602" height="735" key="find.popup" timestamp="1629960430093">
-      <screen x="1680" y="25" width="1920" height="1055" />
-    </state>
-    <state x="2339" y="185" width="602" height="735" key="find.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629960430093" />
-    <state x="547" y="241" width="670" height="625" key="search.everywhere.popup" timestamp="1630033562051">
+    <state x="577" y="173" width="567" height="680" key="find.popup" timestamp="1631774484350">
       <screen x="0" y="25" width="1680" height="975" />
     </state>
+    <state x="577" y="173" width="567" height="680" key="find.popup/0.25.1680.975@0.25.1680.975" timestamp="1631774484350" />
+    <state x="2339" y="185" width="602" height="735" key="find.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629960430093" />
+    <state x="547" y="241" width="670" height="625" key="search.everywhere.popup" timestamp="1631946734779">
+      <screen x="0" y="25" width="1680" height="975" />
+    </state>
+    <state x="547" y="241" width="670" height="625" key="search.everywhere.popup/0.25.1680.975@0.25.1680.975" timestamp="1631946734779" />
     <state x="547" y="241" width="670" height="625" key="search.everywhere.popup/1680.25.1920.1055/0.25.1680.975@0.25.1680.975" timestamp="1630033562051" />
     <state x="2305" y="259" width="670" height="676" key="search.everywhere.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629962384030" />
   </component>

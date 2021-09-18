@@ -9,7 +9,7 @@ var config = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'http://gank.io',
+    baseServerUrl: 'http://59.110.218.235:8000',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -29,7 +29,7 @@ var config = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'http://gank.io',
+    baseServerUrl: 'http://localhost:8000',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
@@ -42,7 +42,7 @@ var config = {
 
 // 需要代理的接口
 var proxyList = [
-  '/*/person/**/*'
+  '/cms'
 ]
 
 const targetPath = config.dev.baseServerUrl // 服务器的地址 可以使www.xx.com

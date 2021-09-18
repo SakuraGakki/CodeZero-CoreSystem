@@ -50,7 +50,7 @@
         <!-- 用户信息 -->
         <Dropdown class="userBox" slot='right'>
           <a href="javascript:void(0)">
-            Artiely
+            {{userInfo.userName}}
             <Icon type="arrow-down-b"></Icon>
           </a>
           <Dropdown-menu slot="list">
@@ -160,6 +160,7 @@
         formValidate: {
           check_password: ''
         },
+        userInfo:JSON.parse(Cookies.get("userInfo")),
         menu: menu, // 导航菜单
         ruleValidate: {
           check_password: [
