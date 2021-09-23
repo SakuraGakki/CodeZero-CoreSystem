@@ -62,7 +62,7 @@
 
     <!-- 更新访客信息 -->
     <update id="uptVisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo">
-        update visitor_info t set t.last_time = #{lastTime},t.visitor_num = t.visitor + 1 where t.ip = #{ip}
+        update visitor_info t set t.last_time = #{lastTime},t.visitor_num = t.visitor_num + 1 where t.ip = #{ip}
     </update>
 
 </mapper>
