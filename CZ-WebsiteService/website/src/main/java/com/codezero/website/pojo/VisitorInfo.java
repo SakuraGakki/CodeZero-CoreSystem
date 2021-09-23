@@ -22,4 +22,8 @@ public class VisitorInfo {
      * 最后一次访问时间
      */
     private String lastTime;
+    /**
+     * 总访问次数
+     */
+    private Integer visitorNum;
 }

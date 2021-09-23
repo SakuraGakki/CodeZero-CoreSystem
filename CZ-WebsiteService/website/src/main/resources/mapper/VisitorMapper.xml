@@ -16,6 +16,7 @@
         <result column="ip" jdbcType="VARCHAR" property="ip" />
         <result column="city" jdbcType="VARCHAR" property="city" />
         <result column="last_time" jdbcType="VARCHAR" property="lastTime" />
+        <result column="visitor_num" javaType="INTEGER" property="visitorNum"/>
     </resultMap>
 
     <!-- 判断是否有今天访问数量数据 -->
@@ -44,9 +45,9 @@
     <!-- 插入访客信息 -->
     <insert id="insertVisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo" useGeneratedKeys="true" keyProperty="seq">
         insert into visitor_info
-        (ip,city,last_time)
+        (ip,city,last_time,visitor_num)
         values
-        (#{ip},#{city},#{lastTime})
+        (#{ip},#{city},#{lastTime},1)
     </insert>
 
     <!-- 更新今日访客数量信息 -->
@@ -61,7 +62,7 @@
 
     <!-- 更新访客信息 -->
     <update id="uptVisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo">
-        update visitor_info t set t.last_time = #{lastTime} where t.ip = #{ip}
+        update visitor_info t set t.last_time = #{lastTime},t.visitor_num = t.visitor + 1 where t.ip = #{ip}
     </update>
 
 </mapper>
