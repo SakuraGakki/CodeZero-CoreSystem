@@ -76,16 +76,24 @@
     },
     created() {
       // 获取登录用户客户端信息
-      this.$api.getIpInfo().then(res => {
-        console.log(res.data)
-        res.data = res.data.substring(6,res.data.length)
-        this.formValidate.ip = res.data.substring(0,res.data.indexOf("  来自于："))
-        this.formValidate.city = res.data.substring(res.data.indexOf("  来自于：")).replace("  来自于：","")
-      }).catch(err => {
-        this.$Message.error('获取客户端信息失败!')
-      })
+      if(!Cookies.hasOwnProperty("ip")){
+        this.getIp()
+      }else{
+        this.getLocationInfo(Cookies.get("ip"))
+      }
     },
     methods: {
+      getIp(){
+        this.$api.getIpInfo().then(res => {
+          console.log(res.data)
+          res.data = res.data.substring(6,res.data.length)
+          this.formValidate.ip = res.data.substring(0,res.data.indexOf("  来自于："))
+          Cookies.set("ip",this.formValidate.ip)
+          this.getLocationInfo(this.formValidate.ip)
+        }).catch(err => {
+          this.$Message.error('获取客户端信息失败!')
+        })
+      },
       handleSubmit (name) { // login
         this.$refs[name].validate((valid) => {
           this.modal_loading = true
@@ -101,8 +109,10 @@
                   duration:10
                 })
                 this.getUserInfo(res.data)
+                console.log("准备保存userInfo",this.userInfo)
+                Cookies.set('userInfo',this.userInfo)
+                console.log("保存后userInfo",Cookies.get('userInfo'))
                 Cookies.set('token', this.formValidate.password)
-                Cookies.set("userInfo",this.userInfo);
                 this.$router.push('/index')
               } else {
                 this.$Message.error('登录失败!')
@@ -127,6 +137,20 @@
       },
       toRegister () {
         this.$router.push('/register')
+      },
+      getLocationInfo(ip){
+        this.$api.locationFromNet(ip).then(res => {
+          console.log("IP返回结果",res)
+          if(res.data.error_code==0){
+            console.log("this.country",res.data.result.Country)
+            console.log("this.province",res.data.result.Province)
+            console.log("this.city",res.data.result.City)
+            console.log("this.region",res.data.result.District)
+            console.log("this.ISP",res.data.result.Isp)
+            this.formValidate.city = res.data.result.Country+" "+res.data.result.Province+" "+res.data.result.City+" "+res.data.result.District+" "+res.data.result.Isp
+            Cookies.set("locationInfo",res.data.result);
+          }
+        })
       },
       getUserInfo(data){
         this.userInfo.userId = data.userId

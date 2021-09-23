@@ -30,7 +30,8 @@ var config = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     baseServerUrl: 'http://localhost:8000',
-    proxyTable: {},
+    proxyTable: {
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
@@ -41,18 +42,45 @@ var config = {
 }
 
 // 需要代理的接口
-var proxyList = [
-  '/cms'
+const proxyList = [
+  '/ip','website','/cms','/laohuangli','/simpleWeather'
 ]
 
 const targetPath = config.dev.baseServerUrl // 服务器的地址 可以使www.xx.com
+//获取老黄历地址
+const vPath = "http://v.juhe.cn"
+//获取ip、天气地址
+const apiPath = "http://apis.juhe.cn"
+
 
 for (let i = 0; i < proxyList.length; i++) {
-  config.dev.proxyTable[proxyList[i]] = {
-    target: targetPath,
-    secure: false,
-    changeOrigin: true
+  if(proxyList[i].indexOf("/laohuangli")>-1){
+    config.dev.proxyTable[proxyList[i]] = {
+      target: vPath,
+      changeOrigin: true,
+      secure: false
+    }
+  }else if(proxyList[i].indexOf("/simpleWeather")>-1){
+    config.dev.proxyTable[proxyList[i]] = {
+      target: apiPath,
+      changeOrigin: true,
+      secure: false
+    }
+  }else if(proxyList[i].indexOf("/ip")>-1){
+    config.dev.proxyTable[proxyList[i]] = {
+      target: apiPath,
+      changeOrigin: true,
+      secure: false
+    }
+  } else{
+    config.dev.proxyTable[proxyList[i]] = {
+      target: targetPath,
+      secure: false,
+      changeOrigin: true
+    }
+    console.log("proxyTable:",config.dev.proxyTable)
   }
+
 }
 // console.info(Object.keys(config.dev.proxyTable))
 module.exports = config

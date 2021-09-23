@@ -5,7 +5,7 @@
         <slot></slot>
       </div>
     </div>
-    <div id="footer">©copyright by Artiely</div>
+    <div id="footer">©copyright by CodeZero</div>
   </div>
 </template>
 
