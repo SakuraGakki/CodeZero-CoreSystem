@@ -85,7 +85,7 @@
     methods: {
       getIp(){
         this.$api.getIpInfo().then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           res.data = res.data.substring(6,res.data.length)
           this.formValidate.ip = res.data.substring(0,res.data.indexOf("  来自于："))
           Cookies.set("ip",this.formValidate.ip)
@@ -109,9 +109,9 @@
                   duration:10
                 })
                 this.getUserInfo(res.data)
-                console.log("准备保存userInfo",this.userInfo)
+                // console.log("准备保存userInfo",this.userInfo)
                 Cookies.set('userInfo',this.userInfo)
-                console.log("保存后userInfo",Cookies.get('userInfo'))
+                // console.log("保存后userInfo",Cookies.get('userInfo'))
                 Cookies.set('token', this.formValidate.password)
                 this.$router.push('/index')
               } else {
@@ -140,14 +140,14 @@
       },
       getLocationInfo(ip){
         this.$api.locationFromNet(ip).then(res => {
-          console.log("IP返回结果",res)
+          // console.log("IP返回结果",res)
           if(res.data.error_code==0){
-            console.log("this.country",res.data.result.Country)
-            console.log("this.province",res.data.result.Province)
-            console.log("this.city",res.data.result.City)
-            console.log("this.region",res.data.result.District)
-            console.log("this.ISP",res.data.result.Isp)
-            this.formValidate.city = res.data.result.Country+" "+res.data.result.Province+" "+res.data.result.City+" "+res.data.result.District+" "+res.data.result.Isp
+            // console.log("this.country",res.data.result.Country)
+            // console.log("this.province",res.data.result.Province)
+            // console.log("this.city",res.data.result.City)
+            // console.log("this.region",res.data.result.District)
+            // console.log("this.ISP",res.data.result.Isp)
+            this.formValidate.city = res.data.result.Country+"-"+res.data.result.Province+"-"+res.data.result.City+"-"+res.data.result.District+"-"+res.data.result.Isp
             Cookies.set("locationInfo",res.data.result);
           }
         })

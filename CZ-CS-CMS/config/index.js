@@ -43,7 +43,7 @@ var config = {
 
 // 需要代理的接口
 const proxyList = [
-  '/ip','website','/cms','/laohuangli','/simpleWeather'
+  '/ip','/website','/cms','/laohuangli','/simpleWeather'
 ]
 
 const targetPath = config.dev.baseServerUrl // 服务器的地址 可以使www.xx.com
@@ -78,7 +78,7 @@ for (let i = 0; i < proxyList.length; i++) {
       secure: false,
       changeOrigin: true
     }
-    console.log("proxyTable:",config.dev.proxyTable)
+    // console.log("proxyTable:",config.dev.proxyTable)
   }
 
 }

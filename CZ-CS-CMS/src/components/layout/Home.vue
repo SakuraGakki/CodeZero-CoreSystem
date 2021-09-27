@@ -224,7 +224,7 @@
              * 选择菜单
              */
             selectFn(a) {
-                console.log(a, this.$route.path)
+                // console.log(a, this.$route.path)
                 this.$router.push({
                     path: a
                 })
@@ -248,7 +248,7 @@
                 // 设置为锁定
                 this.$store.commit('SET_LOCK', '1')
                 // 获取当前的页面path
-                console.log(this.$route.path)
+                // console.log(this.$route.path)
                 this.$store.commit('SET_LOCK_PAGE', this.$route.path)
                 this.$router.push('/lock')
             }

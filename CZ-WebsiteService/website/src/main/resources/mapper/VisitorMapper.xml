@@ -65,4 +65,16 @@
         update visitor_info t set t.last_time = #{lastTime},t.visitor_num = t.visitor_num + 1 where t.ip = #{ip}
     </update>
 
+    <select id="topFiveList" resultMap="VisitorInfo">
+        select * from visitor_info t order by t.visitor_num DESC limit 0,5
+    </select>
+
+    <select id="visitorInfoList" resultMap="VisitorInfo">
+        select * from visitor_info t
+    </select>
+
+    <select id="tenVisitorNumList" resultMap="VisitorNum">
+        select * from visitor_num t order by t.date DESC limit 0,10
+    </select>
+
 </mapper>

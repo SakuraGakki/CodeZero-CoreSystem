@@ -21,7 +21,30 @@ export function getVisitorNum(){
     url: '/website/visitor/getVisitNum',
     method: 'post'
   })
+}
 
+//获取首页top5列表数据
+export function getTopFiveList(){
+  return fetch({
+    url:'/website/visitor/topFiveList',
+    method: 'post'
+  })
+}
+
+// 获取访客列表
+export function getVisitorInfoList(){
+  return fetch({
+    url:'/website/visitor/visitorInfoList',
+    method: 'post'
+  })
+}
+
+// 获取10日内访客数量信息
+export function getTenVisitNumList() {
+  return fetch({
+    url:'website/visitor/tenVisitorNumList',
+    method: 'post'
+  })
 }
 
 // 获取公网IP
@@ -42,7 +65,7 @@ export function weatherFromNet(city){
   return axios.get(weatherUrl,{})
 }
 
-//
+//获取Ip信息
 export function locationFromNet(ip){
   let ipUrl = '/ip/ipNewV3?key=' + JuHe.ipKey + '&ip=' + ip
   return axios.get(ipUrl,{})
@@ -54,7 +77,10 @@ const apiList = {
   getIpInfo,
   calenderFromNet,
   weatherFromNet,
-  locationFromNet
+  locationFromNet,
+  getTopFiveList,
+  getVisitorInfoList,
+  getTenVisitNumList
 }
 
 export default apiList

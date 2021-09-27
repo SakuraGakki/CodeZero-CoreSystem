@@ -1,13 +1,14 @@
 package com.codezero.website.controller;
 
 import com.codezero.website.entity.base.BaseResponse;
-import com.codezero.website.entity.visitor.VisitorNumRequest;
-import com.codezero.website.entity.visitor.VisitorNumResponse;
+import com.codezero.website.entity.visitor.*;
 import com.codezero.website.service.visitor.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 访客信息相关接口
@@ -38,6 +39,29 @@ public class VisitorController {
     @RequestMapping(value = "/uptVisitNum", method = RequestMethod.POST, name = "更新访问量信息")
     public BaseResponse<String> uptVisitNum(VisitorNumRequest visitorNumRequest){
         return visitorService.uptNum(visitorNumRequest);
+    }
+
+    /**
+     * 访客top5列表
+     * @return
+     */
+    @RequestMapping(value = "/topFiveList", method = RequestMethod.POST, name="访客TOP5列表")
+    public BaseResponse<List<TopFiveResponse>> topFiveList(){
+        return visitorService.topFiveList();
+    }
+
+    /**
+     * 访客全部数据
+     * @return
+     */
+    @RequestMapping(value = "/visitorInfoList", method = RequestMethod.POST, name="访客全部数据列表")
+    public BaseResponse<List<VisitorInfoResponse>> visitorInfoList(){
+        return visitorService.visitorInfoList();
+    }
+
+    @RequestMapping(value = "/tenVisitorNumList", method = RequestMethod.POST, name="获取每日访问数据列表（10天内）")
+    public BaseResponse<TenVisitorNumListResponse> tenVisitorNumList(){
+        return visitorService.tenVisitorNumList();
     }
 
 }

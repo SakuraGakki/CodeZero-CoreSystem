@@ -64,40 +64,26 @@
 
         <Row :gutter="8">
             <Col :md='{span:8}'>
-                <Card style="height: 320px">
+                <Card style="height: 350px">
                     <p slot="title">
-                        10个已经完成，2个待完成，1个正在进行中
+                        访客TOP5
                     </p>
-                    <a href="#" slot="extra" @click.prevent="refresh">
-                        <Icon type="ios-loop-strong"></Icon>
-                    </a>
-                    <Steps :current="2" direction="vertical" size="small">
-                        <Step title="已完成" content="这里是该步骤的描述信息"></Step>
-                        <Step title="已完成" content="这里是该步骤的描述信息"></Step>
-                        <Step title="进行中" content="这里是该步骤的描述信息"></Step>
-                        <Step title="待进行" content="这里是该步骤的描述信息"></Step>
-                    </Steps>
+                    <Table :columns="topCol" :data="topData"></Table>
                 </Card>
             </Col>
             <Col :md='{span:8}'>
-                <Card style="height: 320px">
-                    <Table :columns="columns1" :data="data1" :show-header="false"></Table>
+                <Card style="height: 350px">
+                    <div style="height: 350px" ref="pieChart">
+                        <IEcharts ref="pie" :option="pie" :resizable="true"
+                                  :update-options="{notMerge:true}"></IEcharts>
+                    </div>
                 </Card>
             </Col>
             <Col :md='{span:8}'>
-                <Card style="height: 320px">
-                    <p slot="title">
-                        未读消息
-                    </p>
-                    <a href="#" slot="extra" @click.prevent="refresh">
-                        <Icon type="ios-loop-strong"></Icon>
-                    </a>
-                    <Steps :current="2" direction="vertical" size="small">
-                        <Step title="已完成" content="这里是该步骤的描述信息"></Step>
-                        <Step title="已完成" content="这里是该步骤的描述信息"></Step>
-                        <Step title="进行中" content="这里是该步骤的描述信息"></Step>
-                        <Step title="待进行" content="这里是该步骤的描述信息"></Step>
-                    </Steps>
+                <Card style="height: 350px">
+                    <div style="height: 350px">
+                        <IEcharts ref="line" :option="line" :resizable="true"></IEcharts>
+                    </div>
                 </Card>
             </Col>
         </Row>
@@ -107,18 +93,138 @@
     import {getNowFormatDate, getNowFormatTime} from '@/common/utils/dateUtils'
     import {getEnumValue} from "@/common/utils/commonUtils";
     import {JuHe} from "@/api/config";
+    import echarts from 'echarts'
+    import {objArrayDuplicateSum, sort} from "../../common/utils/arrayUtils";
     import Cookies from 'js-cookie'
-    import {getVisitorNum} from "../../api/api";
+    import IEcharts from 'vue-echarts-v3/src/full.js'
 
     export default {
         name: 'index',
+        components: {IEcharts},
         data() {
             return {
                 params: {
                     page: 1,
                     limit: 10
                 },
-                valueCustomText: '隔壁老王',
+                colorList:[
+                    {
+                        c1: '#a18cd1',
+                        c2: '#fbc2eb',
+                    },
+                    {
+                        c1: '#f6d365',
+                        c2: '#fda085',
+                    },
+                    {
+                        c1: '#a1c4fd',
+                        c2: '#c2e9fb',
+                    },
+                    {
+                        c1: '#d4fc79',
+                        c2: '#96e6a1',
+                    },
+                    {
+                        c1: '#84fab0',
+                        c2: '#8fd3f4',
+                    },
+                    {
+                        c1: '#4facfe',
+                        c2: '#00f2fe',
+                    },
+                    {
+                        c1: '#30cfd0',
+                        c2: '#330867',
+                    },
+                    {
+                        c1: '#fad0c4',
+                        c2: '#ffd1ff',
+                    },
+                    {
+                        c1: '#f5f7fa',
+                        c2: '#c3cfe2',
+                    },
+                    {
+                        c1: '#434343',
+                        c2: '#000000',
+                    }
+                ],
+                pie: {
+                    title: {
+                        text: '访客分布'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    series: [{
+                        name: '访问次数',
+                        type: 'pie',
+                        radius: [20, 100],
+                        roseType: 'area',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{b}:{c}({d}%)',
+                                textStyle: {
+                                    fontSize: 12,
+                                    color: '#1d7fcd',
+                                    fontWeight: 600,
+                                    fontFamily: 'Microsoft YaHei',
+                                }
+                            }
+                        },
+                        itemStyle: {
+                            borderRadius: 5,
+                        },
+                        data: [],
+                    }]
+                },
+                line: {
+                    tooltip: {
+                        trigger: 'axis',
+                        position: function (pt) {
+                            return [pt[0], '10%'];
+                        }
+                    },
+                    title: {
+                        text: '热度趋势'
+                    },
+                    toolbox: {},
+                    xAxis: {
+                        type: 'category',
+                        data: []
+                    },
+                    yAxis: {
+                        type: 'value',
+                        boundaryGap: [0, '100%']
+                    },
+                    series: [
+                        {
+                            name: '访问量',
+                            type: 'line',
+                            smooth: true,
+                            symbol: 'none',
+                            areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    {
+                                        offset: 0,
+                                        color: 'rgba(213,72,120,0.8)'
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: 'rgba(213,72,120,0.3)'
+                                    }
+                                ])
+                            },
+                            itemStyle: {
+                                color: 'rgb(255, 70, 131)'
+                            },
+                            data: []
+                        }
+                    ]
+                },
                 imgs: {
                     dafeng: require('../../assets/img/weather/dafeng.png'),
                     qing: require('../../assets/img/weather/qing.png'),
@@ -234,45 +340,26 @@
                     per: 0,
                     hot: 0,
                 },
-                columns1: [
+                topCol: [
                     {
-                        key: 'name'
+                        title: 'IP',
+                        key: 'ip',
+                        width: 140
                     },
                     {
-                        key: 'age'
+                        title: '地点',
+                        key: 'city',
+                        width: 222
                     },
                     {
-                        key: 'address'
+                        title: '访问次数',
+                        key: 'total',
+                        width: 85
                     }
                 ],
-                data1: [
-                    {
-                        name: '王小明',
-                        age: 18,
-                        address: '北京市朝阳区芍药居'
-                    },
-                    {
-                        name: '张小刚',
-                        age: 25,
-                        address: '北京市海淀区西二旗'
-                    },
-                    {
-                        name: '李小红',
-                        age: 30,
-                        address: '上海市浦东新区世纪大道'
-                    },
-                    {
-                        name: '周小伟',
-                        age: 26,
-                        address: '深圳市南山区深南大道'
-                    },
-                    {
-                        name: '赵小钱',
-                        age: 27,
-                        address: '武汉市武昌区区关山大道'
-                    }
-                ]
-
+                topData: [],
+                visitorInfoList: [],
+                tenVisitorNumList: [],
             }
         },
         computed: {},
@@ -293,8 +380,8 @@
             getLocationFromCookies() {
                 this.ip = Cookies.get("ip")
                 this.locationInfo = JSON.parse(Cookies.get("locationInfo"))
-                console.log("从Cookies中获取的ip", this.ip)
-                console.log("从Cookies中获取的locationInfo", this.locationInfo)
+                // console.log("从Cookies中获取的ip", this.ip)
+                // console.log("从Cookies中获取的locationInfo", this.locationInfo)
                 this.getWeatherInfo(this.locationInfo.City)
             },
 
@@ -515,8 +602,83 @@
                         this.visitor.total = res.data.total
                         this.visitor.per = Math.round(this.visitor.today / this.visitor.total * 100 * 2) > 100 ? 100 : Math.round(this.visitor.today / this.visitor.total * 100 * 2)
                         this.visitor.hot = this.visitor.per > 0 ? (this.visitor.per > 20 ? (this.visitor.per > 40 ? (this.visitor.per > 60 ? (this.visitor.per >= 80 ? 5 : 0) : 4) : 3) : 2) : 1
-                        console.log("访客百分比", this.visitor.per)
-                        console.log("访客热度", this.visitor.hot)
+                        // console.log("访客百分比", this.visitor.per)
+                        // console.log("访客热度", this.visitor.hot)
+                    }
+                })
+            },
+            //访客top5
+            getTopFive() {
+                this.$api.getTopFiveList().then(res => {
+                    if (res.status === 0) {
+                        // console.log("Top5", res.data)
+                        this.topData = res.data
+                    }
+                })
+            },
+            //转换访客列表数据
+            transformVisitorData() {
+                const that = this
+                let pieDataArray = new Array()
+                for (let i = 0; i < this.visitorInfoList.length; i++) {
+                    pieDataArray.push(
+                        {
+                            name: this.visitorInfoList[i].city,
+                            value: this.visitorInfoList[i].total,
+                        }
+                    )
+                }
+                let key = Object.keys(pieDataArray[0])[0]
+                let val = Object.keys(pieDataArray[0])[1]
+                pieDataArray = objArrayDuplicateSum(pieDataArray, key, val)
+                for(let i=0;i<pieDataArray.length;i++){
+                    pieDataArray[i].itemStyle ={
+                        normal:{
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                offset: 0,
+                                color: this.colorList[i].c1
+                            }, {
+                                offset: 1,
+                                color: this.colorList[i].c2
+                            }])
+                        }
+                    }
+                }
+                // console.log("pieDataArray", pieDataArray)
+                that.pie.series[0].data = pieDataArray
+                // console.log("pieOptions", this.pie)
+            },
+            //访客信息列表
+            getVisitorInfoList() {
+                this.$api.getVisitorInfoList().then(res => {
+                    if (res.status === 0) {
+                        // console.log("visitorInfoList", res.data)
+                        this.visitorInfoList = res.data
+                        this.transformVisitorData()
+                    }
+                })
+            },
+            //转换10日内访客数量信息列表数据
+            transformTenVisitorNumData() {
+                const that = this
+                let lineDataArray = new Array()
+                let lineXDataArray = new Array()
+                this.tenVisitorNumList = sort(this.tenVisitorNumList)
+                for (let i = 0; i < this.tenVisitorNumList.length; i++) {
+                    lineXDataArray.push(this.tenVisitorNumList[i].date)
+                    lineDataArray.push(this.tenVisitorNumList[i].total)
+                }
+                // console.log("that.line.xAxis.data", lineXDataArray)
+                that.line.xAxis.data = lineXDataArray
+                that.line.series[0].data = lineDataArray
+            },
+            //获取10日内访客数量信息列表
+            getTenVisitNumList() {
+                this.$api.getTenVisitNumList().then(res => {
+                    if (res.status === 0) {
+                        // console.log("tenVisitorNumList",res.data)
+                        this.tenVisitorNumList = res.data
+                        this.transformTenVisitorNumData()
                     }
                 })
             }
@@ -525,6 +687,9 @@
             this.getNowTime()
             this.getLocationFromCookies()
             this.getVisitorNum()
+            this.getTopFive()
+            this.getVisitorInfoList()
+            this.getTenVisitNumList()
         }
     }
 </script>

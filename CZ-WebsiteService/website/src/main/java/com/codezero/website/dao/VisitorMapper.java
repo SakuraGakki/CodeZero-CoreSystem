@@ -64,4 +64,22 @@ public interface VisitorMapper{
      */
     void uptVisitorInfo(VisitorInfo visitorInfo);
 
+    /**
+     * top5列表数据
+     * @return
+     */
+    List<VisitorInfo> topFiveList();
+
+    /**
+     * 访客列表信息
+     * @return
+     */
+    List<VisitorInfo> visitorInfoList();
+
+    /**
+     * 最近十日内访客数量
+     * @return
+     */
+    List<VisitorNum> tenVisitorNumList();
+
 }

@@ -41,6 +41,10 @@ import zhLocale from 'iview/src/locale/lang/zh-CN'
 import enLocale from 'iview/src/locale/lang/en-US'
 import twLocale from 'iview/src/locale/lang/zh-TW'
 
+import echarts from 'echarts'
+
+Vue.prototype.$echarts = echarts
+
 let lang = Cookies.getJSON('lang')
 if (lang && lang === 'CN') {
   Vue.config.lang = 'zh-CN'
