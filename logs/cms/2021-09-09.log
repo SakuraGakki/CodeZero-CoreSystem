@@ -1,0 +1,412 @@
+2021-09-09 18:53:34.604 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 18:53:34.626 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 18:53:34.729 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 18:53:34.772 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 18:53:34.815 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 18:53:34.823 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 18:53:34.827 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 18:53:35.346 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=85a57c60-9f10-3bcd-bd78-981073f807b5
+2021-09-09 18:53:35.414 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 18:53:35.595 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 18:53:35.603 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 18:53:35.604 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 18:53:35.604 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 18:53:35.720 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 18:53:35.720 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 881 ms
+2021-09-09 18:53:36.003 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 18:53:36.003 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 18:53:36.007 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 18:53:36.007 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 18:53:36.138 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 18:53:36.250 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 18:53:36.255 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 18:53:36.256 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 18:53:36.256 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 18:53:36.433 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 18:53:36.457 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 18:53:36.459 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 18:53:36.519 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 18:53:36.580 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 18:53:36.585 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 3.631 seconds (JVM running for 5.225)
+2021-09-09 18:53:36.588 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 18:53:36.589 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 18:53:36.591 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 18:53:36.591 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 18:53:36.592 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 18:53:36.592 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 18:53:36.639 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:54:06.340 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:54:35.891 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:54:53.799 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 18:54:53.799 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 18:54:53.803 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-09-09 18:54:53.864 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 18:54:54.646 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 18:55:05.441 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:55:35.055 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:56:04.606 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:56:58.278 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s524ms).
+2021-09-09 18:56:58.278 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:56:58.334 [com.alibaba.nacos.naming.beat.sender] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"serviceName":"dev@@CMS","weight":1.0}
+2021-09-09 18:57:27.815 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:57:57.347 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:58:40.960 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:58:40.991 [com.alibaba.nacos.naming.beat.sender] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"serviceName":"dev@@CMS","weight":1.0}
+2021-09-09 18:59:44.935 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s975ms).
+2021-09-09 18:59:44.936 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 18:59:47.803 [com.alibaba.nacos.naming.beat.sender] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"serviceName":"dev@@CMS","weight":1.0}
+2021-09-09 19:00:17.375 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:00:26.540 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:00:26.541 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:00:26.541 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:00:26.542 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:00:26.593 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:00:26.593 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:00:26.595 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:00:26.609 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-09-09 19:00:31.022 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 19:00:31.040 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 19:00:31.148 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 19:00:31.193 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 19:00:31.249 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 19:00:31.257 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 19:00:31.261 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 19:00:31.708 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=85a57c60-9f10-3bcd-bd78-981073f807b5
+2021-09-09 19:00:31.769 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 19:00:31.928 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 19:00:31.935 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:00:31.936 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 19:00:31.936 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 19:00:32.042 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 19:00:32.042 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 770 ms
+2021-09-09 19:00:32.308 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:00:32.309 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:00:32.312 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:00:32.312 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:00:32.417 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:00:32.514 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:00:32.518 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:00:32.518 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 19:00:32.519 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:00:32.663 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:00:32.687 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 19:00:32.689 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 19:00:32.742 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 19:00:32.793 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 19:00:32.799 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 2.564 seconds (JVM running for 3.223)
+2021-09-09 19:00:32.802 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:00:32.803 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 19:00:32.804 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:00:32.804 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 19:00:32.804 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:00:32.804 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 19:00:32.861 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:00:50.467 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 19:00:50.467 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 19:00:50.472 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-09-09 19:00:57.611 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 19:00:58.378 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 19:01:02.563 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:01:32.113 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:01:39.176 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:01:39.178 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:01:39.178 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:01:39.178 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:01:39.222 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:01:39.223 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:01:39.225 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:01:39.235 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-09-09 19:01:41.955 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 19:01:41.975 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 19:01:42.065 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 19:01:42.102 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 19:01:42.140 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 19:01:42.148 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 19:01:42.152 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 19:01:42.614 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=85a57c60-9f10-3bcd-bd78-981073f807b5
+2021-09-09 19:01:42.672 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 19:01:42.838 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 19:01:42.845 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:01:42.845 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 19:01:42.845 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 19:01:42.959 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 19:01:42.960 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 797 ms
+2021-09-09 19:01:43.232 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:01:43.232 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:01:43.235 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:01:43.235 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:01:43.345 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:01:43.445 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:01:43.451 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:01:43.451 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 19:01:43.451 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:01:43.617 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:01:43.643 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 19:01:43.646 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 19:01:43.716 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 19:01:43.759 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 19:01:43.764 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 2.584 seconds (JVM running for 3.264)
+2021-09-09 19:01:43.767 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:01:43.768 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 19:01:43.768 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:01:43.769 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 19:01:43.769 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:01:43.769 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 19:01:43.817 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:02:13.518 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:02:43.059 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:03:12.690 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:03:42.229 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:04:03.216 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 19:04:03.217 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 19:04:03.221 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-09-09 19:04:03.270 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 19:04:03.978 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 19:04:11.876 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:04:41.417 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:05:10.957 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:05:40.497 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:06:10.151 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:06:39.688 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:07:09.229 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:07:38.769 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:08:08.306 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:08:37.845 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:09:07.385 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:09:20.615 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:09:20.616 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:09:20.617 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:09:20.617 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:09:20.654 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:09:20.655 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:09:20.657 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:09:20.672 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-09-09 19:09:25.292 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 19:09:25.310 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 19:09:25.391 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 19:09:25.424 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 19:09:25.457 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 19:09:25.464 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 19:09:25.468 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 19:09:25.907 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=85a57c60-9f10-3bcd-bd78-981073f807b5
+2021-09-09 19:09:25.965 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 19:09:26.116 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 19:09:26.123 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:09:26.124 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 19:09:26.124 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 19:09:26.231 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 19:09:26.231 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 752 ms
+2021-09-09 19:09:26.499 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:09:26.500 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:09:26.502 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:09:26.503 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:09:26.605 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:09:26.704 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:09:26.709 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:09:26.709 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 19:09:26.709 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:09:26.855 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:09:26.876 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 19:09:26.878 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 19:09:26.933 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 19:09:26.972 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 19:09:26.978 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 2.481 seconds (JVM running for 3.137)
+2021-09-09 19:09:26.981 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:09:26.982 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 19:09:26.983 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:09:26.983 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 19:09:26.983 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:09:26.983 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 19:09:27.020 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:09:31.142 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 19:09:31.143 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 19:09:31.147 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-09-09 19:09:31.232 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 19:09:31.845 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 19:09:56.730 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:10:26.272 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:10:55.812 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:11:25.443 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:11:55.037 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:12:24.574 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:12:54.113 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:13:23.654 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:13:53.196 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:14:22.732 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:14:52.271 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:15:21.811 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:15:51.377 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:16:20.913 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:16:50.454 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:17:19.994 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:17:49.536 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:18:19.075 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:18:48.615 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:19:18.153 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:19:47.721 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:20:17.262 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:20:46.802 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:21:16.403 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:21:45.943 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:22:15.485 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:22:45.084 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:23:14.650 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:23:44.200 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:24:13.743 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:24:43.283 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:25:12.825 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:25:42.364 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:26:11.905 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:26:41.656 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:27:11.218 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:27:40.758 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:28:10.300 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:28:39.840 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:29:09.380 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:29:38.917 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:30:08.524 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:30:38.057 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:31:07.613 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:31:37.148 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:32:06.698 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:32:36.241 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:33:05.785 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:33:35.322 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:34:04.977 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:34:34.511 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:35:04.050 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:35:33.655 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:36:03.190 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:36:32.730 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:37:02.271 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:37:31.812 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:38:01.352 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:38:30.892 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:39:00.430 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:39:29.971 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:39:40.268 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:39:40.270 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:39:40.270 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:39:40.270 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:39:40.304 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:39:40.304 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:39:40.306 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:39:40.314 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-09-09 19:39:45.931 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 19:39:45.955 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 19:39:46.038 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 19:39:46.072 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 19:39:46.105 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 19:39:46.112 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 19:39:46.116 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 19:39:46.576 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=85a57c60-9f10-3bcd-bd78-981073f807b5
+2021-09-09 19:39:46.638 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 19:39:46.813 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 19:39:46.821 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:39:46.822 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 19:39:46.822 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 19:39:46.941 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 19:39:46.941 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 816 ms
+2021-09-09 19:39:47.222 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:39:47.222 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:39:47.225 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:39:47.225 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:39:47.328 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:39:47.425 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:39:47.430 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:39:47.430 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 19:39:47.430 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:39:47.585 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:39:47.607 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 19:39:47.610 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 19:39:47.666 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 19:39:47.715 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 19:39:47.721 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 2.648 seconds (JVM running for 3.351)
+2021-09-09 19:39:47.725 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:39:47.725 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 19:39:47.726 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:39:47.726 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 19:39:47.727 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:39:47.727 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 19:39:47.771 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:40:17.481 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:40:34.871 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 19:40:34.872 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 19:40:34.876 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-09-09 19:40:34.962 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 19:40:35.715 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 19:40:47.022 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:41:27.342 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:41:27.342 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s521ms).
+2021-09-09 19:41:56.881 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:42:26.419 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:42:55.959 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:43:25.499 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:43:55.042 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:44:24.583 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:44:54.118 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:45:23.703 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:45:53.242 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:46:22.780 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:46:52.322 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:47:21.880 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:47:51.475 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:48:02.868 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:48:02.870 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:48:02.870 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:48:02.871 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:48:02.908 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:48:02.909 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:48:02.911 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:48:02.924 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-09-09 19:48:07.970 [main] INFO  com.alibaba.nacos.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:/Users/wangyuelong/nacos/config
+2021-09-09 19:48:07.989 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2021-09-09 19:48:08.075 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms] & group[dev]
+2021-09-09 19:48:08.111 [main] WARN  com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[cms.yml] & group[dev]
+2021-09-09 19:48:08.146 [main] INFO  com.alibaba.nacos.client.config.utils.JVMUtil - isMultiInstance:false
+2021-09-09 19:48:08.154 [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-cms-dev.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms.yml,dev'}, BootstrapPropertySource {name='bootstrapProperties-cms,dev'}]
+2021-09-09 19:48:08.158 [main] INFO  com.codezero.cms.CmsApplication - The following profiles are active: dev
+2021-09-09 19:48:08.606 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=5a6e5663-3f3e-32a8-92d6-42853380ce53
+2021-09-09 19:48:08.663 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-09 19:48:08.818 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2021-09-09 19:48:08.825 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:48:08.826 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-09-09 19:48:08.826 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-09-09 19:48:08.932 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-09-09 19:48:08.932 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 761 ms
+2021-09-09 19:48:09.230 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:48:09.230 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:48:09.233 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-09-09 19:48:09.233 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-09-09 19:48:09.337 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:48:09.433 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:48:09.437 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:48:09.437 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-09-09 19:48:09.438 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-09-09 19:48:09.581 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2021-09-09 19:48:09.605 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2021-09-09 19:48:09.607 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: {"cluster":"DEFAULT","ip":"10.32.17.52","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":8002,"scheduled":false,"serviceName":"dev@@CMS","stopped":false,"weight":1.0} to beat map.
+2021-09-09 19:48:09.659 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 registering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":8002,"weight":1.0}
+2021-09-09 19:48:09.703 [main] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - nacos registry, dev CMS 10.32.17.52:8002 register finished
+2021-09-09 19:48:09.708 [main] INFO  com.codezero.cms.CmsApplication - Started CmsApplication in 2.52 seconds (JVM running for 3.156)
+2021-09-09 19:48:09.711 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:48:09.712 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms, group=dev, cnt=1
+2021-09-09 19:48:09.713 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms-dev.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:48:09.713 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms-dev.yml, group=dev, cnt=1
+2021-09-09 19:48:09.713 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [subscribe] cms.yml+dev+2e8b2822-4ed2-4783-a312-3b2be270e9f2
+2021-09-09 19:48:09.713 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] [add-listener] ok, tenant=2e8b2822-4ed2-4783-a312-3b2be270e9f2, dataId=cms.yml, group=dev, cnt=1
+2021-09-09 19:48:09.751 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:48:27.867 [http-nio-8002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-09 19:48:27.867 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-09-09 19:48:27.871 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-09-09 19:48:27.953 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-09-09 19:48:28.662 [http-nio-8002-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-09-09 19:48:39.462 [com.alibaba.nacos.client.Worker.longPolling.fixed-59.110.218.235_8848-2e8b2822-4ed2-4783-a312-3b2be270e9f2] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - get changedGroupKeys:[]
+2021-09-09 19:48:58.652 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2021-09-09 19:48:58.653 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-09-09 19:48:58.654 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [BEAT] removing beat: dev@@CMS:10.32.17.52:8002 from beat map.
+2021-09-09 19:48:58.654 [SpringContextShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] 2e8b2822-4ed2-4783-a312-3b2be270e9f2 deregistering service dev@@CMS with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"instanceIdGenerator":"simple","ip":"10.32.17.52","ipDeleteTimeout":30000,"metadata":{},"port":8002,"weight":1.0}
+2021-09-09 19:48:58.684 [SpringContextShutdownHook] INFO  com.alibaba.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-09-09 19:48:58.684 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-09-09 19:48:58.686 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-09-09 19:48:58.697 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
