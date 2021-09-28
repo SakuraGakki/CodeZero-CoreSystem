@@ -10,8 +10,21 @@
                                     <Icon type="ios-calendar"></Icon>
                                 </Col>
                                 <Col span="16">
-                                    <p class="subText">今天日期：</p>
-                                    <h3>{{calender.date}}</h3>
+                                    <Poptip placement="right" width="400">
+                                        <p class="subText">今天日期：</p>
+                                        <h3>{{calender.date}}</h3>
+                                        <div class="api" slot="content">
+                                            <h3>老黄历</h3>
+                                            <p><B> 阴历：</B>{{calender.huangli.yinli}}</p>
+                                            <p><B> 彭祖百忌：</B>{{calender.huangli.baiji}}</p>
+                                            <p><B> 吉神宜趋：</B>{{calender.huangli.jishen}}</p>
+                                            <p><B> 凶神宜忌：</B>{{calender.huangli.xiongshen}}</p>
+                                            <p><B> 五行：</B>{{calender.huangli.wuxing}}</p>
+                                            <p><B> 冲煞：</B>{{calender.huangli.chongsha}}</p>
+                                            <p><B> 宜：</B>{{calender.huangli.yi}}</p>
+                                            <p><B> 忌：</B>{{calender.huangli.ji}}</p>
+                                        </div>
+                                    </Poptip>
                                 </Col>
                             </Row>
                         </Card>
@@ -36,9 +49,20 @@
                                     <img :src="weather.imgSrc" style="height: 55px;width: 55px;">
                                 </Col>
                                 <Col span="20">
-                                    <p class="subText">今日天气：</p>
-                                    <h3>
-                                        {{weather.today.weather}}，{{weather.today.temperature}}，{{weather.today.direct}}{{weather.today.power}}</h3>
+                                    <Poptip placement="right" width="300">
+                                        <p class="subText">今日天气：</p>
+                                        <h3>{{weather.today.weather}}，{{weather.today.temperature}}，{{weather.today.direct}}{{weather.today.power}}</h3>
+                                        <div class="api" slot="content">
+                                            <h3>未来几天天气情况</h3><br>
+                                            <p>{{weather.future[0].date}}:<br><b>{{weather.future[0].weather}}</b>----<b>{{weather.future[0].temperature}}</b>----<b>{{weather.future[0].direct}}</b></p>
+                                            <br>
+                                            <p>{{weather.future[1].date}}:<br><b>{{weather.future[1].weather}}</b>----<b>{{weather.future[1].temperature}}</b>----<b>{{weather.future[1].direct}}</b></p>
+                                            <br>
+                                            <p>{{weather.future[2].date}}:<br><b>{{weather.future[2].weather}}</b>----<b>{{weather.future[2].temperature}}</b>----<b>{{weather.future[2].direct}}</b></p>
+                                            <br>
+                                            <p>{{weather.future[3].date}}:<br><b>{{weather.future[3].weather}}</b>----<b>{{weather.future[3].temperature}}</b>----<b>{{weather.future[3].direct}}</b></p>
+                                        </div>
+                                    </Poptip>
                                 </Col>
                             </Row>
                         </Card>
@@ -389,7 +413,7 @@
             getWeatherInfo(city) {
                 let date = new Date()
                 let h = date.getHours()
-                if (localStorage.getItem("weatherInfo")) {
+                if (localStorage.getItem("weatherInfo") && JSON.parse(localStorage.getItem("weatherInfo")).today.date === getNowFormatDate("YYYY-MM-DD")) {
                     let weatherInfo = JSON.parse(localStorage.getItem("weatherInfo"))
                     if (weatherInfo.today.date && weatherInfo.today.date === getNowFormatDate("YYYY-MM-DD")) {
                         //今天
@@ -681,11 +705,45 @@
                         this.transformTenVisitorNumData()
                     }
                 })
-            }
+            },
+            //获取老黄历信息
+            getCalender(){
+                if(localStorage.getItem("huangliInfo") && JSON.parse(localStorage.getItem("huangliInfo")).yangli === getNowFormatDate("YYYY-MM-DD")){
+                    let huangliInfo = JSON.parse(localStorage.getItem("huangliInfo"))
+                    this.calender.huangli.baiji = huangliInfo.baiji
+                    this.calender.huangli.chongsha = huangliInfo.chongsha
+                    this.calender.huangli.ji = huangliInfo.ji
+                    this.calender.huangli.jishen = huangliInfo.jishen
+                    this.calender.huangli.wuxing = huangliInfo.wuxing
+                    this.calender.huangli.xiongshen = huangliInfo.xiongshen
+                    this.calender.huangli.yi = huangliInfo.yi
+                    this.calender.huangli.yinli = huangliInfo.yinli
+                }else{
+                    this.getCalenderFromNet()
+                }
+            },
+            getCalenderFromNet() {
+                this.$api.calenderFromNet().then(res => {
+                    if(res.data.error_code==0){
+                        localStorage.removeItem("huangliInfo")
+                        this.calender.huangli.baiji = res.data.result.baiji
+                        this.calender.huangli.chongsha = res.data.result.chongsha
+                        this.calender.huangli.ji = res.data.result.ji
+                        this.calender.huangli.jishen = res.data.result.jishen
+                        this.calender.huangli.wuxing = res.data.result.wuxing
+                        this.calender.huangli.xiongshen = res.data.result.xiongshen
+                        this.calender.huangli.yi = res.data.result.yi
+                        this.calender.huangli.yinli = res.data.result.yinli
+                        localStorage.setItem("huangliInfo",JSON.stringify(res.data.result))
+                    }
+                })
+            },
+
         },
         created() {
             this.getNowTime()
             this.getLocationFromCookies()
+            this.getCalender()
             this.getVisitorNum()
             this.getTopFive()
             this.getVisitorInfoList()
