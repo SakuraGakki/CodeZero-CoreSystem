@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import homepage from '@/views/homepage'
 import me from '@/views/me/me'
 import MeIndex from '@/views/me/index'
+import MessageBoard from '@/views/me/msgboard'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
           path: '/meindex',
           name: 'meindex',
           component: MeIndex
+        },
+        {
+          path: '/messageboard',
+          name: 'messageboard',
+          component: MessageBoard
         }
       ]
     }

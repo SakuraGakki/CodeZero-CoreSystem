@@ -55,8 +55,10 @@ export default {
         },
         {}
       ).then(data => {
-          console.log("更新访问信息返回值",data)
-          if(data.status === 0){
+          // console.log("更新访问信息返回值",data)
+          if(data.data.status === 0){
+            localStorage.setItem("ip",this.ip)
+            localStorage.setItem("city",this.city)
             this.getVisitorNum();
           }else{
 
@@ -69,7 +71,7 @@ export default {
         Vue.config.BaseUrl.ip + Vue.config.BaseUrl.getVisitNum,
         {}
       ).then(data => {
-        console.log("查询访客数量返回值",data)
+        // console.log("查询访客数量返回值",data)
         if(data.status === 0){
 
         }else{

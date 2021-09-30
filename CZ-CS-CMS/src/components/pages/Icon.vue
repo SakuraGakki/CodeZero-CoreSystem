@@ -17,6 +17,14 @@
               <i class="icon iconfont" :class="item.name"></i>
             </li>
           </ul>
+          <ul class="icon_lists clear">
+            <li class="emojiList" v-for="(item, index) in emoji" :key="index" >
+              <span style="font-size: 50px" @click="selectEmoji(item.text)">{{item.text}}</span>
+            </li>
+          </ul>
+          <br>
+          <br>
+          <input type="text-area" v-model="content" style="height: 100px;width: 200px"></input><button @click="showContent()">哈哈哈</button>
         </div>
       </Card>
       </Col>
@@ -27,13 +35,17 @@
   import '@/assets/iconfont/iconfont.css'
   import Clipboard from 'clipboard'
   import iconfont from '@/assets/iconfont/icon.js'
+  import {EmojisCommon} from "../../common/data/Emoji";
+
   export default {
     name: 'iconfont',
     components: {},
     data () {
       return {
         iconfont: iconfont,
-        isClass: false
+        emoji:EmojisCommon.map(emoji => ({text: emoji})),
+        isClass: false,
+        content:""
       }
     },
     watch: {},
@@ -57,9 +69,17 @@
           clipboard.destroy()
           this.$Message.success('代码已经复制到剪贴板')
         })
+      },
+      selectEmoji(emoji){
+        this.content += emoji
+      },
+      showContent(){
+        alert(this.content)
+        console.log(this.content)
       }
     },
     created () {
+      console.log("emoji",EmojisCommon.map(emoji => ({text: emoji})))
     },
     mounted () {
     }
