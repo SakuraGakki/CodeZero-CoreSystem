@@ -59,6 +59,10 @@ public class VisitorController {
         return visitorService.visitorInfoList();
     }
 
+    /**
+     * 每日访问数据列表（10天）
+     * @return
+     */
     @RequestMapping(value = "/tenVisitorNumList", method = RequestMethod.POST, name="获取每日访问数据列表（10天内）")
     public BaseResponse<TenVisitorNumListResponse> tenVisitorNumList(){
         return visitorService.tenVisitorNumList();

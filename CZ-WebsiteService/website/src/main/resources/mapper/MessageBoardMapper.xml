@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.website.dao.MessageBoardMapper">
+
+    <resultMap type="com.codezero.website.pojo.messageboard.MessageBoard" id="MessageBoard">
+        <id column="seq" jdbcType="INTEGER" property="seq" />
+        <result column="msgType" jdbcType="VARCHAR" property="msgType" />
+        <result column="ip" jdbcType="VARCHAR" property="ip" />
+        <result column="city" jdbcType="VARCHAR" property="city" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="relatedSeq" jdbcType="INTEGER" property="relatedSeq" />
+    </resultMap>
+
+    <insert id="insertMessage" parameterType="com.codezero.website.pojo.messageboard.MessageBoard">
+        insert into message_board
+        (msgType,ip,city,date,content,status,relatedSeq)
+        values
+        (#{msgType},#{ip},#{city},#{date},#{content},#{status},#{relatedSeq})
+    </insert>
+
+    <select id="selectMainMessage" resultMap="MessageBoard">
+        select * from message_board t where t.msgType = '0' and t.status != '3' order by t.date DESC
+    </select>
+
+    <select id="selectSubMessage" parameterType="com.codezero.website.pojo.messageboard.MessageBoard" resultMap="MessageBoard">
+        select * from message_board t where t.msgType = '1' and t.status != '3' and t.relatedSeq = #{relatedSeq}
+    </select>
+
+    <update id="updateMessageStatus" parameterType="com.codezero.website.pojo.messageboard.MessageBoard">
+        update message_board t set t.status = #{status} where t.seq = #{seq}
+    </update>
+
+</mapper>

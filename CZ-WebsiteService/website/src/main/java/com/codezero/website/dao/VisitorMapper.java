@@ -1,7 +1,7 @@
 package com.codezero.website.dao;
 
-import com.codezero.website.pojo.VisitorInfo;
-import com.codezero.website.pojo.VisitorNum;
+import com.codezero.website.pojo.visitor.VisitorInfo;
+import com.codezero.website.pojo.visitor.VisitorNum;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

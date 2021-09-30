@@ -1,8 +1,6 @@
-package com.codezero.website.pojo;
+package com.codezero.website.pojo.visitor;
 
 import lombok.Data;
-
-import java.sql.Date;
 
 @Data
 public class VisitorNum {

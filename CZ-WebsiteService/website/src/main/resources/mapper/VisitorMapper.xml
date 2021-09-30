@@ -4,14 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.codezero.website.dao.VisitorMapper">
 
-    <resultMap type="com.codezero.website.pojo.VisitorNum" id="VisitorNum">
+    <resultMap type="com.codezero.website.pojo.visitor.VisitorNum" id="VisitorNum">
         <id column="seq" jdbcType="INTEGER" property="seq" />
         <result column="total" jdbcType="INTEGER" property="total" />
         <result column="type" jdbcType="VARCHAR" property="type" />
         <result column="date" jdbcType="VARCHAR" property="date" />
     </resultMap>
 
-    <resultMap type="com.codezero.website.pojo.VisitorInfo" id="VisitorInfo">
+    <resultMap type="com.codezero.website.pojo.visitor.VisitorInfo" id="VisitorInfo">
         <id column="seq" jdbcType="INTEGER" property="seq"/>
         <result column="ip" jdbcType="VARCHAR" property="ip" />
         <result column="city" jdbcType="VARCHAR" property="city" />
@@ -20,22 +20,22 @@
     </resultMap>
 
     <!-- 判断是否有今天访问数量数据 -->
-    <select id="chkTodayData" resultMap="VisitorNum" parameterType="com.codezero.website.pojo.VisitorNum">
+    <select id="chkTodayData" resultMap="VisitorNum" parameterType="com.codezero.website.pojo.visitor.VisitorNum">
         select * from visitor_num t where t.date = #{date}
     </select>
 
     <!-- 判断是否有该访客 -->
-    <select id="chkVisitor" resultMap="VisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo">
+    <select id="chkVisitor" resultMap="VisitorInfo" parameterType="com.codezero.website.pojo.visitor.VisitorInfo">
         select * from visitor_info t where t.ip = #{ip}
     </select>
     
     <!-- 获取总访客数量及今日访客数量 -->
-    <select id="queryVisitorNum" resultMap="VisitorNum" parameterType="com.codezero.website.pojo.VisitorNum">
+    <select id="queryVisitorNum" resultMap="VisitorNum" parameterType="com.codezero.website.pojo.visitor.VisitorNum">
         select * from visitor_num t where t.date = #{date} or t.type = 0 order by t.seq;
     </select>
 
     <!-- 插入今日访客数量信息 -->
-    <insert id="insertTodayVisitorNum" parameterType="com.codezero.website.pojo.VisitorNum" useGeneratedKeys="true" keyProperty="seq">
+    <insert id="insertTodayVisitorNum" parameterType="com.codezero.website.pojo.visitor.VisitorNum" useGeneratedKeys="true" keyProperty="seq">
         insert into visitor_num
         (total,type,date)
         values
@@ -43,7 +43,7 @@
     </insert>
 
     <!-- 插入访客信息 -->
-    <insert id="insertVisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo" useGeneratedKeys="true" keyProperty="seq">
+    <insert id="insertVisitorInfo" parameterType="com.codezero.website.pojo.visitor.VisitorInfo" useGeneratedKeys="true" keyProperty="seq">
         insert into visitor_info
         (ip,city,last_time,visitor_num)
         values
@@ -51,7 +51,7 @@
     </insert>
 
     <!-- 更新今日访客数量信息 -->
-    <update id="uptTodayVisitorNum" parameterType="com.codezero.website.pojo.VisitorNum">
+    <update id="uptTodayVisitorNum" parameterType="com.codezero.website.pojo.visitor.VisitorNum">
         update visitor_num t set t.total = #{total} where t.date = #{date}
     </update>
 
@@ -61,7 +61,7 @@
     </update>
 
     <!-- 更新访客信息 -->
-    <update id="uptVisitorInfo" parameterType="com.codezero.website.pojo.VisitorInfo">
+    <update id="uptVisitorInfo" parameterType="com.codezero.website.pojo.visitor.VisitorInfo">
         update visitor_info t set t.last_time = #{lastTime},t.visitor_num = t.visitor_num + 1 where t.ip = #{ip}
     </update>
 
