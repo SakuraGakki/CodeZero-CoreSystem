@@ -31,7 +31,7 @@
               </Card>
               <Card>
                 <div v-for = "item in messageList">
-                  <Divider>{{item.date}}--来自：{{item.city}}的网友</Divider>
+                  <Divider>{{item.date}}--来自：{{item.city}}的留言</Divider>
                   <p>{{item.content}}</p>
                   <div style="position: absolute;right:50px" >
                     <Poptip placement="left" width="400px" height="200px" v-if="item.list.length>0">
