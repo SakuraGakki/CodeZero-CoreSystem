@@ -133,7 +133,7 @@
   .me-index-div {
     margin: 0 auto;
     width: 1200px;
-    height: auto;
+    height: calc(100vh);
     box-shadow: 2px 2px 10px #909090;
   }
 
@@ -176,7 +176,7 @@
 
   .me-index-body {
     width: 100%;
-    height: 540px;
+    height:calc(100vh - 401px);
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
   }

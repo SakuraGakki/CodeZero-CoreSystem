@@ -1,12 +1,12 @@
 <template>
   <div class="me">
-    <div class="me-article-div">
-      <div class="me-article-body scrollbar">
+    <div class="me-msgboard-div">
+      <div class="me-msgboard-body scrollbar">
         <!-- 留言板 -->
         <Row style="background:rgba(238,238,238,0.5);padding:20px">
           <Col span="24">
             <Card shadow style="height: 760px">
-              <p slot="title" class="me-article-title-font">留言板</p>
+              <p slot="title" class="me-msgboard-title-font">留言板</p>
               <Card>
                 <textarea name="" v-model="messageContent" cols="108" rows="2"
                           style="resize: none;font-size: 20px"></textarea>
@@ -143,28 +143,23 @@
     background-repeat: no-repeat;
   }
 
-  .me-article-div {
+  .me-msgboard-div {
     margin: 0 auto;
     width: 1200px;
-    height: 100%;
+    height: calc(100vh);
     box-shadow: 2px 2px 10px #909090;
   }
 
-  .me-article-body {
+  .me-msgboard-body {
     width: 100%;
-    height: 800px;
+    height: calc(100vh);
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
   }
 
-  .me-article-title-font {
+  .me-msgboard-title-font {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     font-size: 24px;
-  }
-
-  .me-article-content-font {
-    font-family: "宋体";
-    font-size: 20px;
   }
 
   .scrollbar::-webkit-scrollbar { /*滚动条整体样式*/
