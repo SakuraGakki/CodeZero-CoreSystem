@@ -34,4 +34,34 @@
         update message_board t set t.status = #{status} where t.seq = #{seq}
     </update>
 
+    <select id="selectUnreadMessage" resultMap="MessageBoard">
+        select * from message_board t where t.status != '3' and status != '2' order by t.date DESC
+    </select>
+
+    <select id="selectUnreadMessageCount" resultType="java.lang.Integer">
+        select count(1) from message_board t where t.status = '0'
+    </select>
+
+    <select id="selectAllMessage" resultMap="MessageBoard">
+        select * from message_board t where 1=1
+        <if test="allMessageBoard.text != null and allMessageBoard.text != ''">
+            and t.content like concat('%',#{allMessageBoard.text,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="allMessageBoard.status != null and allMessageBoard.status != ''">
+            and t.status = #{allMessageBoard.status,jdbcType=VARCHAR}
+        </if>
+        order by t.date DESC
+    </select>
+
+    <update id="updateMessageContent" parameterType="com.codezero.website.pojo.messageboard.MessageBoard">
+        update message_board t set t.content = #{content} where t.seq = #{seq}
+    </update>
+
+    <update id="deleteMessageBoardList">
+        update message_board t set t.status = '3' where t.seq in
+        <foreach collection="array" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </update>
+
 </mapper>

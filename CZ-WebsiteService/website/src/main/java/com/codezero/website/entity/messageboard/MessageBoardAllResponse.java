@@ -2,13 +2,20 @@ package com.codezero.website.entity.messageboard;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class MessageBoardRequest {
+public class MessageBoardAllResponse {
     /**
      * 留言id
      * @mock 1
      */
-    private Integer id;
+    private int id;
+    /**
+     * 留言类型
+     * @mock 0
+     */
+    private String msgType;
     /**
      * 留言ip
      * @mock 127.0.0.1
@@ -29,4 +36,15 @@ public class MessageBoardRequest {
      * @mock 哈哈哈
      */
     private String content;
+    /**
+     * 状态
+     * @mock 0
+     */
+    private String status;
+    /**
+     * 关联id
+     * @mock 0
+     */
+    private Integer relatedId;
+
 }
