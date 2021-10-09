@@ -29,7 +29,7 @@ var config = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'http://localhost:8000',
+    baseServerUrl: 'http://59.110.218.235:8000',
     proxyTable: {
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

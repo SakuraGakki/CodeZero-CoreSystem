@@ -1,6 +1,8 @@
 import Home from '@/components/layout/Home'
 import Index from '@/components/views/Index'
 
+import MsgBoardList from '@/components/views/Message/MessageBoardList'
+
 
 import Chart from '@/components/views/Chart'
 import NotFound from '@/components/pages/NotFound'
@@ -23,10 +25,18 @@ const routes = [
     children: [
       {
         path: '/index',
-        name: 'index',
+        name: '首页',
         component: Index,
         icon: 'icon-wujiaoxing',
         level: 1,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/msgBoardList',
+        name: '留言列表',
+        component: MsgBoardList,
         meta: {
           requiresAuth: true // 是否需要登录
         }

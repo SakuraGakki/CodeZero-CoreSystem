@@ -11,7 +11,7 @@ const app = {
       minOpen: false // 小屏时菜单状态
     },
     router: {
-      currentPageName: 'index'
+      currentPageName: '首页'
     },
     langList: [
       {

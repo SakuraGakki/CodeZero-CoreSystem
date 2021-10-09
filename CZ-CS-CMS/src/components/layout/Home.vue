@@ -66,14 +66,17 @@
                     <Row>
                         <Col :xs='{span:0}' :sm='{span:24}'>
                             <div class="iconBox">
-                                <Badge count="3">
+                                <Badge :count="unReadCount" overflow-count="9">
                                     <Tooltip placement="bottom" content="通知">
                                         <Icon type="ios-bell">
                                         </Icon>
                                     </Tooltip>
                                 </Badge>
-
                             </div>
+                            <Select v-model="lang" size="small" @on-change="changeLang"
+                                    style="width:80px;position:relative;margin-top: -8px">
+                                <Option v-for="item in langList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                            </Select>
                         </Col>
                     </Row>
                 </div>
@@ -84,9 +87,9 @@
                 <container>
                     <!-- 面包屑 -->
                     <Breadcrumb>
-                        <Breadcrumb-item href="/">
+                        <Breadcrumb-item href="/index">
                             <Icon type="ios-home-outline"></Icon>
-                            Home
+                            首页
                         </Breadcrumb-item>
                         <Breadcrumb-item>
                             <Icon type="pound"></Icon>
@@ -157,6 +160,7 @@
                 modalUser: false,
                 modal_loading: false,
                 lang: 'CN',
+                unReadCount:0,
                 formValidate: {
                     check_password: ''
                 },
@@ -177,6 +181,7 @@
                 this.menu = Cookies.getJSON('menu')
             }
             this.lang = this.$store.state.app.lang
+            this.getUnreadMessageCount()
         },
         computed: {
             state() {
@@ -251,6 +256,19 @@
                 // console.log(this.$route.path)
                 this.$store.commit('SET_LOCK_PAGE', this.$route.path)
                 this.$router.push('/lock')
+            },
+            /* 改变语言 */
+            changeLang () {
+                this.$store.commit('SET_LANG', this.lang)
+                window.location.reload()
+            },
+            //获取未读信息条数
+            getUnreadMessageCount(){
+                this.$api.getUnreadMessageCount().then(res=>{
+                    if (res.status === 0) {
+                        this.unReadCount = res.data;
+                    }
+                })
             }
         }
     }

@@ -47,6 +47,23 @@ export function getTenVisitNumList() {
   })
 }
 
+//获取未读信息条数
+export function getUnreadMessageCount(){
+  return fetch({
+    url:'website/messageboard/getUnreadMessageCount',
+    method:'post'
+  })
+}
+
+//获取所有消息及回复列表
+export function getMessageListAll(data){
+  return fetch({
+    url:'website/messageboard/getMessageListAll',
+    method:'post',
+    data:data
+  })
+}
+
 // 获取公网IP
 export function getIpInfo(){
   return axios.get('http://myip.ipip.net/',{})
@@ -71,6 +88,33 @@ export function locationFromNet(ip){
   return axios.get(ipUrl,{})
 }
 
+//新增留言
+export function addMessageBoardInfo(data){
+  return fetch({
+    url:'website/messageboard/adminInsertMessageBoardInfo',
+    method:'post',
+    data:data
+  })
+}
+
+//修改留言
+export function uptMessageBoardInfo(data) {
+  return fetch({
+    url:'website/messageboard/adminUptMessageBoardInfo',
+    method:'post',
+    data:data
+  })
+}
+
+//删除留言
+export function delMessageBoardInfo(data) {
+  return fetch({
+    url:'website/messageboard/adminDeleteMessageBoardList',
+    method:'post',
+    data:data
+  })
+}
+
 const apiList = {
   login,
   getVisitorNum,
@@ -80,7 +124,12 @@ const apiList = {
   locationFromNet,
   getTopFiveList,
   getVisitorInfoList,
-  getTenVisitNumList
+  getTenVisitNumList,
+  getUnreadMessageCount,
+  getMessageListAll,
+  addMessageBoardInfo,
+  uptMessageBoardInfo,
+  delMessageBoardInfo
 }
 
 export default apiList
