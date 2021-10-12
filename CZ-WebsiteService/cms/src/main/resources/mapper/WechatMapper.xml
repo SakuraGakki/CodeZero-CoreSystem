@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.cms.dao.WechatMapper">
+
+    <resultMap type="com.codezero.cms.pojo.wechat.WechatInfo" id="WechatInfo">
+        <id column="seq" jdbcType="VARCHAR" property="seq" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+        <result column="image_id" jdbcType="VARCHAR" property="imgId" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="read_num" jdbcType="VARCHAR" property="read" />
+    </resultMap>
+
+    <insert id="addWechatInfo" parameterType="com.codezero.cms.pojo.wechat.WechatInfo">
+        insert into wechat_info
+        (seq,title,url,image_id,date,read_num)
+        values
+        (#{seq},#{title},#{url},#{imgId},#{date},#{read})
+    </insert>
+
+    <update id="uptWechatInfo" parameterType="com.codezero.cms.pojo.wechat.WechatInfo">
+        update wechat_info t set
+        t.title = #{title},
+        t.url = #{url},
+        t.image_id = #{imgId},
+        date = #{date},
+        read_num = #{read}
+        where t.seq = #{seq}
+    </update>
+
+    <select id="getWechatArticleList" resultMap="WechatInfo">
+        select * from wechat_info t order by t.date DESC limit 0,8
+    </select>
+
+</mapper>

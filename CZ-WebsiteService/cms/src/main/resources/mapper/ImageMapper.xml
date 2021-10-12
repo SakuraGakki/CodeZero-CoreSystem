@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.cms.dao.ImageMapper">
+
+    <resultMap type="com.codezero.cms.pojo.image.ImageInfo" id="ImageInfo">
+        <id column="image_id" jdbcType="VARCHAR" property="imageId" />
+        <result column="image_name" jdbcType="VARCHAR" property="imageName" />
+        <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
+        <result column="image_size" jdbcType="VARCHAR" property="imageSize" />
+        <result column="image_extension" jdbcType="VARCHAR" property="imageExtension" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+        <result column="related_id" jdbcType="VARCHAR" property="relatedId" />
+        <result column="scene_type" jdbcType="VARCHAR" property="sceneType" />
+        <result column="scene_name" jdbcType="VARCHAR" property="sceneName" />
+    </resultMap>
+
+    <insert id="imageUpload" parameterType="com.codezero.cms.pojo.image.ImageInfo">
+        insert into images
+        (image_id,image_name,image_url,image_size,image_extension,date,type,related_id,scene_type,scene_name)
+        values
+        (#{imageId},#{imageName},#{imageUrl},#{imageSize},#{imageExtension},#{date},#{type},#{relatedId},#{sceneType},#{sceneName})
+    </insert>
+
+    <select id="imageQueryById" resultMap="ImageInfo">
+        select * from images t where t.image_id = #{imageId}
+    </select>
+
+    <update id="imageUpdateById" parameterType="com.codezero.cms.pojo.image.ImageInfo">
+        update images t set
+        t.image_name = #{imageName},
+        t.image_url = #{imageUrl},
+        t.image_size = #{imageSize},
+        t.image_extension = #{imageExtension},
+        t.date = #{date},
+        t.type = #{type},
+        t.related_id = #{relatedId},
+        t.scene_type = #{sceneType},
+        t.scene_name = #{sceneName}
+        where t.image_id = #{imageId}
+    </update>
+
+</mapper>

@@ -32,6 +32,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- 文件上传 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
+
         <!-- nacos配置 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
