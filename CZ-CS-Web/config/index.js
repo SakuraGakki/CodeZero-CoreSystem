@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/cms':{
+        target: "http://59.110.218.235:8000/",
+        changeOrigin: true,
+        secure: false,
+        pathRewrite:{
+          '^/cms':'/cms'
+        }
+      }
+    },
 
     // Various Dev Server settings
     // host: '59.110.218.235', // can be overwritten by process.env.HOST

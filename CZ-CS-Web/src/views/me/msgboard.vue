@@ -159,7 +159,7 @@
 
   .me-msgboard-title-font {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .scrollbar::-webkit-scrollbar { /*滚动条整体样式*/
