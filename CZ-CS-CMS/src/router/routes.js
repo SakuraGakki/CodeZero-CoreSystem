@@ -2,6 +2,7 @@ import Home from '@/components/layout/Home'
 import Index from '@/components/views/Index'
 
 import MsgBoardList from '@/components/views/Message/MessageBoardList'
+import WeChatArticle from '@/components/views/WechatArticle/WechatArticle'
 
 
 import Chart from '@/components/views/Chart'
@@ -37,6 +38,14 @@ const routes = [
         path: '/msgBoardList',
         name: '留言列表',
         component: MsgBoardList,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/weChatArticle',
+        name: '微信文章列表',
+        component: WeChatArticle,
         meta: {
           requiresAuth: true // 是否需要登录
         }

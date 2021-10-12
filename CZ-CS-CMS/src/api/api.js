@@ -42,7 +42,7 @@ export function getVisitorInfoList(){
 // 获取10日内访客数量信息
 export function getTenVisitNumList() {
   return fetch({
-    url:'website/visitor/tenVisitorNumList',
+    url:'/website/visitor/tenVisitorNumList',
     method: 'post'
   })
 }
@@ -50,7 +50,7 @@ export function getTenVisitNumList() {
 //获取未读信息条数
 export function getUnreadMessageCount(){
   return fetch({
-    url:'website/messageboard/getUnreadMessageCount',
+    url:'/website/messageboard/getUnreadMessageCount',
     method:'post'
   })
 }
@@ -58,7 +58,7 @@ export function getUnreadMessageCount(){
 //获取所有消息及回复列表
 export function getMessageListAll(data){
   return fetch({
-    url:'website/messageboard/getMessageListAll',
+    url:'/website/messageboard/getMessageListAll',
     method:'post',
     data:data
   })
@@ -91,7 +91,7 @@ export function locationFromNet(ip){
 //新增留言
 export function addMessageBoardInfo(data){
   return fetch({
-    url:'website/messageboard/adminInsertMessageBoardInfo',
+    url:'/website/messageboard/adminInsertMessageBoardInfo',
     method:'post',
     data:data
   })
@@ -100,7 +100,7 @@ export function addMessageBoardInfo(data){
 //修改留言
 export function uptMessageBoardInfo(data) {
   return fetch({
-    url:'website/messageboard/adminUptMessageBoardInfo',
+    url:'/website/messageboard/adminUptMessageBoardInfo',
     method:'post',
     data:data
   })
@@ -109,9 +109,53 @@ export function uptMessageBoardInfo(data) {
 //删除留言
 export function delMessageBoardInfo(data) {
   return fetch({
-    url:'website/messageboard/adminDeleteMessageBoardList',
+    url:'/website/messageboard/adminDeleteMessageBoardList',
     method:'post',
     data:data
+  })
+}
+
+//上传微信文章配图
+export function uploadWechatImage(data){
+   return fetch({
+    url:'/cms/wechat/wechatImageUpload',
+    method:'post',
+    data:data
+  })
+}
+
+//变更微信文章配图
+export function replaceWechatImage(data){
+  return fetch({
+    url:'/cms/wechat/wechatImageReplace',
+    method:'post',
+    data:data
+  })
+}
+
+//新建微信文章
+export function insertWechatArticle(data){
+  return fetch({
+    url:'/cms/wechat/insertWechatArticle',
+    method:'post',
+    data:data
+  })
+}
+
+//修改微信文章
+export function updateWechatArticle(data){
+  return fetch({
+    url:'/cms/wechat/updateWechatArticle',
+    method:'post',
+    data:data
+  })
+}
+
+//微信文章列表查询
+export function initWechatArticleList(){
+  return fetch({
+    url:'/cms/wechat/getWechatArticleList',
+    method:'post'
   })
 }
 
@@ -129,7 +173,12 @@ const apiList = {
   getMessageListAll,
   addMessageBoardInfo,
   uptMessageBoardInfo,
-  delMessageBoardInfo
+  delMessageBoardInfo,
+  uploadWechatImage,
+  insertWechatArticle,
+  initWechatArticleList,
+  replaceWechatImage,
+  updateWechatArticle
 }
 
 export default apiList

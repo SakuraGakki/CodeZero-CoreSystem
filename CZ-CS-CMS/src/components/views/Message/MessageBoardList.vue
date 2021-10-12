@@ -40,7 +40,7 @@
 <!--            <Icon type="pin"></Icon>-->
 <!--          </Button>-->
           <Button type="success" @click.native="edit(-1)">
-            <Icon type="trash-a"></Icon>
+            <Icon type="icon iconfont icon-document"></Icon>
             新增
           </Button>
           <Button type="primary" @click="searchShow" shape="circle" ><Icon type="funnel"></Icon> 筛选</Button>

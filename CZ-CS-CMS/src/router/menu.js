@@ -15,6 +15,14 @@ const menu = [
     level: 1,
     fixed: false,
     children: []
+  },
+  {
+    path: '/wechatArticle',
+    name: '微信文章',
+    icon: 'icon iconfont icon-jiaoliu',
+    level: 1,
+    fixed: false,
+    children: []
   }
   // {
   //   path: '/',
