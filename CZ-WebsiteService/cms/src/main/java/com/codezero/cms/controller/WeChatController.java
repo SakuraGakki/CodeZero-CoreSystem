@@ -23,26 +23,52 @@ public class WeChatController {
     @Autowired
     ImageService imageService;
 
+
+    /**
+     * 图片上传
+     * @param file
+     * @return
+     */
     @RequestMapping(value = "/wechatImageUpload", method = RequestMethod.POST, name = "图片上传")
     public @ResponseBody BaseResponse wechatImageUpload(@RequestParam("file") MultipartFile file){
         return imageService.wechatImageUpload(file);
     }
 
-    @RequestMapping(value = "/wechatImageReplace", method = RequestMethod.POST, name = "图片上传")
+    /**
+     * 图片替换上传
+     * @param file
+     * @param imgId
+     * @return
+     */
+    @RequestMapping(value = "/wechatImageReplace", method = RequestMethod.POST, name = "图片替换上传")
     public @ResponseBody BaseResponse wechatImageReplace(@RequestParam("file") MultipartFile file,@RequestParam("imgId") String imgId){
         return imageService.wechatImageReplace(file,imgId);
     }
 
+    /**
+     * 新增微信文章
+     * @param weChatRequest
+     * @return
+     */
     @RequestMapping(value = "/insertWechatArticle", method = RequestMethod.POST, name = "新增微信文章")
     public BaseResponse insertWechatArticle(@RequestBody WeChatRequest weChatRequest){
         return wechatService.insertWechatArticle(weChatRequest);
     }
 
+    /**
+     * 更新微信文章
+     * @param weChatRequest
+     * @return
+     */
     @RequestMapping(value = "/updateWechatArticle", method = RequestMethod.POST, name = "更新微信文章")
     public BaseResponse updateWechatArticle(@RequestBody WeChatRequest weChatRequest){
         return wechatService.updatetWechatArticle(weChatRequest);
     }
 
+    /**
+     * 查询微信文章列表
+     * @return
+     */
     @RequestMapping(value = "/getWechatArticleList", method = RequestMethod.POST, name = "查询微信文章列表")
     public BaseResponse<List<WeChatResponse>> getWechatArticleList(){
         return wechatService.getWechatArticleList();
