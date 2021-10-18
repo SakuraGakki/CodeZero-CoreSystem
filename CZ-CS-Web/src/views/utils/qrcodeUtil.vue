@@ -113,6 +113,9 @@
         //aLink.click()
         aLink.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));//兼容火狐
       }
+    },
+    created() {
+      this.getClientInfo()
     }
   }
 
