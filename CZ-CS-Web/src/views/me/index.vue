@@ -65,6 +65,7 @@
 
 <script>
   import $ajax from 'axios'
+  import Vue from "vue";
 
   const poemsArray = [
     ["长风破浪会有时","直挂云帆济沧海"],
@@ -82,6 +83,8 @@
     name: "MeIndex",
     data() {
       return {
+        ip:"",
+        city:"",
         poem1:"",
         poem2:"",
         headerImgSrc:"http://59.110.218.235/images/avator.jpeg",
@@ -91,8 +94,45 @@
     created() {
       this.getPoem();
       this.getWechatArticleList()
+      this.getClientInfo()
     },
     methods:{
+      //获取客户端信息
+      getClientInfo(){
+        if(localStorage.hasOwnProperty("ip") && localStorage.hasOwnProperty("city")){
+          this.ip = localStorage.getItem("ip")
+          this.city = localStorage.getItem("city")
+        }else{
+          $ajax.get('http://myip.ipip.net/',{}).then(
+            res => {
+              res.data = res.data.substring(6,res.data.length)
+              this.ip = res.data.substring(0,res.data.indexOf("  来自于："))
+              this.city = res.data.substring(res.data.indexOf("  来自于：")).replace("  来自于：","")
+              localStorage.setItem("ip",this.ip)
+              localStorage.setItem("city",this.city)
+              this.uptVisitorNum()
+            }
+          )
+        }
+        this.uptVisitorNum()
+      },
+      //更新访客信息
+      uptVisitorNum(){
+        $ajax.post(
+          Vue.config.BaseUrl.ip + Vue.config.BaseUrl.uptVisitNum,
+          {
+            "ip":this.ip,
+            "city":this.city
+          },
+          {}
+        ).then(data => {
+          // console.log("更新访问信息返回值",data)
+          if(data.data.status === 0){
+            localStorage.setItem("ip",this.ip)
+            localStorage.setItem("city",this.city)
+          }
+        })
+      },
       //获取页面右上方文字内容
       getPoem(){
         let random = Math.floor(Math.random()*10);
@@ -106,7 +146,8 @@
             this.wechatArticleList = res.data.data
           }
         })
-      }
+      },
+
     }
   }
 </script>

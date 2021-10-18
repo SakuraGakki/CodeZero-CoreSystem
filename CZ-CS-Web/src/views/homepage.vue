@@ -36,14 +36,21 @@ export default {
   methods:{
     //获取客户端信息
     getClientInfo(){
-      $ajax.get('http://myip.ipip.net/',{}).then(
-        res => {
-          res.data = res.data.substring(6,res.data.length)
-          this.ip = res.data.substring(0,res.data.indexOf("  来自于："))
-          this.city = res.data.substring(res.data.indexOf("  来自于：")).replace("  来自于：","")
-          this.uptVisitorNum()
-        }
-      )
+      if(localStorage.hasOwnProperty("ip") && localStorage.hasOwnProperty("city")){
+        this.ip = localStorage.getItem("ip")
+        this.city = localStorage.getItem("city")
+      }else{
+        $ajax.get('http://myip.ipip.net/',{}).then(
+          res => {
+            res.data = res.data.substring(6,res.data.length)
+            this.ip = res.data.substring(0,res.data.indexOf("  来自于："))
+            this.city = res.data.substring(res.data.indexOf("  来自于：")).replace("  来自于：","")
+            localStorage.setItem("ip",this.ip)
+            localStorage.setItem("city",this.city)
+          }
+        )
+      }
+      this.uptVisitorNum()
     },
     //更新访客信息
     uptVisitorNum(){
@@ -60,8 +67,6 @@ export default {
             localStorage.setItem("ip",this.ip)
             localStorage.setItem("city",this.city)
             this.getVisitorNum();
-          }else{
-
           }
       })
     },
