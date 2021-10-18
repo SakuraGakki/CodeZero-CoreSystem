@@ -3,7 +3,7 @@
     <Row type="flex" justify="space-around" >
       <Col span="4">
         <Card>
-          <div style="text-align:center" >
+          <div style="text-align:center">
             <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/json.jpeg">
             <router-link :to="{name: 'jsonUtil'}" tag="span"><h3>JSON数据在线格式化</h3></router-link>
           </div>
@@ -11,9 +11,9 @@
       </Col>
       <Col span="4">
         <Card>
-          <div style="text-align:center" @click="">
+          <div style="text-align:center">
             <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/qrcode.jpeg">
-            <h3>二维码在线生成器</h3>
+            <router-link :to="{name: 'qrcodeUtil'}" tag="span"><h3>二维码在线生成器</h3></router-link>
           </div>
         </Card>
       </Col>
