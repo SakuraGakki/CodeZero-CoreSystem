@@ -78,6 +78,9 @@
           }
         })
       },
+    },
+    created() {
+      this.getClientInfo()
     }
   }
 </script>
