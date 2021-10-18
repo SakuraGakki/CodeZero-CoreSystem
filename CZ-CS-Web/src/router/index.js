@@ -3,7 +3,10 @@ import Router from 'vue-router'
 import homepage from '@/views/homepage'
 import me from '@/views/me/me'
 import MeIndex from '@/views/me/index'
-import MessageBoard from '@/views/me/msgboard'
+import MessageBoard from '@/views/message/msgboard'
+import Utils from '@/views/utils/utils'
+import jsonUtil from "@/views/utils/jsonUtil"
+
 
 Vue.use(Router)
 
@@ -23,6 +26,16 @@ export default new Router({
           path: '/meindex',
           name: 'meindex',
           component: MeIndex
+        },
+        {
+          path: '/utils',
+          name: 'utils',
+          component: Utils,
+        },
+        {
+          path:'/jsonUtil',
+          name:'jsonUtil',
+          component:jsonUtil
         },
         {
           path: '/messageboard',

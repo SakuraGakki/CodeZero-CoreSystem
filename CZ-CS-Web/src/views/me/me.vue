@@ -4,7 +4,7 @@
       <ul class="me-header-menu">
         <router-link :to="{name: 'messageboard'}" tag="li" class="me-header-submenu"><span class="menuFont">留言</span></router-link>
 <!--        <router-link :to="{name: 'mearcicle'}" tag="li" class="me-header-submenu"><span class="menuFont">我的文章</span></router-link>-->
-<!--        <router-link :to="{name: 'meblog'}" tag="li" class="me-header-submenu"><span class="menuFont">我的动态</span></router-link>-->
+        <router-link :to="{name: 'utils'}" tag="li" class="me-header-submenu"><span class="menuFont">在线工具</span></router-link>
         <router-link :to="{name: 'meindex'}" tag="li" class="me-header-submenu"><span class="menuFont">主页</span></router-link>
       </ul>
     </div>
@@ -31,13 +31,13 @@
 <style scoped>
   .me-header{
     width: 100%;
-    height: 80px;
+    height: 60px;
     background-color: #41454b;
   }
   .me-header-menu{
     position: fixed;
     width: 100%;
-    height: 80px;
+    height: 60px;
     top: 0px;
     left: 0px;
     z-index: 1;
@@ -50,7 +50,7 @@
     margin:0 40px;
   }
   .menuFont{
-    line-height: 80px;
+    line-height: 60px;
     font-size: 20px;
     font-family:  "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     color: #ffffff;

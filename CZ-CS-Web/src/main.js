@@ -12,10 +12,15 @@ import 'view-design/dist/styles/iview.css'
 
 import { BaseUrl } from "./config/config";
 
+/* 引入jsonViewer */
+import JsonViewer from 'vue-json-viewer/ssr'
+import 'vue-json-viewer/style.css'
+
 
 Vue.use(ViewUI)
 Vue.use(VueRouter)
 Vue.use($ajax)
+Vue.use(JsonViewer)
 Vue.config.productionTip = false
 Vue.config.BaseUrl = BaseUrl
 
