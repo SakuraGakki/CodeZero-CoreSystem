@@ -6,6 +6,7 @@ import com.codezero.website.entity.visitor.*;
 import com.codezero.website.pojo.visitor.VisitorInfo;
 import com.codezero.website.pojo.visitor.VisitorNum;
 import com.codezero.website.utils.DateUtils;
+import com.codezero.website.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -60,8 +61,16 @@ public class VisitorService {
             }
             //访问信息处理
             VisitorInfo visitorInfo = new VisitorInfo();
-            visitorInfo.setIp(visitorNumRequest.getIp());
-            visitorInfo.setCity(visitorNumRequest.getCity().replaceAll("  "," ").replaceAll(" ","-"));
+            if(StringUtils.isBlank(visitorNumRequest.getIp())){
+                visitorInfo.setIp("xx.xx.xx.xx");
+            }else{
+                visitorInfo.setIp(visitorNumRequest.getIp());
+            }
+            if(StringUtils.isBlank(visitorNumRequest.getCity())){
+                visitorInfo.setCity("未知-未知-未知-未知");
+            }else{
+                visitorInfo.setCity(visitorNumRequest.getCity().replaceAll("  "," ").replaceAll(" ","-"));
+            }
             visitorInfo.setLastTime(DateUtils.getCurrentTime());
             List<VisitorInfo> visitorInfoList = visitorMapper.chkVisitor(visitorInfo);
             if(visitorInfoList.size()>0){
