@@ -36,7 +36,7 @@
       <Col span="4">
         <Card>
           <div style="text-align:center">
-            <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/ip.jpeg">
+            <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/location.jpeg">
             <router-link :to="{name: 'ipUtil'}" tag="span"><h3>在线ip地址查询</h3></router-link>
           </div>
         </Card>
