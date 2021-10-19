@@ -29,7 +29,7 @@
         <Card>
           <div style="text-align:center">
             <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/colorboard.jpeg">
-            <h3>在线调色板</h3>
+            <router-link :to="{name: 'colorUtil'}" tag="span"><h3>在线调色板</h3></router-link>
           </div>
         </Card>
       </Col>

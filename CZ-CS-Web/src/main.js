@@ -7,6 +7,8 @@ import router from './router'
 import $ajax from 'axios'
 import qrcode from 'vue_qrcodes'
 import $ from 'jquery'
+import less from 'less'
+import VueClipboard from 'vue-clipboard2'
 
 /* 引入viewui */
 import ViewUI from 'view-design'
@@ -23,6 +25,8 @@ Vue.use(ViewUI)
 Vue.use(VueRouter)
 Vue.use($ajax)
 Vue.use($)
+Vue.use(less)
+Vue.use(VueClipboard)
 Vue.use(qrcode)
 Vue.use(JsonViewer)
 Vue.config.productionTip = false
