@@ -1,7 +1,7 @@
 <template>
   <div>
     <br>
-    <div style="margin-left: 40px"><h2>在线调色盘</h2></div>
+    <div style="margin-left: 40px"><h2>在线调色板</h2></div>
     <br>
     <Row type="flex" justify="space-around" >
       <Col span="20">
@@ -60,7 +60,7 @@
                   >
                   </Button>
                 </Input>
-                <br>
+                <br><br><br>
                 <span>16进制：</span>
                 <Input v-model.lazy="colorResultHexStr">
                   <span slot="prepend">点击后方按钮复制</span>
@@ -74,6 +74,7 @@
                   >
                   </Button>
                 </Input>
+                <br>
               </Card>
             </Col>
           </Row>
@@ -86,10 +87,15 @@
 
 <script>
 
+  import $ajax from "axios";
+  import Vue from "vue";
+
   export default {
     name: "colorUtil",
     data () {
       return {
+        ip:"",
+        city:"",
         baseColorList: [], // 基本颜色列表
         sliderAvailable: false, // 滑块是否可滑动
         sliderTop: 50, // 滑块距父组件的高度
@@ -105,6 +111,9 @@
         colorResultRgbStr: null, // 最终结果
         colorResultHexStr: null,
       }
+    },
+    created() {
+      this.getClientInfo()
     },
     mounted () {
       this.init()
@@ -125,6 +134,43 @@
       }
     },
     methods: {
+
+      //获取客户端信息
+      getClientInfo(){
+        if(localStorage.hasOwnProperty("ip") && localStorage.hasOwnProperty("city")){
+          this.ip = localStorage.getItem("ip")
+          this.city = localStorage.getItem("city")
+        }else{
+          $ajax.get('http://myip.ipip.net/',{}).then(
+            res => {
+              res.data = res.data.substring(6,res.data.length)
+              this.ip = res.data.substring(0,res.data.indexOf("  来自于："))
+              this.city = res.data.substring(res.data.indexOf("  来自于：")).replace("  来自于：","")
+              localStorage.setItem("ip",this.ip)
+              localStorage.setItem("city",this.city)
+              this.uptVisitorNum()
+            }
+          )
+        }
+
+      },
+      //更新访客信息
+      uptVisitorNum(){
+        $ajax.post(
+          Vue.config.BaseUrl.ip + Vue.config.BaseUrl.uptVisitNum,
+          {
+            "ip":this.ip,
+            "city":this.city
+          },
+          {}
+        ).then(data => {
+          // console.log("更新访问信息返回值",data)
+          if(data.data.status === 0){
+            localStorage.setItem("ip",this.ip)
+            localStorage.setItem("city",this.city)
+          }
+        })
+      },
       init () {
         let r = 255
         let g = 0

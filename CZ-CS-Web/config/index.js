@@ -18,6 +18,14 @@ module.exports = {
         pathRewrite:{
           '^/cms':'/cms'
         }
+      },
+      '/ip':{
+        target: "http://apis.juhe.cn/",
+        changeOrigin: true,
+        secure: false,
+        pathRewrite:{
+          '^/ip':'/ip'
+        }
       }
     },
 

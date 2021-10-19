@@ -9,6 +9,7 @@ import jsonUtil from "@/views/utils/jsonUtil"
 import qrcodeUtil from "@/views/utils/qrcodeUtil"
 import encodeUtil from "@/views/utils/encodeUtil"
 import colorUtil from "@/views/utils/colorUtil"
+import ipUtil from "@/views/utils/ipUtil"
 
 
 Vue.use(Router)
@@ -54,6 +55,11 @@ export default new Router({
           path:'/colorUtil',
           name:'colorUtil',
           component:colorUtil
+        },
+        {
+          path:'/ipUtil',
+          name:'ipUtil',
+          component:ipUtil
         },
         {
           path: '/messageboard',
