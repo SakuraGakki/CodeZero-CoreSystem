@@ -21,7 +21,7 @@
         <Card>
           <div style="text-align:center">
             <img style="width: 200px;height: 150px" src="../../assets/img/me/utils/base64.jpeg">
-            <h3>在线转码</h3>
+            <router-link :to="{name: 'encodeUtil'}" tag="span"><h3>在线转码</h3></router-link>
           </div>
         </Card>
       </Col>

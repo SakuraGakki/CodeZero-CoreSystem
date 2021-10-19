@@ -6,7 +6,8 @@ import MeIndex from '@/views/me/index'
 import MessageBoard from '@/views/message/msgboard'
 import Utils from '@/views/utils/utils'
 import jsonUtil from "@/views/utils/jsonUtil"
-import qrcodeUtil from "@/views/utils/qrcodeUtil";
+import qrcodeUtil from "@/views/utils/qrcodeUtil"
+import encodeUtil from "@/views/utils/encodeUtil"
 
 
 Vue.use(Router)
@@ -42,6 +43,11 @@ export default new Router({
           path:'/qrcodeUtil',
           name:'qrcodeUtil',
           component:qrcodeUtil
+        },
+        {
+          path:'/encodeUtil',
+          name:'encodeUtil',
+          component:encodeUtil
         },
         {
           path: '/messageboard',
