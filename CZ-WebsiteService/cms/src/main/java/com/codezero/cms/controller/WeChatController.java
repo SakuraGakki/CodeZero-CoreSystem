@@ -1,8 +1,10 @@
 package com.codezero.cms.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codezero.cms.entity.base.BaseResponse;
 import com.codezero.cms.entity.wechat.WeChatRequest;
 import com.codezero.cms.entity.wechat.WeChatResponse;
+import com.codezero.cms.entity.wechat.WechatListAllPageRequest;
 import com.codezero.cms.service.ImageService;
 import com.codezero.cms.service.WechatService;
 import lombok.extern.slf4j.Slf4j;
@@ -74,4 +76,9 @@ public class WeChatController {
         return wechatService.getWechatArticleList();
     }
 
+
+    @RequestMapping(value = "/getWechatArticleListPage", method = RequestMethod.POST, name = "微信文章列表分页查询")
+    public BaseResponse<Page<WeChatResponse>> getWechatArticleListPage(@RequestBody WechatListAllPageRequest wechatListAllPageRequest){
+        return wechatService.getWechatArticleListPage(wechatListAllPageRequest);
+    }
 }

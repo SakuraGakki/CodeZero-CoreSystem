@@ -1,10 +1,12 @@
 package com.codezero.cms.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codezero.cms.dao.ImageMapper;
 import com.codezero.cms.dao.WechatMapper;
 import com.codezero.cms.entity.base.BaseResponse;
 import com.codezero.cms.entity.wechat.WeChatRequest;
 import com.codezero.cms.entity.wechat.WeChatResponse;
+import com.codezero.cms.entity.wechat.WechatListAllPageRequest;
 import com.codezero.cms.pojo.image.ImageInfo;
 import com.codezero.cms.pojo.wechat.WechatInfo;
 import com.codezero.cms.utils.DateUtils;
@@ -60,6 +62,44 @@ public class WechatService {
             baseResponse.setMessage("微信文章列表查询错误！");
         }
         return baseResponse;
+    }
+
+
+    public BaseResponse<Page<WeChatResponse>> getWechatArticleListPage(WechatListAllPageRequest wechatListAllPageRequest){
+        BaseResponse baseResponse = new BaseResponse();
+        Page page = new Page();
+        if(wechatListAllPageRequest.getCurrent()!=null){
+            page.setCurrent(wechatListAllPageRequest.getCurrent());
+        }
+        Page<WechatInfo> wechatInfoPage = wechatMapper.selectAllWechatArticlePage(page);
+        List<WechatInfo> wechatInfoList = wechatInfoPage.getRecords();
+        if(wechatInfoList!=null && !wechatInfoList.isEmpty()){
+            Page<WeChatResponse> weChatResponsePage = new Page<>();
+            weChatResponsePage.setTotal(wechatInfoPage.getTotal());
+            weChatResponsePage.setCurrent(wechatInfoPage.getCurrent());
+            weChatResponsePage.setSize(wechatInfoPage.getSize());
+            List<WeChatResponse> list = transformAllWechatArticleList(wechatInfoList);
+            weChatResponsePage.setRecords(list);
+            baseResponse.setData(weChatResponsePage);
+        }
+        return baseResponse;
+    }
+
+    protected List<WeChatResponse> transformAllWechatArticleList(List<WechatInfo> list){
+        List<WeChatResponse> weChatResponseList = new ArrayList<>();
+        for(WechatInfo wechatInfo:list){
+            WeChatResponse weChatResponse = new WeChatResponse();
+            weChatResponse.setSeq(wechatInfo.getSeq());
+            weChatResponse.setTitle(wechatInfo.getTitle());
+            weChatResponse.setUrl(wechatInfo.getUrl());
+            weChatResponse.setImgId(wechatInfo.getImgId());
+            ImageInfo imageInfo = imageMapper.imageQueryById(weChatResponse.getImgId());
+            weChatResponse.setImgUrl(imageInfo.getImageUrl());
+            weChatResponse.setDate(wechatInfo.getDate());
+            weChatResponse.setRead(wechatInfo.getRead());
+            weChatResponseList.add(weChatResponse);
+        }
+        return weChatResponseList;
     }
 
     protected  WeChatResponse tranformWechatInfoToWechatResponse(WechatInfo wechatInfo){

@@ -1,7 +1,10 @@
 package com.codezero.cms.dao;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.codezero.cms.entity.wechat.WechatListAllPageRequest;
 import com.codezero.cms.pojo.wechat.WechatInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -26,4 +29,10 @@ public interface WechatMapper {
      */
     List<WechatInfo> getWechatArticleList();
 
+    /**
+     * 分页查询微信文章列表
+     * @param page
+     * @return
+     */
+    Page<WechatInfo> selectAllWechatArticlePage(@Param("page") Page page);
 }

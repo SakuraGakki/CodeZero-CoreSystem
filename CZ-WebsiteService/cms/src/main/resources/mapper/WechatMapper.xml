@@ -34,4 +34,8 @@
         select * from wechat_info t order by t.date DESC limit 0,8
     </select>
 
+    <select id="selectAllWechatArticlePage" resultMap="WechatInfo">
+        select * from wechat_info t  order by t.date DESC
+    </select>
+
 </mapper>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.cms.dao.ArticleMapper">
+
+    <resultMap type="com.codezero.cms.pojo.article.ArticleInfo" id="ArticleInfo">
+        <id column="article_id" jdbcType="VARCHAR" property="articleId" />
+        <result column="article_title" jdbcType="VARCHAR" property="articleTitle" />
+        <result column="article_tag" jdbcType="VARCHAR" property="articleTag" />
+        <result column="read_num" jdbcType="INTEGER" property="readNum" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+    </resultMap>
+
+    <resultMap type="com.codezero.cms.pojo.article.ArticleContent" id="ArticleContent">
+        <id column="article_id" jdbcType="VARCHAR" property="articleId" />
+        <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    </resultMap>
+
+    <insert id="saveArticleInfo" parameterType="com.codezero.cms.pojo.article.ArticleInfo">
+        insert into article_info
+        (article_id,article_title,article_tag,read_num,date,status)
+        values
+        (#{articleId},#{articleTitle},#{articleTag},#{readNum},#{date},#{status})
+    </insert>
+
+    <insert id="saveArticleContent" parameterType="com.codezero.cms.pojo.article.ArticleContent">
+        insert into article_content
+        (article_id,content)
+        values
+        (#{articleId},#{content})
+    </insert>
+
+    <update id="updateArticleInfo" parameterType="com.codezero.cms.pojo.article.ArticleInfo">
+        update article_info t
+        set
+        t.article_title = #{articleTitle},
+        t.article_tag = #{articleTag}
+        where t.article_id = #{articleId}
+    </update>
+
+    <update id="updateArticleContent" parameterType="com.codezero.cms.pojo.article.ArticleContent">
+        update article_content t
+        set
+        t.content = #{content}
+        where t.article_id = #{articleId}
+    </update>
+
+    <update id="addArticleReadNum">
+        update article_content t
+        set
+        t.read_num = t.read_num+1
+        where t.article_id = #{id}
+    </update>
+
+    <update id="publishArticle">
+        update article_info t set t.status = "1" where t.article_id = #{id}
+    </update>
+
+    <update id="cancelArticle">
+        update article_info t set t.status = "0" where t.article_id = #{id}
+    </update>
+
+    <select id="getAllArticleInfoList" resultMap="ArticleInfo">
+        select t.* from article_info t,article_content x where t.article_id = x.article_id
+        <if test="keywords != null and keywords != ''">
+            and (t.article_title like concat('%',#{keywords,jdbcType=VARCHAR},'%') or x.content like concat('%',#{keywords,jdbcType=LONGVARCHAR},'%'))
+        </if>
+        order by t.date DESC
+    </select>
+
+    <select id="getPublishArticleInfoList" resultMap="ArticleInfo">
+        select t.* from article_info t,article_content x where t.article_id = x.article_id and t.status = '1'
+        <if test="keywords != null and keywords != ''">
+            and (t.article_title like concat('%',#{keywords,jdbcType=VARCHAR},'%') or x.content like concat('%',#{keywords,jdbcType=LONGVARCHAR},'%'))
+        </if>
+        order by t.date DESC
+    </select>
+
+    <select id="getArticleContent" resultMap="ArticleContent">
+        select * from article_content t where t.article_id = #{id}
+    </select>
+
+
+</mapper>
