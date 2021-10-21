@@ -2,7 +2,6 @@ import fetch from './fetch.js'
 import axios from 'axios'
 import { JuHe } from './config'
 import { getNowFormatDate } from '@/common/utils/dateUtils'
-import Vue from "vue";
 
 // 登录
 export function login (data) {
@@ -124,6 +123,24 @@ export function uploadWechatImage(data){
   })
 }
 
+//上传本站文章配图
+export function uploadArticleImage(data){
+  return fetch({
+    url:'/cms/article/articleImageUpload',
+    method:'post',
+    data:data
+  })
+}
+
+//新建本站文章
+export function insertArticle(data){
+  return fetch({
+    url:'/cms/article/saveArticleInfo',
+    method:'post',
+    data:data
+  })
+}
+
 //变更微信文章配图
 export function replaceWechatImage(data){
   return fetch({
@@ -152,10 +169,52 @@ export function updateWechatArticle(data){
 }
 
 //微信文章列表查询
-export function initWechatArticleList(){
+export function initWechatArticleList(data){
   return fetch({
-    url:'/cms/wechat/getWechatArticleList',
-    method:'post'
+    url:'/cms/wechat/getWechatArticleListPage',
+    method:'post',
+    data:data
+  })
+}
+
+//本站文章列表
+export function initArticleList(data){
+  return fetch({
+    url:'/cms/article/getAllArticleInfosList',
+    method:'post',
+    data:data
+  })
+}
+
+export function getArticleContent(data){
+  return fetch({
+    url:'/cms/article/getArticleContentById',
+    method:'post',
+    data:data
+  })
+}
+
+export function updateArticleInfo(data){
+  return fetch({
+    url:'/cms/article/updateArticleInfo',
+    method:'post',
+    data:data
+  })
+}
+
+export function publishArticle(data){
+  return fetch({
+    url:'/cms/article/publishArticle',
+    method:'post',
+    data:data
+  })
+}
+
+export function cancelArticle(data){
+  return fetch({
+    url:'/cms/article/cancelArticle',
+    method:'post',
+    data:data
   })
 }
 
@@ -178,7 +237,14 @@ const apiList = {
   insertWechatArticle,
   initWechatArticleList,
   replaceWechatImage,
-  updateWechatArticle
+  updateWechatArticle,
+  uploadArticleImage,
+  insertArticle,
+  initArticleList,
+  getArticleContent,
+  updateArticleInfo,
+  publishArticle,
+  cancelArticle
 }
 
 export default apiList

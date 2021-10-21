@@ -29,10 +29,10 @@
                             <Icon type="icon iconfont icon-document"></Icon>
                             新增
                         </Button>
-<!--                        <Button type="primary" @click="searchShow" shape="circle">-->
-<!--                            <Icon type="funnel"></Icon>-->
-<!--                            筛选-->
-<!--                        </Button>-->
+                        <!--                        <Button type="primary" @click="searchShow" shape="circle">-->
+                        <!--                            <Icon type="funnel"></Icon>-->
+                        <!--                            筛选-->
+                        <!--                        </Button>-->
                     </div>
 
                     <a href="#" slot="extra" @click.prevent="refresh">
@@ -41,7 +41,7 @@
                     <Table :loading="loading2"
                            :data="listData"
                            :columns="columns" ref="table"
-                           ></Table>
+                    ></Table>
                     <Page show-sizer show-elevator @on-change="pageChange" style="margin-top: 10px"
                           @on-page-size-change="PageSizeChange" :total="condition.total"
                           :page-size="condition.size"></Page>
@@ -64,31 +64,36 @@
                     </FormItem>
                     <FormItem label="配图地址" prop="imgUrl">
                         <div class="demo-upload-list" v-if="currIndex!=-1">
-                            <img  :src="wechat.imgUrl" />
+                            <img :src="wechat.imgUrl"/>
                         </div>
-                      <div class="demo-upload-list" v-for="item in file">
-                        <img  :src="item.src" />
-                        <div class="demo-upload-list-cover" @click="handleRemove()">
-                          <Icon type="ios-trash-outline" size="60"></Icon>
+                        <div class="demo-upload-list" v-for="item in file">
+                            <img :src="item.src"/>
+                            <div class="demo-upload-list-cover" @click="handleRemove()">
+                                <Icon type="ios-trash-outline" size="60"></Icon>
+                            </div>
                         </div>
-                      </div>
-                      <div style="width: 110px;float: right">
-                        <Button icon="ios-cloud-upload" type="success" style="width: 100px;" v-if="(file.length>0) && (!imageReady) && (currIndex==-1)" @click="upload()">上传</Button>
-                        <Button icon="ios-cloud-upload" type="success" style="width: 100px;" v-if="(file.length>0) && (!imageReady) && (currIndex!=-1)" @click="upload(wechat.imgId)">替换上传</Button>
-                      </div>
-                      <div style="width: 110px;display:inline;float: right">
-                        <Upload
-                                style="width: 110px;"
-                                ref="imgUpload"
-                                :before-upload="handleUpload"
-                                :action=action
-                                :format="['jpg','jpeg','png']"
-                                :on-format-error="uploadFormatError"
-                        >
-                          <Button icon="icon iconfont icon-tupian" v-if="!file.length>0">选择图片</Button>
-                        </Upload>
-                      </div>
-                      <Input v-model="wechat.imgUrl" disabled></Input>
+                        <div style="width: 110px;float: right">
+                            <Button icon="ios-cloud-upload" type="success" style="width: 100px;"
+                                    v-if="(file.length>0) && (!imageReady) && (currIndex==-1)" @click="upload()">上传
+                            </Button>
+                            <Button icon="ios-cloud-upload" type="success" style="width: 100px;"
+                                    v-if="(file.length>0) && (!imageReady) && (currIndex!=-1)"
+                                    @click="upload(wechat.imgId)">替换上传
+                            </Button>
+                        </div>
+                        <div style="width: 110px;display:inline;float: right">
+                            <Upload
+                                    style="width: 110px;"
+                                    ref="imgUpload"
+                                    :before-upload="handleUpload"
+                                    :action=action
+                                    :format="['jpg','jpeg','png']"
+                                    :on-format-error="uploadFormatError"
+                            >
+                                <Button icon="icon iconfont icon-tupian" v-if="!file.length>0">选择图片</Button>
+                            </Upload>
+                        </div>
+                        <Input v-model="wechat.imgUrl" disabled></Input>
                     </FormItem>
                     <FormItem label="发布时间" v-if="currIndex!=-1">
                         <Input v-model="wechat.date" disabled></Input>
@@ -100,10 +105,12 @@
             </div>
 
             <div slot="footer">
-                <Button type="success" size="large" v-if="currIndex!=-1" long @click="uptWechatInfo()" :loading="loading">
+                <Button type="success" size="large" v-if="currIndex!=-1" long @click="uptWechatInfo()"
+                        :loading="loading">
                     保存
                 </Button>
-                <Button type="success" size="large" v-if="currIndex==-1" long @click="addWechatInfo()" :loading="loading">
+                <Button type="success" size="large" v-if="currIndex==-1" long @click="addWechatInfo()"
+                        :loading="loading">
                     保存
                 </Button>
             </div>
@@ -122,17 +129,17 @@
         data() {
             return {
                 ruleLine: {
-                    title:{
-                        required:true,
-                        message:'标题不能为空'
+                    title: {
+                        required: true,
+                        message: '标题不能为空'
                     },
-                    url:{
-                        required:true,
-                        message:'文章链接路径不能为空'
+                    url: {
+                        required: true,
+                        message: '文章链接路径不能为空'
                     },
-                    imgUrl:{
-                        required:true,
-                        message:'文章配图不能为空'
+                    imgUrl: {
+                        required: true,
+                        message: '文章配图不能为空'
                     }
                 },
                 // 预览图片的src
@@ -141,14 +148,13 @@
                 action: 'http://59.110.218.235:8000/cms/wechat/wechatImageUpload',
                 // 上传文件
                 file: [],
-                formData:new FormData(),
+                formData: new FormData(),
                 condition: {
-                    keyword: '',
                     size: 10,
                     current: 1,
                     total: 0,
                 },
-                imageReady:false,
+                imageReady: false,
                 searchState: false,
                 editModal: false,
                 loading2: false, // 分页loading
@@ -157,7 +163,7 @@
                     title: '',
                     url: '',
                     imgUrl: '',
-                    imgId:'',
+                    imgId: '',
                     date: '',
                     read: 0
                 },
@@ -203,7 +209,7 @@
                                     },
                                     on: {
                                         click: () => {
-                                            this.edit(params.index,1)
+                                            this.edit(params.index, 1)
                                         }
                                     }
                                 }, '详情'),
@@ -233,7 +239,7 @@
              * */
             params: {
                 handler(val) {
-                    this.getMessageBoardListAll(val)
+                    this.initSearch()
                 },
                 deep: true
             },
@@ -280,13 +286,13 @@
             },
             remove(index) {
             },
-            edit(index,type) {
+            edit(index, type) {
                 this.editModal = true
                 this.currIndex = index
-                if(type){//详情
+                if (type) {//详情
                     this.editModal = false
                     window.open(this.listData[index].url)
-                }else{
+                } else {
                     if (index === -1) { // 新增
                         this.imageReady = false
                         this.file = []
@@ -326,7 +332,6 @@
              */
             reset() {
                 this.condition = {
-                    keyword: '',
                     size: 10,
                     current: 1,
                     total: 0,
@@ -337,8 +342,8 @@
              **/
             handleRemove() {
                 this.imageReady = false
-              this.file.splice(0, 1)
-              this.$refs.imgUpload.clearFiles()
+                this.file.splice(0, 1)
+                this.$refs.imgUpload.clearFiles()
             },
 
             /**
@@ -352,18 +357,18 @@
              * 获取上传文件,并去掉重复的文件
              **/
             handleUpload(file) {
-              file.src = this.convertSrc(file)
-              if(this.file.length>0){
-                this.formData = new FormData()
-                this.handleRemove()
-                this.file.push(file)
-                this.formData.append("file",file)
-              }else{
-                this.file.push(file)
-                this.formData.append("file",file)
-              }
-              // false代表不上传到action的地址，true的话会报错，因为action地址是瞎写的，action地址不写会报错。
-              return false;
+                file.src = this.convertSrc(file)
+                if (this.file.length > 0) {
+                    this.formData = new FormData()
+                    this.handleRemove()
+                    this.file.push(file)
+                    this.formData.append("file", file)
+                } else {
+                    this.file.push(file)
+                    this.formData.append("file", file)
+                }
+                // false代表不上传到action的地址，true的话会报错，因为action地址是瞎写的，action地址不写会报错。
+                return false;
             },
 
             /**
@@ -371,21 +376,21 @@
              **/
             upload(imgId) {
                 if (this.file.length == 0) {
-                  this.$Message.error('上传文件不能为空');
+                    this.$Message.error('上传文件不能为空');
                     return;
                 }
-                if(imgId){
-                    this.formData.append("imgId",imgId)
-                    this.$api.replaceWechatImage(this.formData).then(res=>{
-                        if(res.status == 0){
+                if (imgId) {
+                    this.formData.append("imgId", imgId)
+                    this.$api.replaceWechatImage(this.formData).then(res => {
+                        if (res.status == 0) {
                             this.wechat.imgUrl = res.data.imageUrl
                             this.wechat.imgId = res.data.imageId
                             this.imageReady = true
                         }
                     })
-                }else{
-                    this.$api.uploadWechatImage(this.formData).then(res=>{
-                        if(res.status == 0){
+                } else {
+                    this.$api.uploadWechatImage(this.formData).then(res => {
+                        if (res.status == 0) {
                             this.wechat.imgUrl = res.data.imageUrl
                             this.wechat.imgId = res.data.imageId
                             this.imageReady = true
@@ -404,21 +409,22 @@
             /**
              * 微信文章列表初始化查询查询
              * */
-            initSearch(){
-                this.$api.initWechatArticleList().then(res=>{
-                    if(res.status == 0){
-                        this.listData = res.data
+            initSearch() {
+                this.$api.initWechatArticleList(this.condition).then(res => {
+                    if (res.status == 0) {
+                        this.listData = res.data.records
+                        this.condition.total = res.data.total
                     }
                 })
             },
             /**
              * 修改微信信息
              **/
-            uptWechatInfo(){
+            uptWechatInfo() {
                 //先校验信息完整性
-                if(this.$refs['wechatForm'].validate()){
-                    this.$api.updateWechatArticle(this.wechat).then(res=>{
-                        if(res.status == 0){
+                if (this.$refs['wechatForm'].validate()) {
+                    this.$api.updateWechatArticle(this.wechat).then(res => {
+                        if (res.status == 0) {
                             this.$Message.success('修改成功')
                             this.editModal = false
                             this.initSearch()
@@ -429,11 +435,11 @@
             /**
              * 新增微信信息
              **/
-            addWechatInfo(){
+            addWechatInfo() {
                 //先校验信息完整性
-                if(this.$refs['wechatForm'].validate()){
-                    this.$api.insertWechatArticle(this.wechat).then(res=>{
-                        if(res.status == 0){
+                if (this.$refs['wechatForm'].validate()) {
+                    this.$api.insertWechatArticle(this.wechat).then(res => {
+                        if (res.status == 0) {
                             this.$Message.success('保存成功')
                             this.editModal = false
                             this.initSearch()

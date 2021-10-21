@@ -11,7 +11,7 @@ const menu = [
   {
     path: '/msgBoardList',
     name: '留言板',
-    icon: 'icon-createtask_fill',
+    icon: 'icon iconfont icon-mail_fill',
     level: 1,
     fixed: false,
     children: []
@@ -20,6 +20,14 @@ const menu = [
     path: '/wechatArticle',
     name: '微信文章',
     icon: 'icon iconfont icon-jiaoliu',
+    level: 1,
+    fixed: false,
+    children: []
+  },
+  {
+    path: '/articleList',
+    name: '本站文章',
+    icon: 'icon iconfont icon-wenzibida',
     level: 1,
     fixed: false,
     children: []

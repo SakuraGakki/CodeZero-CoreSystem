@@ -19,80 +19,68 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="CMS添加留言板管理功能模块">
-      <change afterPath="$PROJECT_DIR$/src/components/views/WechatArticle/WechatArticle.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/controller/WeChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/dao/ImageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/dao/WechatMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/Images/ImageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/wechat/WeChatRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/wechat/WeChatResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/pojo/image/ImageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/pojo/wechat/WechatInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/ImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/WechatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/mapper/ImageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/mapper/WechatMapper.xml" afterDir="false" />
+    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="CMS添加微信文章配置功能">
+      <change afterPath="$PROJECT_DIR$/dist/static/js/app.83fb7c7bea13ef3a8ae9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/static/js/app.83fb7c7bea13ef3a8ae9.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.0cf701a8efc0280828f0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.0cf701a8efc0280828f0.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/views/Article/ArticleList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/views/Article/ArticlePreView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/views/Article/NewArticle.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/views/Article/Vue-Quill-Editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/dao/ArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/article/ArticleContentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/article/ArticleInfoAllPageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/article/ArticleInfoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/article/ArticleRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/base/PageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/entity/wechat/WechatListAllPageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/pojo/article/ArticleContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/pojo/article/ArticleInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/smart-doc/AllInOne.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CZ-WebsiteService/website/src/main/resources/smart-doc/AllInOne.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/css/app.b8449f16b86686d29a8d81cf14b5385f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/css/app.b8449f16b86686d29a8d81cf14b5385f.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/iconfont.42ef16c.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/iconfont.4cf6b7c.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/iconfont.b5270aa.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/ionicons.05acfdb.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/ionicons.24712f6.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/fonts/ionicons.2c2ae06.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/bg_login.7285dd8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/bingbao.5f0111f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/dafeng.a697f0d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/daxue.e105c67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/dayu.8cb409f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/duoyun.ae34cb4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/duoyunzhuanqing.517812c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/fullstack.e51bafb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/fullstack.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/iconfont.ae14f3b.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/ionicons.621bd38.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/leizhenyu.64c06c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/qing.80cbaa4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/san.109b2ba.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/wu.5041870.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/xiaoxue.eb52585.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/xiaoyu.6c8be70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/yin.2ef958d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/yujiaxue.9c44147.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/yuzhuanqing.7275754.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/zhongxue.ae6605d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/img/zhongyu.6a581c9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.de925b5aa93842653182.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.de925b5aa93842653182.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.aca9a6f55985763862f2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.aca9a6f55985763862f2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Message/MessageBoardList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Message/MessageBoardList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/WechatArticle/WechatArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/WechatArticle/WechatArticle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/msgboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/msgboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/CmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/CmsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/cms/2021-09-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/cms/2021-09-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/cms/2021-09-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/cms/2021-09-27.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/gateway/2021-09-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/gateway/2021-09-27.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/website/2021-09-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/website/2021-09-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/website/2021-09-27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/login/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/login/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/bg1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/bg1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/title1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/title2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/title3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/me/title4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/controller/WeChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/controller/WeChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/dao/WechatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/dao/WechatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/WechatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/java/com/codezero/cms/service/WechatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/mapper/WechatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-WebsiteService/cms/src/main/resources/mapper/WechatMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -108,7 +96,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/views/WechatArticle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/views/Article" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -124,11 +112,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/views/Article" />
       <recent name="$PROJECT_DIR$/src/components/views/WechatArticle" />
       <recent name="$PROJECT_DIR$/src/common/utils" />
       <recent name="$PROJECT_DIR$/src/components/views/Message" />
       <recent name="$PROJECT_DIR$/src/assets/img" />
-      <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -156,7 +144,18 @@
       <workItem from="1632706605797" duration="17976000" />
       <workItem from="1632811069797" duration="19024000" />
       <workItem from="1633655094449" duration="5127000" />
-      <workItem from="1633672762051" duration="48420000" />
+      <workItem from="1633672762051" duration="49167000" />
+      <workItem from="1634101716211" duration="84000" />
+      <workItem from="1634104414657" duration="143000" />
+      <workItem from="1634125989800" duration="282000" />
+      <workItem from="1634541007036" duration="1194000" />
+      <workItem from="1634605403941" duration="525000" />
+      <workItem from="1634609863487" duration="65000" />
+      <workItem from="1634610083750" duration="874000" />
+      <workItem from="1634644412924" duration="35000" />
+      <workItem from="1634694144551" duration="6260000" />
+      <workItem from="1634710196025" duration="9003000" />
+      <workItem from="1634777061067" duration="10099000" />
     </task>
     <task id="LOCAL-00001" summary="变更CMS工程">
       <created>1629959412217</created>
@@ -214,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633750220041</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CMS添加微信文章配置功能">
+      <created>1634035817072</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634035817072</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +247,8 @@
     <MESSAGE value="调整评星算法" />
     <MESSAGE value="首页添加老黄历及未来几天天气信息" />
     <MESSAGE value="CMS添加留言板管理功能模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="CMS添加留言板管理功能模块" />
+    <MESSAGE value="CMS添加微信文章配置功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="CMS添加微信文章配置功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="703" y="409" key="#ESLint" timestamp="1629957140361">
@@ -294,23 +301,23 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="595" y="251" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.25.1680.976@0.25.1680.976" timestamp="1632733306763" />
-    <state x="578" y="173" width="567" height="681" key="find.popup" timestamp="1633766510981">
+    <state x="448" y="143" width="567" height="681" key="find.popup" timestamp="1634721242762">
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="577" y="173" width="567" height="680" key="find.popup/0.25.1680.975@0.25.1680.975" timestamp="1632389036048" />
-    <state x="578" y="173" width="567" height="681" key="find.popup/0.25.1680.976@0.25.1680.976" timestamp="1633766510981" />
+    <state x="448" y="143" width="567" height="681" key="find.popup/0.25.1680.976@0.25.1680.976" timestamp="1634721242762" />
     <state x="578" y="173" width="567" height="682" key="find.popup/0.25.1680.977@0.25.1680.977" timestamp="1633694145144" />
     <state x="2339" y="185" width="602" height="735" key="find.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629960430093" />
-    <state x="505" y="235" key="run.anything.popup" timestamp="1633744279708">
-      <screen x="0" y="25" width="1680" height="977" />
+    <state x="505" y="235" key="run.anything.popup" timestamp="1634721477376">
+      <screen x="0" y="25" width="1680" height="976" />
     </state>
-    <state x="505" y="235" key="run.anything.popup/0.25.1680.976@0.25.1680.976" timestamp="1632879916498" />
+    <state x="505" y="235" key="run.anything.popup/0.25.1680.976@0.25.1680.976" timestamp="1634721477376" />
     <state x="505" y="235" key="run.anything.popup/0.25.1680.977@0.25.1680.977" timestamp="1633744279708" />
-    <state x="547" y="241" width="670" height="627" key="search.everywhere.popup" timestamp="1633662920473">
-      <screen x="0" y="25" width="1680" height="977" />
+    <state x="547" y="241" width="670" height="626" key="search.everywhere.popup" timestamp="1634699027681">
+      <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="547" y="241" width="670" height="625" key="search.everywhere.popup/0.25.1680.975@0.25.1680.975" timestamp="1632293257971" />
-    <state x="547" y="241" width="670" height="626" key="search.everywhere.popup/0.25.1680.976@0.25.1680.976" timestamp="1632727517414" />
+    <state x="547" y="241" width="670" height="626" key="search.everywhere.popup/0.25.1680.976@0.25.1680.976" timestamp="1634699027681" />
     <state x="547" y="241" width="670" height="627" key="search.everywhere.popup/0.25.1680.977@0.25.1680.977" timestamp="1633662920473" />
     <state x="547" y="241" width="670" height="625" key="search.everywhere.popup/1680.25.1920.1055/0.25.1680.975@0.25.1680.975" timestamp="1630033562051" />
     <state x="2305" y="259" width="670" height="676" key="search.everywhere.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629962384030" />

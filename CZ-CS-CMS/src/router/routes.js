@@ -3,6 +3,9 @@ import Index from '@/components/views/Index'
 
 import MsgBoardList from '@/components/views/Message/MessageBoardList'
 import WeChatArticle from '@/components/views/WechatArticle/WechatArticle'
+import ArticleList from "@/components/views/Article/ArticleList"
+import NewArticle from "@/components/views/Article/NewArticle"
+import ArticlePreView from "@/components/views/Article/ArticlePreView"
 
 
 import Chart from '@/components/views/Chart'
@@ -46,6 +49,30 @@ const routes = [
         path: '/weChatArticle',
         name: '微信文章列表',
         component: WeChatArticle,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/articleList',
+        name: '本站文章列表',
+        component: ArticleList,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/newArticle',
+        name: '新建文章',
+        component: NewArticle,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/articlePreView',
+        name: '预览文章',
+        component: ArticlePreView,
         meta: {
           requiresAuth: true // 是否需要登录
         }
