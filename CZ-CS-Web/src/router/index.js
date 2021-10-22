@@ -10,6 +10,8 @@ import qrcodeUtil from "@/views/utils/qrcodeUtil"
 import encodeUtil from "@/views/utils/encodeUtil"
 import colorUtil from "@/views/utils/colorUtil"
 import ipUtil from "@/views/utils/ipUtil"
+import ArticleList from "@/views/article/articleList"
+import ArticleContent from "@/views/article/articleContent"
 
 
 Vue.use(Router)
@@ -65,6 +67,16 @@ export default new Router({
           path: '/messageboard',
           name: 'messageboard',
           component: MessageBoard
+        },
+        {
+          path: '/articleList',
+          name: 'articleList',
+          component: ArticleList
+        },
+        {
+          path: '/articleContent',
+          name: 'articleContent',
+          component: ArticleContent
         }
       ]
     }
