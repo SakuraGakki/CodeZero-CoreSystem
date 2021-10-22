@@ -12,7 +12,7 @@
                     <Form :label-width="100">
                         <Form-item>
                             <span style="text-align: left;font-size: 16px">文章标题：</span>
-                            <Input v-model="articleTitle" style="width: 400px" :maxlength="20" placeholder="请输入(不超过20个汉字)"></Input>
+                            <Input v-model="articleTitle" style="width: 400px" :maxlength="50" placeholder="请输入(不超过50个汉字)"></Input>
                             <div style="float: right" v-if="!this.articleId"><Button type="success" size="large" @click="saveArticleInfo">保存文章</Button></div>
                             <div style="float: right" v-if="this.articleId"><Button type="success" size="large" @click="updateArticleInfo">更新文章</Button></div>
                         </Form-item>
