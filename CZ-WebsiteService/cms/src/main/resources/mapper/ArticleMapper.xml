@@ -48,7 +48,7 @@
     </update>
 
     <update id="addArticleReadNum">
-        update article_content t
+        update article_info t
         set
         t.read_num = t.read_num+1
         where t.article_id = #{id}

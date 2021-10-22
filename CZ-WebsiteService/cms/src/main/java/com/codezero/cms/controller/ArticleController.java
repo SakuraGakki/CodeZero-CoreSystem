@@ -52,12 +52,22 @@ public class ArticleController {
     }
 
     /**
-     * 根据文章ID获取详情
+     * 根据文章ID获取详情（cms）
      * @param articleRequest
      * @return
      */
-    @RequestMapping(value = "/getArticleContentById", method = RequestMethod.POST, name = "根据文章ID获取详情")
+    @RequestMapping(value = "/getArticleContentById", method = RequestMethod.POST, name = "根据文章ID获取详情（cms）")
     public BaseResponse<ArticleContentResponse> getArticleContentById(@RequestBody ArticleRequest articleRequest){
+        return articleService.getArticleContent(articleRequest);
+    }
+
+    /**
+     * 根据文章ID获取详情（门户）
+     * @param articleRequest
+     * @return
+     */
+    @RequestMapping(value = "/articleContentById", method = RequestMethod.POST, name = "根据文章ID获取详情(门户)")
+    public BaseResponse<ArticleContentResponse> articleContentById(ArticleRequest articleRequest){
         return articleService.getArticleContent(articleRequest);
     }
 
@@ -97,12 +107,17 @@ public class ArticleController {
      * @return
      */
     @RequestMapping(value = "/getPublishArticleInfosList",method = RequestMethod.POST, name = "已发布文章列表查询")
-    public BaseResponse<Page<ArticleInfoResponse>> getPublishArticleInfosList(@RequestBody ArticleInfoAllPageRequest articleInfoAllPageRequest){
+    public BaseResponse<Page<ArticleInfoResponse>> getPublishArticleInfosList(ArticleInfoAllPageRequest articleInfoAllPageRequest){
         return articleService.getPublishArticleInfosList(articleInfoAllPageRequest);
     }
 
+    /**
+     * 增加文章阅读数
+     * @param articleRequest
+     * @return
+     */
     @RequestMapping(value = "/addArticleReadNum", method = RequestMethod.POST, name = "增加文章阅读数")
-    public BaseResponse addArticleReadNum(@RequestBody ArticleRequest articleRequest){
+    public BaseResponse addArticleReadNum(ArticleRequest articleRequest){
         return articleService.addArticleReadNum(articleRequest);
     }
 }
