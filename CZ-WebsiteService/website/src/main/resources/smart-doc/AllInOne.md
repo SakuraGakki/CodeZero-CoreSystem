@@ -33,7 +33,7 @@ size|int64|No comments found.|false|-
 
 **Request-example:**
 ```
-curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/getMessageBoardList --data 'size=417&current=119'
+curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/getMessageBoardList --data 'current=910&size=784'
 ```
 **Response-fields:**
 
@@ -72,7 +72,7 @@ data|object|响应对象|-
   "message": "Success",
   "data": {
     "searchCount": true,
-    "pages": 291,
+    "pages": 869,
     "hitCount": true,
     "records": [
       {
@@ -84,12 +84,12 @@ data|object|响应对象|-
         "list": "（List）回复列表"
       }
     ],
-    "total": 736,
+    "total": 819,
     "size": 310,
-    "current": 945,
+    "current": 184,
     "orders": [
       {
-        "column": "ztpnip",
+        "column": "f6itlu",
         "asc": true
       }
     ],
@@ -128,7 +128,7 @@ content|string|留言内容|false|-
 
 **Request-example:**
 ```
-curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/insertMessageBoardInfo --data 'content=哈哈哈&ip=127.0.0.1&id=1&date=2021-09-29 00:00:00&city=中国 辽宁 沈阳 联通'
+curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/insertMessageBoardInfo --data 'id=1&content=哈哈哈&ip=127.0.0.1&city=中国 辽宁 沈阳 联通&date=2021-09-29 00:00:00'
 ```
 **Response-fields:**
 
@@ -179,7 +179,7 @@ content|string|留言内容|false|-
 
 **Request-example:**
 ```
-curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/insertMessageBoardSubInfo --data 'ip=127.0.0.1&date=2021-09-29 00:00:00&city=中国 辽宁 沈阳 联通&content=哈哈哈&id=1'
+curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/insertMessageBoardSubInfo --data 'id=1&date=2021-09-29 00:00:00&ip=127.0.0.1&content=哈哈哈&city=中国 辽宁 沈阳 联通'
 ```
 **Response-fields:**
 
@@ -227,7 +227,7 @@ size|int64|No comments found.|false|-
 
 **Request-example:**
 ```
-curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/getMessageBoardUnreadList --data 'current=738&size=293'
+curl -X POST -H 'token' -i http://59.110.218.235:8000/website/messageboard/getMessageBoardUnreadList --data 'current=329&size=433'
 ```
 **Response-fields:**
 
@@ -266,7 +266,7 @@ data|object|响应对象|-
   "message": "Success",
   "data": {
     "searchCount": true,
-    "pages": 188,
+    "pages": 237,
     "hitCount": true,
     "records": [
       {
@@ -278,12 +278,12 @@ data|object|响应对象|-
         "list": "（List）回复列表"
       }
     ],
-    "total": 287,
-    "size": 526,
-    "current": 623,
+    "total": 756,
+    "size": 832,
+    "current": 85,
     "orders": [
       {
-        "column": "8mfxz0",
+        "column": "8v9qxd",
         "asc": true
       }
     ],
@@ -363,10 +363,10 @@ status|string|No comments found.|false|-
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json; charset=utf-8' -H 'token' -i http://59.110.218.235:8000/website/messageboard/getMessageListAll --data '{
-  "current": 824,
-  "size": 870,
-  "keyword": "mlpgrw",
-  "status": "kt9ao4"
+  "current": 53,
+  "size": 111,
+  "keyword": "f7s664",
+  "status": "qb9x80"
 }'
 ```
 **Response-fields:**
@@ -403,7 +403,7 @@ data|object|响应对象|-
   "message": "Success",
   "data": {
     "searchCount": true,
-    "pages": 975,
+    "pages": 594,
     "hitCount": true,
     "records": [
       {
@@ -417,12 +417,12 @@ data|object|响应对象|-
         "relatedId": 0
       }
     ],
-    "total": 583,
-    "size": 990,
-    "current": 874,
+    "total": 407,
+    "size": 713,
+    "current": 13,
     "orders": [
       {
-        "column": "9ud63f",
+        "column": "bsnpp2",
         "asc": true
       }
     ],
@@ -676,7 +676,7 @@ city|string|客户端所在地及网络运营商|false|-
 
 **Request-example:**
 ```
-curl -X POST -H 'token' -i http://59.110.218.235:8000/website/visitor/uptVisitNum --data 'ip=187.57.122.216&city=s4hqpc'
+curl -X POST -H 'token' -i http://59.110.218.235:8000/website/visitor/uptVisitNum --data 'ip=205.36.170.53&city=4mrv7k'
 ```
 **Response-fields:**
 
@@ -691,7 +691,7 @@ data|object|响应对象|-
 {
   "status": 0,
   "message": "Success",
-  "data": "o5aiqr"
+  "data": "dp9vsu"
 }
 ```
 

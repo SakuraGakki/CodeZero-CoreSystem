@@ -19,40 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="调整文章标题长度">
-      <change afterPath="$PROJECT_DIR$/dist/static/css/app.7ef86161641403c624e32bf6c331b900.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/css/app.7ef86161641403c624e32bf6c331b900.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/app.8e137e9016247fccef05.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/app.8e137e9016247fccef05.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.14ac4899a4888b4fbdd7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.14ac4899a4888b4fbdd7.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Daily/Daily.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.b1abf238a7b40ee29ff167c9f6207ce2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.b1abf238a7b40ee29ff167c9f6207ce2.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/3.d8da816.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.364f739e55b70c3cc016.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.364f739e55b70c3cc016.js.map" afterDir="false" />
+    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="新增我的日常模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/css/app.731ad9887f3f2472c5a42a1f6272d726.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/css/app.731ad9887f3f2472c5a42a1f6272d726.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.8f98761b0ed45193960c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.8f98761b0ed45193960c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.39f8e143b66491167825.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.39f8e143b66491167825.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.2ae5477cdda2b0099979b432fd0e3db8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.2ae5477cdda2b0099979b432fd0e3db8.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/3.18145d7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.045d581cec91ede1ca16.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.045d581cec91ede1ca16.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/assets/img/homepage/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/article/articleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/article/articleList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +123,7 @@
       <workItem from="1634864770782" duration="1509000" />
       <workItem from="1635122512970" duration="6185000" />
       <workItem from="1635143474719" duration="8000" />
-      <workItem from="1635143746638" duration="974000" />
+      <workItem from="1635143746638" duration="2895000" />
     </task>
     <task id="LOCAL-00001" summary="变更CMS工程">
       <created>1629959412217</created>
@@ -234,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634864997238</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="新增我的日常模块">
+      <created>1635145597545</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635145597545</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +239,8 @@
     <MESSAGE value="CMS添加微信文章配置功能" />
     <MESSAGE value="CMS添加文章功能模块" />
     <MESSAGE value="调整文章标题长度" />
-    <option name="LAST_COMMIT_MESSAGE" value="调整文章标题长度" />
+    <MESSAGE value="新增我的日常模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增我的日常模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="703" y="409" key="#ESLint" timestamp="1629957140361">
@@ -337,12 +313,12 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="595" y="251" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.25.1680.976@0.25.1680.976" timestamp="1632733306763" />
-    <state x="448" y="143" width="567" height="681" key="find.popup" timestamp="1634888520908">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="578" y="173" width="567" height="682" key="find.popup" timestamp="1635147721201">
+      <screen x="0" y="25" width="1680" height="977" />
     </state>
     <state x="577" y="173" width="567" height="680" key="find.popup/0.25.1680.975@0.25.1680.975" timestamp="1632389036048" />
     <state x="448" y="143" width="567" height="681" key="find.popup/0.25.1680.976@0.25.1680.976" timestamp="1634888520908" />
-    <state x="578" y="173" width="567" height="682" key="find.popup/0.25.1680.977@0.25.1680.977" timestamp="1633694145144" />
+    <state x="578" y="173" width="567" height="682" key="find.popup/0.25.1680.977@0.25.1680.977" timestamp="1635147721201" />
     <state x="2339" y="185" width="602" height="735" key="find.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629960430093" />
     <state x="505" y="235" key="run.anything.popup" timestamp="1634721477376">
       <screen x="0" y="25" width="1680" height="976" />
