@@ -88,10 +88,8 @@
       queryArticleList() {
         $ajax.post('/cms/article/getPublishArticleInfosList', {
           current:this.page.current,
-          size:this.page.size
         }).then(
           res => {
-            console.log("列表返回",res)
             if (res.data.status === 0) {
               this.articleList = res.data.data.records
               for(let i=0;i<this.articleList.length;i++){
@@ -108,7 +106,7 @@
               this.page.total = res.data.data.total
               // console.log("this.messageList",res.data.data)
             } else {
-              this.$Message.error('查询留言列表失败！')
+              this.$Message.error('文章留言列表失败！')
             }
           }
         )

@@ -218,6 +218,62 @@ export function cancelArticle(data){
   })
 }
 
+export function initDailyList(data){
+  return fetch({
+    url:'/cms/daily/getDailyInfoListPage',
+    method:'post',
+    data:data
+  })
+}
+
+export function replaceDailyImage(data){
+  return fetch({
+    url:'/cms/daily/dailyImageReplace',
+    method:'post',
+    data:data
+  })
+}
+
+export function uploadDailyImage(data){
+  return fetch({
+    url:'/cms/daily/dailyImageUpload',
+    method:'post',
+    data:data
+  })
+}
+
+export function updateDailyInfo(data){
+  return fetch({
+    url:'/cms/daily/uptDailyInfo',
+    method:'post',
+    data:data
+  })
+}
+
+export function insertDailyInfo(data){
+  return fetch({
+    url:'/cms/daily/addDailyInfo',
+    method:'post',
+    data:data
+  })
+}
+
+export function publishDaily(data){
+  return fetch({
+    url:'/cms/daily/publishDailyInfo',
+    method:'post',
+    data:data
+  })
+}
+
+export function cancelDaily(data){
+  return fetch({
+    url:'/cms/daily/cancelDailyInfo',
+    method:'post',
+    data:data
+  })
+}
+
 const apiList = {
   login,
   getVisitorNum,
@@ -244,7 +300,14 @@ const apiList = {
   getArticleContent,
   updateArticleInfo,
   publishArticle,
-  cancelArticle
+  cancelArticle,
+  initDailyList,
+  uploadDailyImage,
+  replaceDailyImage,
+  insertDailyInfo,
+  updateDailyInfo,
+  publishDaily,
+  cancelDaily
 }
 
 export default apiList

@@ -6,6 +6,7 @@ import WeChatArticle from '@/components/views/WechatArticle/WechatArticle'
 import ArticleList from "@/components/views/Article/ArticleList"
 import NewArticle from "@/components/views/Article/NewArticle"
 import ArticlePreView from "@/components/views/Article/ArticlePreView"
+import Daily from "@/components/views/Daily/Daily";
 
 
 import Chart from '@/components/views/Chart'
@@ -73,6 +74,14 @@ const routes = [
         path: '/articlePreView',
         name: '预览文章',
         component: ArticlePreView,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/daily',
+        name: '日常列表',
+        component: Daily,
         meta: {
           requiresAuth: true // 是否需要登录
         }

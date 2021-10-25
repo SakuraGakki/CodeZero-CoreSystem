@@ -1,5 +1,44 @@
 <template>
   <div class="me">
+    <!-- 里程碑展示 -->
+    <div style="height: calc(100vh);width: 180px;z-index: 999;margin-left:50px;padding-left:10px;padding-top:20px;position: absolute;float: top">
+      <span style="font-size: 18px;color:#13c2c2">里程碑</span>
+      <br><br>
+      <Timeline pending>
+        <Timeline-item color="green">
+          <p class="time">2021年8月11日</p>
+          <p class="content">CodeZero主站上线</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年9月23日</p>
+          <p class="content">CodeZero--CMS上线</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年9月30日</p>
+          <p class="content">留言板功能上线</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年10月12日</p>
+          <p class="content">CodeZero及CMS数据联通</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年10月19日</p>
+          <p class="content">在线工具功能上线</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年10月21日</p>
+          <p class="content">我的文章功能上线</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年10月25日</p>
+          <p class="content">我的日常功能上线</p>
+        </Timeline-item>
+        <Timeline-item>
+          <p class="time">未来</p>
+          <p class="content">未来可期，仍将继续！</p>
+        </Timeline-item>
+      </Timeline>
+    </div>
     <div class="me-index-div">
       <div class="me-index-header">
         <div class="head-img-div">
@@ -29,13 +68,30 @@
             </Card>
           </Col>
         </Row>
-        <!-- 最新动态 -->
+        <!-- 我的日常 -->
         <Row style="background:rgba(238,238,238,0.5);padding:20px">
           <Col span="24">
             <Card shadow>
-              <p slot="title" class="me-index-title-font">最新动态</p>
-              <p class="me-index-content-font">
-                这里记录了我在学习、工作中的所有编程积累、经验及总结。希望对大家的工作学习有所帮助，也希望能有更多的朋友通过本站了解编程知识，感受到代码的乐趣与魅力。</p>
+              <p slot="title" class="me-index-title-font">我的日常</p>
+              <div style="height: 300px;width: 100%">
+                <Carousel v-model="value1" v-if="dynamicList">
+                  <Carousel-item v-for="item in dynamicList">
+                    <div class="demo-carousel">
+                      <Row type="flex" justify="space-around" >
+                        <Col :span="12">
+                          <img :src="item.imageUrl" style="height: 290px;width: 100%">
+                        </Col>
+                        <Col :span="12">
+                          <Card style="height: 290px">
+                            <P slot="title">时间：{{item.date}}</P>
+                            <span style="font-size: 28px;">{{item.content}}</span>
+                          </Card>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Carousel-item>
+                </Carousel>
+              </div>
             </Card>
           </Col>
         </Row>
@@ -83,18 +139,29 @@
     name: "MeIndex",
     data() {
       return {
+        baseImgUrl:'',
+        value1:0,
+        setting: {
+          autoplay: false,
+          autoplaySpeed: 5000,
+          dots: 'inside',
+          trigger: 'hover',
+          arrow: 'hover'
+        },
         ip:"",
         city:"",
         poem1:"",
         poem2:"",
         headerImgSrc:"http://59.110.218.235/images/avator.jpeg",
-        wechatArticleList:[]
+        wechatArticleList:[],
+        dynamicList:[]
       }
     },
     created() {
-      this.getPoem();
+      this.getPoem()
       this.getWechatArticleList()
       this.getClientInfo()
+      this.getDailyList()
     },
     methods:{
       //获取客户端信息
@@ -147,7 +214,14 @@
           }
         })
       },
-
+      //主页从CMS系统获取日常信息
+      getDailyList(){
+        $ajax.post('/cms/daily/getDailyInfoList').then(res=>{
+          if(res.data.status == 0){
+            this.dynamicList = res.data.data
+          }
+        })
+      }
     }
   }
 </script>
@@ -233,5 +307,27 @@
     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
     border-radius: 10px;
     background: #EDEDED;
+  }
+
+  .time{
+    color:#00ffff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .content{
+    color:#2db7f5;
+    padding-left: 5px;
+  }
+
+  .dynamic{
+    display: inline-block;
+    line-height: 24px;
+    padding: 5px 0;
+    margin-right: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    color: #13c2c2;
+    font-size: 30px;
   }
 </style>

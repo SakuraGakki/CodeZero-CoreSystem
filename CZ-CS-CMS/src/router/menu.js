@@ -31,6 +31,14 @@ const menu = [
     level: 1,
     fixed: false,
     children: []
+  },
+  {
+    path: '/daily',
+    name: '日常列表',
+    icon: 'icon iconfont icon-label_fill',
+    level: 1,
+    fixed: false,
+    children: []
   }
   // {
   //   path: '/',
