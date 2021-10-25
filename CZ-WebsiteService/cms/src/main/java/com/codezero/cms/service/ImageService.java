@@ -127,6 +127,56 @@ public class ImageService {
         return baseResponse;
     }
 
+    public BaseResponse<ImageResponse> dailyImageUpload(MultipartFile file){
+        BaseResponse baseResponse = new BaseResponse();
+        if(file.isEmpty()){
+            baseResponse.setStatus(-1);
+            baseResponse.setMessage("上传图片文件为空！！");
+            return baseResponse;
+        }
+        //图片Id
+        String imageId = UUID.randomUUID().toString();
+        //图片名
+        String imageName = file.getOriginalFilename();
+        //图片后缀名
+        String imageExtension = imageName.substring(imageName.lastIndexOf("."));
+        //应用场景
+        String sceneType = "daily";
+        String sceneName = "日常配图";
+        //图片大小
+        Long imageSize = file.getSize();
+        //图片路径
+        String imageUrl = imageUploadUrl+"images/daily/"+imageName;
+        //图片类型
+        String type = "0";
+        //上传时间
+        String date = DateUtils.getCurrentTime();
+        File dest = new File(imageUrl);
+        if(!dest.getParentFile().exists()){
+            dest.getParentFile().mkdir();
+        }
+        try{
+            file.transferTo(dest);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        ImageInfo imageInfo = new ImageInfo();
+        imageInfo.setImageId(imageId);
+        imageInfo.setImageName(imageName);
+        imageInfo.setImageUrl(imageUrl.replace(imageUploadUrl,imageHttpUrl));
+        imageInfo.setDate(date);
+        imageInfo.setImageExtension(imageExtension);
+        imageInfo.setType(type);
+        imageInfo.setImageSize(Math.round(imageSize/1024)+"KB");
+        imageInfo.setSceneType(sceneType);
+        imageInfo.setSceneName(sceneName);
+        imageInfo.setRelatedId("");
+        imageMapper.imageUpload(imageInfo);
+        ImageResponse imageResponse = transformImageInfoToImageResponse(imageInfo);
+        baseResponse.setData(imageResponse);
+        return baseResponse;
+    }
+
     public BaseResponse<ImageResponse> wechatImageReplace(MultipartFile file,String imgId){
         BaseResponse baseResponse = new BaseResponse();
         if(file.isEmpty()){
@@ -145,6 +195,58 @@ public class ImageService {
         Long imageSize = file.getSize();
         //图片路径
         String imageUrl = imageUploadUrl+"images/wechat/"+imageName;
+        //图片类型
+        String type = "0";
+        //上传时间
+        String date = DateUtils.getCurrentTime();
+        ImageInfo imageInfo = imageMapper.imageQueryById(imgId);
+        String oldImageUrl = imageInfo.getImageUrl().replace(imageHttpUrl,imageUploadUrl);
+        File oldImg = new File(oldImageUrl);
+        if(oldImg.getAbsoluteFile().exists()){
+            oldImg.delete();
+        }
+        File dest = new File(imageUrl);
+        if(!dest.getParentFile().exists()){
+            dest.getParentFile().mkdir();
+        }
+        try{
+            file.transferTo(dest);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        imageInfo.setImageName(imageName);
+        imageInfo.setImageUrl(imageUrl.replace(imageUploadUrl,imageHttpUrl));
+        imageInfo.setDate(date);
+        imageInfo.setImageExtension(imageExtension);
+        imageInfo.setType(type);
+        imageInfo.setImageSize(Math.round(imageSize/1024)+"KB");
+        imageInfo.setSceneType(sceneType);
+        imageInfo.setSceneName(sceneName);
+        imageInfo.setRelatedId("");
+        imageMapper.imageUpdateById(imageInfo);
+        ImageResponse imageResponse = transformImageInfoToImageResponse(imageInfo);
+        baseResponse.setData(imageResponse);
+        return baseResponse;
+    }
+
+    public BaseResponse<ImageResponse> dailyImageReplace(MultipartFile file,String imgId){
+        BaseResponse baseResponse = new BaseResponse();
+        if(file.isEmpty()){
+            baseResponse.setStatus(-1);
+            baseResponse.setMessage("上传图片文件为空！！");
+            return baseResponse;
+        }
+        //图片名
+        String imageName = file.getOriginalFilename();
+        //图片后缀名
+        String imageExtension = imageName.substring(imageName.lastIndexOf("."));
+        //应用场景
+        String sceneType = "daily";
+        String sceneName = "日常配图";
+        //图片大小
+        Long imageSize = file.getSize();
+        //图片路径
+        String imageUrl = imageUploadUrl+"images/daily/"+imageName;
         //图片类型
         String type = "0";
         //上传时间

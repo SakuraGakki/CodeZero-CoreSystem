@@ -89,6 +89,7 @@ public class ArticleService {
         Page page = new Page();
         if(articleInfoAllPageRequest.getCurrent()!=null){
             page.setCurrent(articleInfoAllPageRequest.getCurrent());
+            page.setSize(6);
         }
         String keywords = articleInfoAllPageRequest.getKeyword();
         Page<ArticleInfo> articleInfoPage = articleMapper.getPublishArticleInfoList(page,keywords);
@@ -97,7 +98,7 @@ public class ArticleService {
             Page<ArticleInfoResponse> articleInfoResponsePage = new Page<>();
             articleInfoResponsePage.setTotal(articleInfoPage.getTotal());
             articleInfoResponsePage.setCurrent(articleInfoPage.getCurrent());
-            articleInfoResponsePage.setSize(articleInfoPage.getSize());
+            articleInfoResponsePage.setSize(6);
             List<ArticleInfoResponse> list = transformArticleInfoList(articleInfoList);
             articleInfoResponsePage.setRecords(list);
             baseResponse.setData(articleInfoResponsePage);

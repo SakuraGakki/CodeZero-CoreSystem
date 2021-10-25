@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.cms.dao.DailyMapper">
+
+    <resultMap type="com.codezero.cms.pojo.daily.DailyInfo" id="DailyInfo">
+        <id column="seq" jdbcType="VARCHAR" property="seq" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="image_id" jdbcType="VARCHAR" property="imageId" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+    </resultMap>
+
+    <select id="getDailyInfoListPage" resultMap="DailyInfo">
+        select * from daily_info t order by t.date DESC
+    </select>
+
+
+    <select id="getDailyInfoList" resultMap="DailyInfo">
+        select * from daily_info t where t.status="1" order by t.date DESC limit 0,5
+    </select>
+
+    <insert id="insertDailyInfo" parameterType="com.codezero.cms.pojo.daily.DailyInfo">
+        insert into daily_info
+        (seq,content,image_id,status,date)
+        values
+        (#{seq},#{content},#{imageId},#{status},#{date})
+    </insert>
+
+    <update id="updateDailyInfo" parameterType="com.codezero.cms.pojo.daily.DailyInfo">
+        update daily_info t set
+        t.content = #{content}
+        where t.seq = #{seq}
+    </update>
+
+    <update id="publishDailyInfo">
+        update daily_info t set
+        t.status = "1"
+        where t.seq = #{id}
+    </update>
+
+    <update id="cancelDailyInfo">
+        update daily_info t set
+        t.status = "0"
+        where t.seq = #{id}
+    </update>
+
+</mapper>
