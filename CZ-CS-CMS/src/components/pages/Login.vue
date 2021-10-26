@@ -13,18 +13,6 @@
           <Form-item prop="password">
             <Input v-model="formValidate.password" @keyup.native.enter="handleSubmit('formValidate')" type="password" placeholder="请输入密码"></Input>
           </Form-item>
-
-          <Row>
-            <Col span="12">
-            <Checkbox-group v-model="formValidate.remember">
-              <Checkbox label="记住我"></Checkbox>
-            </Checkbox-group>
-            </Col>
-            <Col span="12">
-            <a style="float:right" @click="toRegister">新用户注册</a>
-            </Col>
-          </Row>
-
         </Form>
       </div>
       <div slot="footer">
@@ -135,18 +123,9 @@
           }
         })
       },
-      toRegister () {
-        this.$router.push('/register')
-      },
       getLocationInfo(ip){
         this.$api.locationFromNet(ip).then(res => {
-          // console.log("IP返回结果",res)
           if(res.data.error_code==0){
-            // console.log("this.country",res.data.result.Country)
-            // console.log("this.province",res.data.result.Province)
-            // console.log("this.city",res.data.result.City)
-            // console.log("this.region",res.data.result.District)
-            // console.log("this.ISP",res.data.result.Isp)
             this.formValidate.city = res.data.result.Country+"-"+res.data.result.Province+"-"+res.data.result.City+"-"+res.data.result.District+"-"+res.data.result.Isp
             Cookies.set("locationInfo",res.data.result);
           }

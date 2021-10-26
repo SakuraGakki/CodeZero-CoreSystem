@@ -33,6 +33,10 @@
           <p class="time">2021年10月25日</p>
           <p class="content">我的日常功能上线</p>
         </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年10月26日</p>
+          <p class="content">服务器及域名备案通过，www.codezer0.cn上线</p>
+        </Timeline-item>
         <Timeline-item>
           <p class="time">未来</p>
           <p class="content">未来可期，仍将继续！</p>
@@ -74,7 +78,13 @@
             <Card shadow>
               <p slot="title" class="me-index-title-font">我的日常</p>
               <div style="height: 300px;width: 100%">
-                <Carousel v-model="value1" v-if="dynamicList">
+                <Carousel v-model="value1" v-if="dynamicList"
+                          :autoplay="setting.autoplay"
+                          :autoplay-speed="setting.autoplaySpeed"
+                          :dots="setting.dots"
+                          :radius-dot="setting.radiusDot"
+                          :trigger="setting.trigger"
+                          :arrow="setting.arrow">
                   <Carousel-item v-for="item in dynamicList">
                     <div class="demo-carousel">
                       <Row type="flex" justify="space-around" >
@@ -142,8 +152,8 @@
         baseImgUrl:'',
         value1:0,
         setting: {
-          autoplay: false,
-          autoplaySpeed: 5000,
+          autoplay: true,
+          autoplaySpeed: 3000,
           dots: 'inside',
           trigger: 'hover',
           arrow: 'hover'
@@ -152,7 +162,7 @@
         city:"",
         poem1:"",
         poem2:"",
-        headerImgSrc:"http://59.110.218.235/images/avator.jpeg",
+        headerImgSrc:"http://59.110.218.235:8011/images/avator.jpeg",
         wechatArticleList:[],
         dynamicList:[]
       }

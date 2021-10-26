@@ -94,55 +94,55 @@ const routes = [
           requiresAuth: true // 是否需要登录
         }
       },
-      {
-        path: '/list',
-        name: 'list',
-        component: List,
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      },
-      {
-        path: '/userInfo',
-        name: 'userInfo',
-        component: UserInfo,
-        icon: 'icon-addpeople_fill',
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      },
-      {
-        path: '/table',
-        name: 'table',
-        component: Table,
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      },
-      {
-        path: '/icon',
-        name: 'icon',
-        component: Icon,
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      },
-      {
-        path: '/filter',
-        name: 'filter',
-        component: Filter,
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      },
-      {
-        path: '/notFound',
-        name: 'notFound',
-        component: NotFound,
-        meta: {
-          requiresAuth: true // 是否需要登录
-        }
-      }
+      // {
+      //   path: '/list',
+      //   name: 'list',
+      //   component: List,
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // },
+      // {
+      //   path: '/userInfo',
+      //   name: 'userInfo',
+      //   component: UserInfo,
+      //   icon: 'icon-addpeople_fill',
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // },
+      // {
+      //   path: '/table',
+      //   name: 'table',
+      //   component: Table,
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // },
+      // {
+      //   path: '/icon',
+      //   name: 'icon',
+      //   component: Icon,
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // },
+      // {
+      //   path: '/filter',
+      //   name: 'filter',
+      //   component: Filter,
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // },
+      // {
+      //   path: '/notFound',
+      //   name: 'notFound',
+      //   component: NotFound,
+      //   meta: {
+      //     requiresAuth: true // 是否需要登录
+      //   }
+      // }
     ]
   },
   {
@@ -150,11 +150,11 @@ const routes = [
     name: 'login',
     component: Login
   },
-  {
-    path: '/register',
-    name: 'register',
-    component: Register
-  },
+  // {
+  //   path: '/register',
+  //   name: 'register',
+  //   component: Register
+  // },
   {
     path: '/error404',
     name: 'error404',

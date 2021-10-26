@@ -215,6 +215,8 @@ public class MessageBoardService {
         messageBoard.setIp(messageBoardRequest.getIp());
         messageBoard.setCity(messageBoardRequest.getCity());
         messageBoard.setDate(messageBoardRequest.getDate());
+        //添加关键词过滤
+        
         messageBoard.setContent(messageBoardRequest.getContent());
         return messageBoard;
     }

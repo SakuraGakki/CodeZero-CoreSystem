@@ -9,7 +9,7 @@
               <p slot="title" class="me-msgboard-title-font">留言板</p>
               <Card>
                 <textarea name="" v-model="messageContent" cols="108" rows="2"
-                          style="resize: none;font-size: 20px"></textarea>
+                          style="resize: none;font-size: 20px" @change="filter()"></textarea>
                 <div style="text-align: right">
                   <Poptip placement="left" width="400px" height="200px">
                     <span style="font-size: 24px;text-align: center;">😀</span>
@@ -64,7 +64,8 @@
   import {BaseUrl} from "../../config/config"
   import {getNowFormatDate, getNowFormatTime} from "../../utils/dateUtils"
   import Qs from 'qs'
-  import Vue from "vue";
+  import Vue from "vue"
+  import {keywords} from "../../utils/keywords"
 
   $ajax.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
   $ajax.defaults.transformRequest = [obj => Qs.stringify(obj)]
@@ -127,6 +128,10 @@
         this.messageContent += emoji
       },
       saveMessageInfo() {
+        if(this.messageContent && this.messageContent.indexOf("*")>-1){
+          this.$Message.error("请规范您的用词后再留言！！！")
+          return;
+        }
         this.loading = true
         $ajax.post(BaseUrl.ip + BaseUrl.insertMessageInfo, {
           "ip": this.ip,
@@ -165,6 +170,17 @@
       pageChange(pageNum){
         this.page.current = pageNum
         this.queryMessageList();
+      },
+      //添加敏感词过滤
+      filter() {
+        let arrMg = keywords;
+        let showContent = this.messageContent;
+        for (let i = 0; i < arrMg.length; i++) {
+          // 创建一个正则表达式
+          var r = new RegExp(arrMg[i], "ig");
+          showContent = showContent.replace(r, "*");
+        }
+        this.messageContent = showContent;
       }
     },
     created() {

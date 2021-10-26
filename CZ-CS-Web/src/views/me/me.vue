@@ -11,9 +11,11 @@
     <div>
       <router-view/>
     </div>
-    <ul class="me-footer">
-      <span class="me-footer-font">©2021 CodeZero</span>
-    </ul>
+    <div style="background-color: #aca7a7">
+      <ul class="me-footer">
+        <span class="me-footer-font">©2021 CodeZero  ICP备案号：<a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2021010634号-1</a></span>
+      </ul>
+    </div>
   </div>
 
 </template>
