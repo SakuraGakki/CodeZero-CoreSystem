@@ -15,7 +15,7 @@
         </Timeline-item>
         <Timeline-item color="green">
           <p class="time">2021年9月30日</p>
-          <p class="content">留言板功能上线</p>
+          <p class="content">留言板功能上线(2021年10月26日公安备案需要该功能已删)</p>
         </Timeline-item>
         <Timeline-item color="green">
           <p class="time">2021年10月12日</p>

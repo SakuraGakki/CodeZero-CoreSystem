@@ -2,7 +2,7 @@
   <div>
     <div class="me-header">
       <ul class="me-header-menu">
-        <router-link :to="{name: 'messageboard'}" tag="li" class="me-header-submenu"><span class="menuFont">留言</span></router-link>
+<!--        <router-link :to="{name: 'messageboard'}" tag="li" class="me-header-submenu"><span class="menuFont">留言</span></router-link>-->
         <router-link :to="{name: 'articleList'}" tag="li" class="me-header-submenu"><span class="menuFont">我的文章</span></router-link>
         <router-link :to="{name: 'utils'}" tag="li" class="me-header-submenu"><span class="menuFont">在线工具</span></router-link>
         <router-link :to="{name: 'meindex'}" tag="li" class="me-header-submenu"><span class="menuFont">主页</span></router-link>

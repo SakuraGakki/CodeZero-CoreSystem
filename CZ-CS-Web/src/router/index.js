@@ -63,11 +63,11 @@ export default new Router({
           name:'ipUtil',
           component:ipUtil
         },
-        {
-          path: '/messageboard',
-          name: 'messageboard',
-          component: MessageBoard
-        },
+        // {
+        //   path: '/messageboard',
+        //   name: 'messageboard',
+        //   component: MessageBoard
+        // },
         {
           path: '/articleList',
           name: 'articleList',

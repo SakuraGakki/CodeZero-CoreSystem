@@ -20,33 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="新增我的日常模块">
-      <change afterPath="$PROJECT_DIR$/dist/static/js/app.4023067a66f0494b86d5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/app.4023067a66f0494b86d5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.0feca346b88faa12eb09.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/static/js/manifest.0feca346b88faa12eb09.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.0b939988578efd4b5e66b1b0f1fd7c44.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.0b939988578efd4b5e66b1b0f1fd7c44.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.c10472e9f4eb8712813d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.c10472e9f4eb8712813d.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/utils/keywords.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.8e137e9016247fccef05.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.8e137e9016247fccef05.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.14ac4899a4888b4fbdd7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.14ac4899a4888b4fbdd7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/config/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.b1abf238a7b40ee29ff167c9f6207ce2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.b1abf238a7b40ee29ff167c9f6207ce2.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.364f739e55b70c3cc016.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.364f739e55b70c3cc016.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.9aa1e17bc3923d51c966842813ddde33.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/css/app.9aa1e17bc3923d51c966842813ddde33.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/BebasNeue-webfont.bfc1e5d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/BebasNeue-webfont.da29796.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/BebasNeue-webfont.de10c6a.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/ionicons.143146f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/ionicons.99ac330.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/fonts/ionicons.d535a25.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/1.e593bf6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/2.d759cbf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/3.d8da816.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/4.3433b7d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/5.91547ca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/6.cb3a2d1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/BebasNeue-webfont.34512fc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/background.ef180bf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/base64.55122ac.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/bg1.f1944e0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/colorboard.eb2b4e6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/ionicons.a2c4a26.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/json.3f0df62.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/img/location.b1ae084.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.3cbeac225600c9d6bf87.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/app.3cbeac225600c9d6bf87.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/vendor.fd43fb9929fc68719035.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/dist/static/js/vendor.fd43fb9929fc68719035.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/me.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/me/me.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CZ-CS-Web/src/views/message/msgboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../CZ-CS-Web/src/views/message/msgboard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
