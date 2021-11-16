@@ -50,6 +50,16 @@ public class MessageBoardController {
     }
 
     /**
+     * 插入主留言信息(微信小程序)
+     * @param messageBoardRequest
+     * @return
+     */
+    @RequestMapping(value = "/insertWechatMessageBoardInfo", method = RequestMethod.POST, name = "插入主留言信息")
+    public BaseResponse insertWechatMessageBoardInfo(@RequestBody MessageBoardRequest messageBoardRequest){
+        return messageBoardService.insertMessageBoardInfo(messageBoardRequest);
+    }
+
+    /**
      * 插入留言回复信息
      * @param messageBoardRequest
      * @return
