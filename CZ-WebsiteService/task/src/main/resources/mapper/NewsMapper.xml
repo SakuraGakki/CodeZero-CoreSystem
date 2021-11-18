@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.task.dao.NewsMapper">
+
+    <insert id="insertBatch" parameterType="com.codezero.task.pojo.news.News">
+        insert into news
+        (title,time,src,category,pic,url,webUrl,content)
+        values
+        <foreach collection="list"  item="item"  separator=",">
+            (#{item.title},#{item.time},#{item.src},#{item.category},#{item.pic},#{item.url},#{item.weburl},#{item.content})
+        </foreach>
+    </insert>
+
+</mapper>

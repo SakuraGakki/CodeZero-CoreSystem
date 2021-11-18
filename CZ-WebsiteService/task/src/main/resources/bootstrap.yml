@@ -1,0 +1,19 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: TASK
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 59.110.218.235:8848
+        namespace: 2e8b2822-4ed2-4783-a312-3b2be270e9f2
+        group: dev
+      config:
+        server-addr: 59.110.218.235:8848
+        namespace: 2e8b2822-4ed2-4783-a312-3b2be270e9f2
+        file-extension: yml
+        group: dev
+        prefix: task
+  profiles:
+    active: dev

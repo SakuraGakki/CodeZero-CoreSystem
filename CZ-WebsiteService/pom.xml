@@ -8,6 +8,7 @@
         <module>cms</module>
         <module>website</module>
         <module>gateway</module>
+        <module>task</module>
     </modules>
 
     <groupId>org.codezero</groupId>
