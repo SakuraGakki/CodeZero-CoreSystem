@@ -1,0 +1,8 @@
+.avatar image {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.avatar{
+    color:#1380c9;
+}

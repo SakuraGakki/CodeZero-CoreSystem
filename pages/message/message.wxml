@@ -1,0 +1,72 @@
+<view style="height: auto;">
+    <text>\n</text>
+    <view style="width: 100%;">
+        <i-row>
+            <i-col span="22" offset="1">
+                <span style="font-size: 30px;color:#1380c9">留言板</span>
+            </i-col>
+        </i-row>
+    </view>
+    <view style="width: 100%;">
+        <text>\n</text>
+        <i-row>
+            <i-col span="16" offset="1">
+                <span style="font-size: 15px;color:#1380c9">新建留言</span>
+            </i-col>
+            <i-col span="6">
+                <i-button size="small" shape="circle" type="primary" bind:click="saveButton">保存</i-button>
+            </i-col>
+        </i-row>
+        <i-row>
+            <i-col span="16" offset="1">
+                <span style="font-size: 15px;color:#1380c9">留言内容</span>
+            </i-col>
+        </i-row>
+        <i-row>
+            <i-col span="20" offset="1">
+                <input class="weui-input" bindinput="bindKeyInput" placeholder="请输入留言内容(最多50字)" type="text" maxlength="50"/>
+
+            </i-col>
+        </i-row>
+        <text>\n</text>
+    </view>
+    <view style="width: 100%;">
+        <i-row>
+            <i-col span="22" offset="1">
+                <span style="font-size: 15px;color:#1380c9">留言列表</span>
+            </i-col>
+        </i-row>
+        <text>\n</text>
+       <view wx:for="{{messageList}}">
+        <i-card wx:if="{{item.ip}} !== ''" title="{{item.city}}" extra="{{item.date}}" thumb="{{item.ip}}" i-class="avatar">
+            <view slot="content">{{item.content}}</view>
+            <view slot="footer">站长回复：{{item.list[0].content}} \n {{item.list[0].date}} </view>
+        </i-card>
+        <i-card wx:else="{{item.ip}} === ''" title="{{item.city}}" extra="{{item.date}}"  i-class="avatar">
+            <view slot="content">{{item.content}}</view>
+            <view slot="footer">站长回复：{{item.list[0].content}} \n {{item.list[0].date}}</view>
+        </i-card>
+        <text>\n</text>
+       </view>
+    </view>
+    <view style="width: 100%;margin-bottom:50px;">
+        <i-page current="{{ page.current }}" total="{{page.total}}" bind:change="handleChange">
+    <view slot="prev">
+        <i-icon type="return"></i-icon>
+        上一页
+    </view>
+    <view slot="next">
+        下一页
+        <i-icon type="enter"></i-icon>
+    </view>
+</i-page>
+    </view>
+    <view style="width: 100%;position: fixed;bottom: 0px;">
+        <i-tab-bar current="{{ current }}" color="#1380c9" bindchange="handleChange">
+            <i-tab-bar-item key="home" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+            <i-tab-bar-item key="message" icon="message" current-icon="message_fill" title="留言"></i-tab-bar-item>
+            <i-tab-bar-item key="article" icon="document" current-icon="document_fill" title="文章"></i-tab-bar-item>
+            <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+        </i-tab-bar>
+    </view>
+</view>
