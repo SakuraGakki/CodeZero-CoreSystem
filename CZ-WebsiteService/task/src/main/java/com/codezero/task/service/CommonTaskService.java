@@ -61,7 +61,6 @@ public class CommonTaskService {
             List<News> newsList = transformNewsInfoToNews(list);
             redisUtil.set("newsInfo", JSONArray.toJSONString(newsList));
             int i = newsMapper.insertBatch(newsList);
-            log.info("redis中新闻信息值："+JSONArray.parseArray(redisUtil.get("newsInfo").toString()).toString());
             if(i==newsList.size()){
                 log.info("头条任务全部结束共"+i+"条数据被处理！");
             }else{
@@ -87,7 +86,6 @@ public class CommonTaskService {
             List<Keywords> keywordsList = transformKeywordInfoToKeywords(list);
             redisUtil.set("keywordsInfo", JSONArray.toJSONString(keywordsList));
             int i = keywordsMapper.insertBatch(keywordsList);
-            log.info("redis中热搜信息值："+JSONArray.parseArray(redisUtil.get("keywordsInfo").toString()).toString());
             if(i==keywordsList.size()){
                 log.info("热搜任务全部结束共"+i+"条数据被处理！");
             }else{
@@ -113,7 +111,6 @@ public class CommonTaskService {
             Days days = transformDaysInfoToDays(daysResponseBody);
             redisUtil.set("calendarInfo", JSONObject.toJSONString(days));
             int i = daysMapper.insert(days);
-            log.info("redis中日历信息值："+JSONObject.parseObject(redisUtil.get("calendarInfo").toString()).toString());
             if(i==1){
                 log.info("黄历任务结束共"+i+"条数据被处理！");
             }else{
