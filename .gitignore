@@ -1,0 +1,12 @@
+/dist/
+/node_modules/
+/pages/
+/utils/
+/.eslintrc.js
+/app.js
+/app.json
+/app.wxss
+/package.json
+/package-lock.json
+/project.config.json
+/sitemap.json
