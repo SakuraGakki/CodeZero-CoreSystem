@@ -27,7 +27,6 @@ Page({
       province:"",
       city:"",
       weather:{
-        imgSrc:"",
         today:{
           date:"",
           temperature:"",
@@ -96,62 +95,36 @@ Page({
             latitude:res.latitude,
             longitude:res.longitude
           })
-          that.getCity()
+          that.getCityAndWeather()
         }
        })
     },
 
-    //根据经纬度坐标获取地理位置
-    getCity(){
-      let that = this
-      wx.request({
-        url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat='+that.data.latitude+'&lon='+that.data.longitude+'&zom=18&addressdetails=1',
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success (res) {
-          that.setData({
-            country:res.data.display_name.split(",")[res.data.display_name.split(",").length-1],
-            province:res.data.display_name.split(",")[res.data.display_name.split(",").length-3],
-            city:res.data.display_name.split(",")[res.data.display_name.split(",").length-4]
-          })
-          that.getWeather()
-        }
-      })
-    },
-
-    //获取天气信息
-    getWeather(){
-      let that = this
-        if(wx.getStorageSync(formatTime("YYYY-MM-DD")+that.data.country+that.data.province+that.data.city)){
-          that.setData({weather:wx.getStorageSync(formatTime("YYYY-MM-DD")+that.data.country+that.data.province+that.data.city)})
-        }else{
-          // let cityName = encodeURI(this.data.city.substring(0,this.data.city.length-1))
-          wx.request({
-            url:"https://way.jd.com/jisuapi/weather?city="+this.data.city.substring(0,this.data.city.length-1)+"&appkey=f89330d75709e6c1029839d97aa0004c",
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success (res) {
-              if(res.data.msg==='查询成功'){
-                 //今天
-                 that.setData({
-                   weather:{
-                     today:{
-                       date:res.data.result.result.date,
-                       temperature:res.data.result.result.templow+"~"+res.data.result.result.temphigh,
-                       humidity:res.data.result.result.humidity,
-                       weather:res.data.result.result.weather,
-                       direct:res.data.result.result.winddirect,
-                       power:res.data.result.result.windpower,
-                       aqi:res.data.result.result.aqi.aqi
-                     }}
-                  })
-                 wx.setStorageSync(formatTime("YYYY-MM-DD")+that.data.country+that.data.province+that.data.city,that.data.weather)
-              }
+    //查询地点及天气
+    getCityAndWeather(){
+      this._request = new request
+      this._request.postRequest(baseUrl+"/cms/getLocationAndWeather",{"latitude":this.data.latitude,"longitude":this.data.longitude},{'content-type': 'application/json'}).then(
+          res=>{
+            if(res.data.status===0){
+              this.setData({
+                country:res.data.data.country,
+                province:res.data.data.province,
+                city:res.data.data.city,
+                weather:{
+                  today:{
+                    date:res.data.data.date,
+                    temperature:res.data.data.temperature,
+                    humidity:res.data.data.humidity,
+                    weather:res.data.data.weather,
+                    direct:res.data.data.direct,
+                    power:res.data.data.power,
+                    aqi:res.data.data.aqi
+                  }
+                }
+              })
             }
-          })
-        }
+          }  
+        )
     },
 
     //获取头条消息

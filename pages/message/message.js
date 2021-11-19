@@ -1,5 +1,9 @@
 // pages/message/message.js
 import {formatTime} from '../../utils/util'
+import request from '../../utils/requestUtil'
+const { $Message } = require('../../dist/base/index');
+var app = getApp();
+const baseUrl = app.globalData.baseUrl
 Page({
 
     /**
@@ -87,52 +91,36 @@ Page({
 
     },
     queryMessageList() {
-        let that = this
-        wx.request({
-            url: 'http://www.codezer0.cn:8000/website/messageboard/getMessageBoardList',
-            data:{
-                current:this.data.page.current,
-                size:this.data.page.current
-            },
-            method:'POST',
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success (res) {
-            if (res.data.status === 0) {      
-                let total = Math.round(res.data.data.total/res.data.data.size)===0?1:Math.round(res.data.data.total/res.data.data.size)
-                that.setData({messageList:res.data.data.records,page:{total:total,current:res.data.data.current,size:res.data.data.size}})
-            } else {
-                that.handleError("查询留言列表失败！")
+      this._request = new request
+      this._request.postRequest(baseUrl+"/website/messageboard/getMessageBoardList",{"current":this.data.page.current,
+        "size":this.data.page.current},{'content-type': 'application/json'}).then(
+          res=>{
+            if(res.data.status===0){
+            let total = Math.round(res.data.data.total/res.data.data.size)===0?1:Math.round(res.data.data.total/res.data.data.size)
+            this.setData({messageList:res.data.data.records,page:{total:total,current:res.data.data.current,size:res.data.data.size}})
+            }else {
+                this.handleError("查询留言列表失败！")
             }
-          }
-      })
+          }  
+        )
     },
     saveMessageInfo() {
-        let that = this
-        wx.request({
-            url: 'http://www.codezer0.cn:8000/website/messageboard/adminInsertMessageBoardInfo',
-            data:{
-                ip: that.data.ip,
-                city: that.data.city,
-                date: formatTime('YYYY-MM-DD hh:mm:ss'),
-                content: that.data.messageContent
-            },
-            method:'POST',
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success (res) {
-            if (res.data.status === 0) {      
-                that.queryMessageList()
-                that.setData({
+      this._request = new request
+      this._request.postRequest(baseUrl+"/website/messageboard/adminInsertMessageBoardInfo",{"ip": this.data.ip,
+        "city": this.data.city,
+        "date": formatTime('YYYY-MM-DD hh:mm:ss'),
+        "content": this.data.messageContent},{'content-type': 'application/json'}).then(
+          res=>{
+            if(res.data.status===0){
+                this.queryMessageList()
+                this.setData({
                     messageContent: ""
                 })
-            } else {
-                that.handleError("留言保存失败！")
+            }else {
+                this.handleError("留言保存失败！")
             }
-          }
-      })
+          }  
+        )
     },
     handleChange ({ detail }) {
         if(['article','more'].indexOf(detail.key)>-1){
