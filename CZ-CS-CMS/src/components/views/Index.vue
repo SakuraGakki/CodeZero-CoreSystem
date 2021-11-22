@@ -660,10 +660,10 @@
                         normal:{
                             color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                 offset: 0,
-                                color: this.colorList[i].c1
+                                color: this.colorList[i%10].c1
                             }, {
                                 offset: 1,
-                                color: this.colorList[i].c2
+                                color: this.colorList[i%10].c2
                             }])
                         }
                     }
