@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="版本编译后提交">
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.4025aa4bce260d450c30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/app.4025aa4bce260d450c30.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.9d0445b2fe10b4cb3517.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.9d0445b2fe10b4cb3517.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="CMS调整访客星级计算逻辑" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +123,7 @@
       <workItem from="1635143474719" duration="8000" />
       <workItem from="1635143746638" duration="3613000" />
       <workItem from="1635216314913" duration="912000" />
-      <workItem from="1637558978897" duration="1879000" />
+      <workItem from="1637558978897" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="变更CMS工程">
       <created>1629959412217</created>
@@ -230,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637561726873</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="CMS调整访客星级计算逻辑">
+      <created>1637566712336</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1637566712336</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +263,8 @@
     <MESSAGE value="新增我的日常模块" />
     <MESSAGE value="CMS首页访客地点信息echart图表的颜色分配方案调整" />
     <MESSAGE value="版本编译后提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="版本编译后提交" />
+    <MESSAGE value="CMS调整访客星级计算逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="CMS调整访客星级计算逻辑" />
   </component>
   <component name="WindowStateProjectService">
     <state x="703" y="409" key="#ESLint" timestamp="1629957140361">
