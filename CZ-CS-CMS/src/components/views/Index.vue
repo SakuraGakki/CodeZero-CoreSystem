@@ -624,7 +624,7 @@
                     if (res.status === 0) {
                         this.visitor.today = res.data.today
                         this.visitor.total = res.data.total
-                        this.visitor.per = Math.round(this.visitor.today / 100) > 100 ? 100 : Math.round(this.visitor.today / 100)
+                        this.visitor.per = this.visitor.today > 100 ? 100 : this.visitor.today
                         this.visitor.hot = this.visitor.today > 14 ? (this.visitor.today > 28 ? (this.visitor.today > 42 ? (this.visitor.today > 56 ? (this.visitor.today >= 70 ? 5 : 0) : 4) : 3) : 2) : 1
                         // console.log("访客百分比", this.visitor.per)
                         // console.log("访客热度", this.visitor.hot)
