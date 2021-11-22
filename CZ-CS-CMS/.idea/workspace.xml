@@ -19,8 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="新增我的日常模块">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3d8639e7-7bfd-4fc8-87b0-44329d29e60d" name="Default Changelist" comment="版本编译后提交">
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/app.4025aa4bce260d450c30.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/app.4025aa4bce260d450c30.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.9d0445b2fe10b4cb3517.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/js/manifest.9d0445b2fe10b4cb3517.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/views/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +130,7 @@
       <workItem from="1635143474719" duration="8000" />
       <workItem from="1635143746638" duration="3613000" />
       <workItem from="1635216314913" duration="912000" />
-      <workItem from="1637558978897" duration="874000" />
+      <workItem from="1637558978897" duration="1879000" />
     </task>
     <task id="LOCAL-00001" summary="变更CMS工程">
       <created>1629959412217</created>
@@ -212,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635145597545</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="CMS首页访客地点信息echart图表的颜色分配方案调整">
+      <created>1637561604737</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637561604737</updated>
+    </task>
+    <task id="LOCAL-00014" summary="版本编译后提交">
+      <created>1637561726873</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637561726873</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +261,9 @@
     <MESSAGE value="CMS添加文章功能模块" />
     <MESSAGE value="调整文章标题长度" />
     <MESSAGE value="新增我的日常模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增我的日常模块" />
+    <MESSAGE value="CMS首页访客地点信息echart图表的颜色分配方案调整" />
+    <MESSAGE value="版本编译后提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="版本编译后提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="703" y="409" key="#ESLint" timestamp="1629957140361">
@@ -316,10 +336,10 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="595" y="251" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.25.1680.976@0.25.1680.976" timestamp="1632733306763" />
-    <state x="578" y="173" width="567" height="682" key="find.popup" timestamp="1635147721201">
-      <screen x="0" y="25" width="1680" height="977" />
+    <state x="577" y="173" width="567" height="680" key="find.popup" timestamp="1637566365464">
+      <screen x="0" y="25" width="1680" height="975" />
     </state>
-    <state x="577" y="173" width="567" height="680" key="find.popup/0.25.1680.975@0.25.1680.975" timestamp="1632389036048" />
+    <state x="577" y="173" width="567" height="680" key="find.popup/0.25.1680.975@0.25.1680.975" timestamp="1637566365464" />
     <state x="448" y="143" width="567" height="681" key="find.popup/0.25.1680.976@0.25.1680.976" timestamp="1634888520908" />
     <state x="578" y="173" width="567" height="682" key="find.popup/0.25.1680.977@0.25.1680.977" timestamp="1635147721201" />
     <state x="2339" y="185" width="602" height="735" key="find.popup/1680.25.1920.1055/0.25.1680.976@1680.25.1920.1055" timestamp="1629960430093" />
