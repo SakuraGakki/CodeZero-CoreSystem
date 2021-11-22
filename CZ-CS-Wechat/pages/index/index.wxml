@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view>
+  <div id="app">
+      <ul class="indexMenu">
+      <li class="menuList">
+        <span class="menuFont" bindtap="goHomePage">{{ menu }}</span>
+      </li>
+      <div class="logo-div">
+        <image class="logo" src="{{ logoUrl }}"/>
+      </div>
+    <span class="title">{{ title }}</span>
+    </ul>
+    </div>
+    <ul class="cb-slideshow">
+    <li><span></span><div><h3>{{ subTitles[0] }}</h3></div></li>
+    <li><span></span><div><h3>{{ subTitles[1] }}</h3></div></li>
+    <li><span></span><div><h3>{{ subTitles[2] }}</h3></div></li>
+    <li><span></span><div><h3>{{ subTitles[3] }}</h3></div></li>
+    <li><span></span><div><h3>{{ subTitles[4] }}</h3></div></li>
+    <li><span></span><div><h3>{{ subTitles[5] }}</h3></div></li>
+  </ul>
+</view>

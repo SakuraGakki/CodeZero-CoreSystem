@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/webview/webview",
+    "pages/message/message"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "CodeZero",
+    "navigationBarTextStyle":"white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
+    "i-modal": "../../dist/modal/index",
+    "i-notice-bar": "../../dist/notice-bar/index",
+    "i-avatar": "../../dist/avatar/index",
+    "i-divider": "../../dist/divider/index",
+    "i-card": "../../dist/card/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-tab-bar": "../../dist/tab-bar/index",
+    "i-tab-bar-item": "../../dist/tab-bar-item/index",
+    "i-icon": "../../dist/icon/index",
+    "i-swipeout": "../../dist/swipeout/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index",
+    "i-page": "../../dist/page/index",
+    "i-input": "../../dist/input/index",
+    "i-panel": "../../dist/panel/index",
+    "i-button": "../../dist/button/index",
+    "i-alert": "../../dist/alert/index",
+    "i-message": "../../dist/message/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  }
+}
