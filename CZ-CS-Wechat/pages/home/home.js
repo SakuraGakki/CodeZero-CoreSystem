@@ -43,7 +43,9 @@ Page({
     },
     onLoad() {
       if(wx.getStorageSync('userInfo')){
-        this.setData({userInfo:wx.getStorageSync('userInfo')})
+        this.setData({hasUserInfo:true,userInfo:wx.getStorageSync('userInfo')})
+      }else{
+        this.setData({hasUserInfo:false})
       }
       this.getWelcome()
       this.getLocation()

@@ -15,6 +15,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl:"http://59.110.218.235:8000"
+    baseUrl:"http://www.codezer0.cn:8000"
   }
 })

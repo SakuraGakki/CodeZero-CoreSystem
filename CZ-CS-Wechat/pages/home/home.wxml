@@ -2,7 +2,7 @@
     <i-message id="message" />
     <!-- 授权弹窗 -->
     <i-modal title="提示" visible="{{ !hasUserInfo }}" actions="{{ actions }}" bind:click="handleClick">
-        <view>请先进行微信授权！！</view>
+        <view><text>请先进行授权\n以便获得更好的个性化体验！</text></view>
     </i-modal>
 
     <!-- 通知 -->
