@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/home/home",
     "pages/webview/webview",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/article/article",
+    "pages/articleViewer/articleViewer"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,7 +35,8 @@
     "i-panel": "../../dist/panel/index",
     "i-button": "../../dist/button/index",
     "i-alert": "../../dist/alert/index",
-    "i-message": "../../dist/message/index"
+    "i-message": "../../dist/message/index",
+    "i-tag": "../../dist/tag/index"
   },
   "permission": {
     "scope.userLocation": {

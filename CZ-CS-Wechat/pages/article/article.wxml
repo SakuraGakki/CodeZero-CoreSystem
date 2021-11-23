@@ -1,0 +1,91 @@
+<view style="height: auto;">
+    <i-message id="message" />
+    <text>\n</text>
+    <view style="width: 100%;">
+        <i-row>
+            <i-col span="22" offset="1">
+                <span style="font-size: 30px;color:#1380c9">文章列表</span>
+            </i-col>
+        </i-row>
+    </view>
+    <view style="width: 100%;">
+        <i-tabs current="{{ current }}" bindchange="handleChange">
+            <i-tab key="local" title="本站文章">
+                
+            </i-tab>
+            <i-tab key="wechat" title="公众号文章"></i-tab>
+        </i-tabs>
+    </view>
+    <view style="width: 100%;" wx:if="{{current==='local'}}">
+        <view style="width: 100%;">
+                <text>\n</text>
+                <view wx:for="{{articleList}}" wx:for-item="articleInfo" wx:for-index="x">
+                    <i-card title="{{articleInfo.articleTitle}}" extra="{{articleInfo.date}}" bindtap="articleDetail" data-articleId="{{articleInfo.articleId}}"
+                    data-articleTitle="{{articleInfo.articleTitle}}"
+                    data-date="{{articleInfo.date}}"
+                    >
+                        <view slot="content">
+                            标签：
+                            <i-tag 
+                                wx:for="{{tagList[x]}}" 
+                                wx:for-index="y"
+                                wx:key="{{index}}" 
+                                color="{{colorList[y%4]}}"  
+                                type="border"
+                                style="margin-right:5px;">
+                                {{tagList[x][y]}}
+                            </i-tag>
+                        </view>
+                        <view slot="footer">阅读数：{{articleInfo.readNum}}</view>
+                    </i-card>
+                    <text>\n</text>
+                </view>
+                </view>
+                <view style="width: 100%;margin-bottom:50px;">
+                    <i-page current="{{ page.current }}" total="{{page.total}}" bind:change="handleChange">
+                        <view slot="prev">
+                            <i-icon type="return"></i-icon>
+                            上一页
+                        </view>
+                        <view slot="next">
+                            下一页
+                            <i-icon type="enter"></i-icon>
+                        </view>
+                    </i-page>
+                </view>
+    </view>
+    <view style="width: 100%;" wx:if="{{current==='wechat'}}">
+        <view style="width: 100%;">
+                <text>\n</text>
+                <view wx:for="{{wechatArticleList}}">
+                    <i-card title="{{item.title}}" extra="{{item.date}}" bindtap="wechatArticleDetail" data-url="{{item.url}}"
+                    >
+                        <view slot="content">
+                            <image src="{{item.imgUrl}}" style="height: 100px;"/>
+                        </view>
+                    </i-card>
+                    <text>\n</text>
+                </view>
+        </view>
+                <view style="width: 100%;margin-bottom:50px;">
+                    <i-page current="{{ page.current }}" total="{{page.total}}" bind:change="handleChange">
+                        <view slot="prev">
+                            <i-icon type="return"></i-icon>
+                            上一页
+                        </view>
+                        <view slot="next">
+                            下一页
+                            <i-icon type="enter"></i-icon>
+                        </view>
+                    </i-page>
+                </view>
+    </view>
+    <view style="width: 100%;position: fixed;bottom: 0px;">
+        <i-tab-bar current="{{ current }}" color="#1380c9" bindchange="handleChange">
+            <i-tab-bar-item key="home" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+            <i-tab-bar-item key="message" icon="message" current-icon="message_fill" title="留言"></i-tab-bar-item>
+            <i-tab-bar-item key="article" icon="document" current-icon="document_fill" title="文章"></i-tab-bar-item>
+            <i-tab-bar-item key="more" icon="feedback" current-icon="feedback_fill" title="更多"></i-tab-bar-item>
+        </i-tab-bar>
+    </view>
+</view>

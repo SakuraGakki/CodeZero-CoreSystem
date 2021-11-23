@@ -210,7 +210,7 @@ Page({
         }   
     },
     handleChange ({ detail }) {
-      if(['article','more'].indexOf(detail.key)>-1){
+      if(['more'].indexOf(detail.key)>-1){
         $Message({
           content: '功能还未完成，敬请期待...',
           type: 'warning'

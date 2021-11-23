@@ -1,0 +1,9 @@
+<view style="width: 100%;">
+    <text>\n</text>
+    <i-card title="{{title}}" extra="{{date}}">
+        <view slot="content">
+            <rich-text nodes="{{nodes}}" style="overflow-x: auto;"></rich-text>
+        </view>
+    </i-card>
+    <text>\n</text>
+</view>
