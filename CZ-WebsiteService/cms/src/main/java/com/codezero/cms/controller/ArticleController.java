@@ -120,4 +120,14 @@ public class ArticleController {
     public BaseResponse addArticleReadNum(ArticleRequest articleRequest){
         return articleService.addArticleReadNum(articleRequest);
     }
+
+    /**
+     * 增加文章阅读数（微信小程序）
+     * @param articleRequest
+     * @return
+     */
+    @RequestMapping(value = "/addArticleReadNumWechat", method = RequestMethod.POST, name = "增加文章阅读数(微信小程序)")
+    public BaseResponse addArticleReadNumWechat(@RequestBody ArticleRequest articleRequest){
+        return articleService.addArticleReadNum(articleRequest);
+    }
 }
