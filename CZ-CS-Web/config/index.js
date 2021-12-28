@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/cms':{
-        target: "http://59.110.218.235:8000/",
+        target: "https://www.codezer0.cn:8000/",
         changeOrigin: true,
         secure: false,
         pathRewrite:{

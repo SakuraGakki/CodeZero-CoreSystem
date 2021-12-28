@@ -13,7 +13,10 @@
     </div>
     <div style="background-color: #aca7a7">
       <ul class="me-footer">
-        <span class="me-footer-font">©2021 CodeZero  ICP备案号：<a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2021010634号-1</a></span>
+        <span class="me-footer-font">
+          <div  style="width: 100%; margin: -15px auto; padding: 10px 0px;background-color: #a1aab8"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21010502000602" style="display: inline-block; text-decoration: none; text-align: center;"><img src="../../assets/img/beian.png" style="float: left;"> <p style="float: left; margin: 0px 0px 0px 5px; color: rgb(54, 53, 53); text-align: center; display: block;">辽公网安备 21010502000602号</p></a> <span style="display: inline-block; text-decoration: none; text-align: center; top: -6px; position: relative;"> &nbsp;&nbsp;&nbsp;&nbsp; ©2021 CodeZero  &nbsp;&nbsp;&nbsp;&nbsp;ICP备案号：
+          <a  href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2021010634号-1</a></span></div>
+        </span>
       </ul>
     </div>
   </div>

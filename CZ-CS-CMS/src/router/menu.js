@@ -39,6 +39,14 @@ const menu = [
     level: 1,
     fixed: false,
     children: []
+  },
+  {
+    path: '/books',
+    name: '书籍列表',
+    icon: 'icon iconfont icon-label_fill',
+    level: 1,
+    fixed: false,
+    children: []
   }
   // {
   //   path: '/',

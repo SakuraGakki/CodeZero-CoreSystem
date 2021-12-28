@@ -7,6 +7,8 @@ import ArticleList from "@/components/views/Article/ArticleList"
 import NewArticle from "@/components/views/Article/NewArticle"
 import ArticlePreView from "@/components/views/Article/ArticlePreView"
 import Daily from "@/components/views/Daily/Daily";
+import Book from "@/components/views/Book/Books"
+import BookContent from "@/components/views/Book/BookContent"
 
 
 import Chart from '@/components/views/Chart'
@@ -84,6 +86,22 @@ const routes = [
         component: Daily,
         meta: {
           requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/books',
+        name: '书籍列表',
+        component: Book,
+        meta: {
+          requiresAuth: true // 是否需要登录
+        }
+      },
+      {
+        path: '/booksContents',
+        name: '内容列表',
+        component: BookContent,
+        meta: {
+          requiresAuth: true
         }
       },
       {

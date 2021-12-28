@@ -162,7 +162,7 @@
         city:"",
         poem1:"",
         poem2:"",
-        headerImgSrc:"http://59.110.218.235:8011/images/avator.jpeg",
+        headerImgSrc:"https://www.codezer0:8011/images/avator.jpeg",
         wechatArticleList:[],
         dynamicList:[]
       }
@@ -245,7 +245,7 @@
   .me-index-div {
     margin: 0 auto;
     width: 1200px;
-    height: calc(100vh);
+    height: calc(100vh - 75px);
     box-shadow: 2px 2px 10px #909090;
   }
 

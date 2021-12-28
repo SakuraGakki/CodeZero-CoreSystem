@@ -9,7 +9,7 @@ var config = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'http://59.110.218.235:8000',
+    baseServerUrl: 'https://www.codezer0.cn:8000',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -29,7 +29,7 @@ var config = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'http://59.110.218.235:8000',
+    baseServerUrl: 'http://localhost:8000',
     proxyTable: {
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
