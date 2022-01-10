@@ -36,7 +36,8 @@
     "i-button": "../../dist/button/index",
     "i-alert": "../../dist/alert/index",
     "i-message": "../../dist/message/index",
-    "i-tag": "../../dist/tag/index"
+    "i-tag": "../../dist/tag/index",
+    "i-drawer": "../../dist/drawer/index"
   },
   "permission": {
     "scope.userLocation": {

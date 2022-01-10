@@ -6,6 +6,8 @@ const baseUrl = app.globalData.baseUrl
 
 Page({
     data: {
+      showContent:false,
+      newsContent:"",
       actions: [
         {
             name: '点击授权登录',
@@ -17,9 +19,9 @@ Page({
       ],
       userInfo: {},
       hasUserInfo: wx.getStorageSync('userInfo')?true:false,
-      notice:"欢迎访问CodeZero，电脑端请访问http://www.codezer0.cn 。",
+      notice:"欢迎访问CodeZero，电脑端请访问https://www.codezer0.cn 。",
       welcome:"欢迎您",
-      backgroundUrl:"http://www.codezer0.cn:8011/images/wechatApp/index/logoHomePage.png",
+      backgroundUrl:"https://www.codezer0.cn:8011/images/wechatApp/index/logoHomePage.png",
       current:"home",
       latitude:0,
       longitude:0,
@@ -223,9 +225,20 @@ Page({
     },
     newInfo(e){
       console.log("e",e)
-      let url = e.currentTarget.dataset.url
-      wx.navigateTo({
-        url: "../webview/webview?url="+url,
+      // let url = e.currentTarget.dataset.url
+      // wx.navigateTo({
+      //   url: "../webview/webview?url="+url,
+      // })
+      let content = e.currentTarget.dataset.content
+      this.setData({
+        showContent:true,
+        newsContent:content
+      })
+    },
+    closeNewsContent(){
+      this.setData({
+        showContent:false,
+        newsContent:""
       })
     },
     onClose(){

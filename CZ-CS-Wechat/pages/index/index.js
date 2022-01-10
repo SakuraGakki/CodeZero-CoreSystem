@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    logoUrl:"http://www.codezer0.cn:8011/images/wechatApp/index/logoHomePage.png",
+    logoUrl:"https://www.codezer0.cn:8011/images/wechatApp/index/logoHomePage.png",
     menu:"首页",
     title:"欢迎访问CodeZero",
     subTitles:['Visualization','DataManage','CodeDesign','Analytics','Intelligence','Applications']

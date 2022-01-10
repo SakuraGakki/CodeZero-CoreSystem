@@ -13,7 +13,7 @@ Page({
         current:"message",
         page:{
             current:1,
-            size:3,
+            size:5,
             total:100
         },
         messageContent: "",
@@ -22,17 +22,20 @@ Page({
         messageList: []
     },
 
-    handleChange ({ detail }) {
+    pageChange ({ detail }) {
+        console.log(detail)
         const type = detail.type;
         if (type === 'next') {
             this.setData({
-                current: this.data.current + 1
+                page:{current: this.data.page.current + 1}
             });
         } else if (type === 'prev') {
             this.setData({
-                current: this.data.current - 1
+                page:{current: this.data.page.current - 1}
             });
         }
+        console.log("当前页码："+this.data.page.current)
+        this.queryMessageList()
     },
 
     /**
@@ -92,9 +95,10 @@ Page({
     },
     queryMessageList() {
       this._request = new request
-      this._request.postRequest(baseUrl+"/website/messageboard/getMessageBoardList",{"current":this.data.page.current,
+      this._request.postRequest(baseUrl+"/website/messageboard/getMessageBoardListWechat",{"current":this.data.page.current,
         "size":this.data.page.size},{'content-type': 'application/json'}).then(
           res=>{
+              console.log("留言列表查询结果："+res)
             if(res.data.status===0){
             let total = Math.round(res.data.data.total/res.data.data.size)===0?1:Math.round(res.data.data.total/res.data.data.size)
             this.setData({messageList:res.data.data.records,page:{total:total,current:res.data.data.current,size:res.data.data.size}})
@@ -105,22 +109,30 @@ Page({
         )
     },
     saveMessageInfo() {
-      this._request = new request
-      this._request.postRequest(baseUrl+"/website/messageboard/adminInsertMessageBoardInfo",{"ip": this.data.ip,
-        "city": this.data.city,
-        "date": formatTime('YYYY-MM-DD hh:mm:ss'),
-        "content": this.data.messageContent},{'content-type': 'application/json'}).then(
-          res=>{
-            if(res.data.status===0){
-                this.queryMessageList()
-                this.setData({
-                    messageContent: ""
-                })
-            }else {
-                this.handleError("留言保存失败！")
-            }
-          }  
-        )
+      if(this.data.messageContent){
+        this._request = new request
+        this._request.postRequest(baseUrl+"/website/messageboard/adminInsertMessageBoardInfo",{"ip": this.data.ip,
+          "city": this.data.city,
+          "date": formatTime('YYYY-MM-DD hh:mm:ss'),
+          "content": this.data.messageContent},{'content-type': 'application/json'}).then(
+            res=>{
+              if(res.data.status===0){
+                  this.queryMessageList()
+                  this.setData({
+                      messageContent: ""
+                  })
+              }else {
+                  this.handleError("留言保存失败！")
+              }
+            }  
+          )
+      }else{
+        $Message({
+            content: '请输入留言内容再保存！',
+            type: 'error'
+        });
+      }
+      
     },
     handleChange ({ detail }) {
         if(['more'].indexOf(detail.key)>-1){

@@ -51,7 +51,7 @@
        </view>
     </view>
     <view style="width: 100%;margin-bottom:50px;">
-        <i-page current="{{ page.current }}" total="{{page.total}}" bind:change="handleChange">
+        <i-page current="{{ page.current }}" total="{{page.total}}" bind:change="pageChange">
     <view slot="prev">
         <i-icon type="return"></i-icon>
         上一页

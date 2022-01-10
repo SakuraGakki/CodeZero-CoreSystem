@@ -10,7 +10,7 @@
 }
 .dog-eared-tip{
     padding: 7.5px 5px 7.5px 20px;
-    background-image: url("http://www.codezer0.cn:8011/images/wechatApp/calenderBG.jpeg");
+    background-image: url("https://www.codezer0.cn:8011/images/wechatApp/calenderBG.jpeg");
     background-size: cover;  
     font-size: 13px;
     position: absolute;
@@ -104,4 +104,9 @@
   height: 0px;
   border-top: 69px solid #ffffff; 
   border-left: 69px solid transparent;
+}
+
+.newsModal {
+    height: 500px;
+    width: 400px;
 }
