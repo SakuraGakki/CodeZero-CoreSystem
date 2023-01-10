@@ -7,6 +7,7 @@ import com.codezero.website.entity.base.PageRequest;
 import com.codezero.website.entity.messageboard.*;
 import com.codezero.website.pojo.messageboard.AllMessageBoard;
 import com.codezero.website.pojo.messageboard.MessageBoard;
+import com.codezero.website.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,11 @@ public class MessageBoardService {
     @Transactional(propagation = Propagation.REQUIRED)
     public BaseResponse insertMessageBoardInfo(MessageBoardRequest messageBoardRequest){
         BaseResponse baseResponse = new BaseResponse();
+        if(StringUtils.isBlank(messageBoardRequest.getIp())||StringUtils.isBlank(messageBoardRequest.getCity())||StringUtils.isBlank(messageBoardRequest.getContent().trim())){
+            baseResponse.setStatus(-1);
+            baseResponse.setMessage("您的头像、昵称或留言为空，请授权登录后添加留言内容再次留言！");
+            return baseResponse;
+        }
         MessageBoard messageBoard = transformMessageBoardRequest(messageBoardRequest);
         messageBoard.setMsgType("0");
         messageBoard.setStatus("0");

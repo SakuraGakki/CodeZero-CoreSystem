@@ -10,6 +10,7 @@ import qrcodeUtil from "@/views/utils/qrcodeUtil"
 import encodeUtil from "@/views/utils/encodeUtil"
 import colorUtil from "@/views/utils/colorUtil"
 import ipUtil from "@/views/utils/ipUtil"
+import regularExpressionsUtil from "@/views/utils/regularExpressionsUtil"
 import ArticleList from "@/views/article/articleList"
 import ArticleContent from "@/views/article/articleContent"
 
@@ -62,6 +63,11 @@ export default new Router({
           path:'/ipUtil',
           name:'ipUtil',
           component:ipUtil
+        },
+        {
+          path:'/regularExpressionsUtil',
+          name:'regularExpressionsUtil',
+          component:regularExpressionsUtil
         },
         // {
         //   path: '/messageboard',

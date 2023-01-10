@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezero.cms.dao.BookMapper">
+
+    <resultMap type="com.codezero.cms.pojo.book.Books" id="BooksInfo">
+        <id column="book_id" jdbcType="VARCHAR" property="bookId" />
+        <result column="book_title" jdbcType="VARCHAR" property="bookTitle" />
+        <result column="book_subtitle" jdbcType="VARCHAR" property="bookSubTitle" />
+        <result column="author" jdbcType="VARCHAR" property="author" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+        <result column="img_id" jdbcType="VARCHAR" property="imgId" />
+        <result column="book_type" jdbcType="VARCHAR" property="bookType" />
+    </resultMap>
+
+    <resultMap type="com.codezero.cms.pojo.book.BooksContent" id="BooksContent">
+        <id column="content_order" jdbcType="INTEGER" property="contentOrder" />
+        <result column="book_id" jdbcType="VARCHAR" property="bookId" />
+        <result column="content_id" jdbcType="VARCHAR" property="contentId" />
+        <result column="content_title" jdbcType="VARCHAR" property="contentTitle" />
+        <result column="content_url" jdbcType="VARCHAR" property="contentUrl" />
+    </resultMap>
+
+    <select id="queryBooksList" resultMap="BooksInfo">
+        select * from books t
+        order by t.date DESC
+    </select>
+
+    <select id="queryBooksContentList" resultMap="BooksContent">
+        select * from books_content t where t.book_id = #{bookId}
+        order by t.content_order
+    </select>
+
+    <insert id="insertBook" parameterType="com.codezero.cms.pojo.book.Books">
+        insert into books
+        (book_id,book_title,book_subtitle,author,date,status,img_url,img_id,book_type)
+        values
+        (#{bookId},#{bookTitle},#{bookSubTitle},#{author},#{date},#{status},#{imgUrl},#{imgId},#{bookType})
+    </insert>
+
+    <insert id="insertBookContent" parameterType="com.codezero.cms.pojo.book.BooksContent">
+        insert into books_content
+        (book_id,content_id,content_title,content_url)
+        values
+        (#{bookId},#{contentId},#{contentTitle},#{contentUrl})
+    </insert>
+
+    <update id="publishBook">
+        update books t set t.status = "1" where t.book_id = #{bookId}
+    </update>
+
+    <update id="cancelBook">
+        update books t set t.status = "0" where t.book_id = #{bookId}
+    </update>
+
+    <select id="queryPublicBookList" resultMap="BooksInfo">
+        select * from books t where t.status = '1'
+        order by t.date DESC
+    </select>
+
+</mapper>

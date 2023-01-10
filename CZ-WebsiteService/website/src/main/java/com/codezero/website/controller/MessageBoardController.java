@@ -40,6 +40,16 @@ public class MessageBoardController {
     }
 
     /**
+     * 获取留言列表（包含回复）微信小程序
+     * @param page
+     * @return
+     */
+    @RequestMapping(value = "/getMessageBoardListWechat", method = RequestMethod.POST, name = "获取留言列表（包含回复）微信小程序")
+    public BaseResponse<Page<MessageBoardResponse>> getMessageBoardListWechat(@RequestBody PageRequest page){
+        return messageBoardService.getMessageBoardList(page);
+    }
+
+    /**
      * 插入主留言信息
      * @param messageBoardRequest
      * @return

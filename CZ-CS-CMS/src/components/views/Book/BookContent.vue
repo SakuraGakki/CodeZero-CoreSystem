@@ -1,26 +1,5 @@
 <template>
     <div class="list">
-        <!-- 搜索 v-show="state.searchState.show"-->
-        <Row class="search-filter" :class="{'active':searchState}">
-            <Col>
-                <Card>
-                    <Form :label-width="80" inline>
-                        <Form-item label="文章名称">
-                            <Input v-model="condition.keyword" placeholder="请输入" style="width:187px"></Input>
-                        </Form-item>
-                        <div class="clearfix" style="border-top:1px solid #eee;margin-top:-15px;padding-top:10px">
-          <span class="pull-right">
-              <Button type="primary" icon="ios-search" shape="circle" @click="">查询</Button>
-              <Button type="primary" icon="ios-close-empty" shape="circle" @click="reset()">重置</Button>
-              <Button type="primary" icon="ios-download-outline" shape="circle" @click="exportData(1)">导出数据</Button>
-            </span>
-
-                        </div>
-                    </Form>
-                </Card>
-            </Col>
-        </Row>
-        <!-- 搜索 /-->
         <Row>
             <Col>
                 <Card>
@@ -51,19 +30,16 @@
                 <span v-if="currIndex!=-1">编辑文章</span>
             </p>
             <div style="text-align:center">
-                <Form :label-width="80" :rules="ruleLine" :model="wechat" ref="wechatForm">
-                    <FormItem label="文章标题" prop="title">
-                        <Input v-model="wechat.title"></Input>
+                <Form :label-width="80" :model="content" ref="bookForm">
+                    <FormItem label="文章标题">
+                        <Input disabled v-model="content.contentTitle" ></Input>
                     </FormItem>
-                    <FormItem label="文章地址" prop="url">
-                        <Input v-model="wechat.url"></Input>
-                    </FormItem>
-                    <FormItem label="配图地址" prop="imgUrl">
+                    <FormItem label="文章地址">
                         <div class="demo-upload-list" v-if="currIndex!=-1">
-                            <img :src="wechat.imgUrl"/>
+                            <span>文章地址：{{content.contentUrl}}</span>
                         </div>
                         <div class="demo-upload-list" v-for="item in file">
-                            <img :src="item.src"/>
+                            <span>文件名称：{{item.name}}</span>
                             <div class="demo-upload-list-cover" @click="handleRemove()">
                                 <Icon type="ios-trash-outline" size="60"></Icon>
                             </div>
@@ -74,38 +50,32 @@
                             </Button>
                             <Button icon="ios-cloud-upload" type="success" style="width: 100px;"
                                     v-if="(file.length>0) && (!imageReady) && (currIndex!=-1)"
-                                    @click="upload(wechat.imgId)">替换上传
+                                    @click="upload(content.contentId)">替换上传
                             </Button>
                         </div>
                         <div style="width: 110px;display:inline;float: right">
                             <Upload
                                     style="width: 110px;"
-                                    ref="imgUpload"
+                                    ref="fileUpload"
                                     :before-upload="handleUpload"
                                     :action=action
-                                    :format="['jpg','jpeg','png']"
+                                    :format="['md','pdf']"
                                     :on-format-error="uploadFormatError"
                             >
-                                <Button icon="icon iconfont icon-tupian" v-if="!file.length>0">选择图片</Button>
+                                <Button icon="icon iconfont icon-tupian" v-if="!file.length>0">选择文件</Button>
                             </Upload>
                         </div>
-                        <Input v-model="wechat.imgUrl" disabled></Input>
-                    </FormItem>
-                    <FormItem label="发布时间" v-if="currIndex!=-1">
-                        <Input v-model="wechat.date" disabled></Input>
-                    </FormItem>
-                    <FormItem label="阅读数" v-if="currIndex!=-1">
-                        <Input v-model="wechat.read"></Input>
+                        <Input v-model="content.contentUrl" disabled></Input>
                     </FormItem>
                 </Form>
             </div>
 
             <div slot="footer">
-                <Button type="success" size="large" v-if="currIndex!=-1" long @click="uptWechatInfo()"
+                <Button type="success" size="large" v-if="currIndex!=-1" long @click="uptBookInfo()"
                         :loading="loading">
                     保存
                 </Button>
-                <Button type="success" size="large" v-if="currIndex==-1" long @click="addWechatInfo()"
+                <Button type="success" size="large" v-if="currIndex==-1" long @click="addBookInfo()"
                         :loading="loading">
                     保存
                 </Button>
@@ -113,39 +83,27 @@
         </Modal>
         <!-- 编辑/ -->
     </div>
+
 </template>
+
 <script>
     import elementResizeDetectorMaker from 'element-resize-detector'
-    import {getNowFormatDate, getNowFormatTime} from '@/common/utils/dateUtils'
 
     var erd = elementResizeDetectorMaker()
     export default {
-        name: 'weChatArticle',
+        name: 'BookContent',
         components: {},
         data() {
             return {
-                ruleLine: {
-                    title: {
-                        required: true,
-                        message: '标题不能为空'
-                    },
-                    url: {
-                        required: true,
-                        message: '文章链接路径不能为空'
-                    },
-                    imgUrl: {
-                        required: true,
-                        message: '文章配图不能为空'
-                    }
-                },
                 // 预览图片的src
                 src: '',
                 // 随便写个地址
-                action: 'http://59.110.218.235:8000/cms/wechat/wechatImageUpload',
+                action: '',
                 // 上传文件
                 file: [],
                 formData: new FormData(),
                 condition: {
+                    bookId:this.$route.query,
                     size: 10,
                     current: 1,
                     total: 0,
@@ -155,76 +113,34 @@
                 editModal: false,
                 loading2: false, // 分页loading
                 loading: false, // save
-                wechat: {
-                    title: '',
-                    url: '',
-                    imgUrl: '',
-                    imgId: '',
-                    date: '',
-                    read: 0
+                content: {
+                    bookId:this.$route.query,
+                    contentId:'',
+                    contentTitle: '',
+                    contentUrl: ''
                 },
                 currIndex: 0, // 当前编辑和新增的行号
                 listData: [], // @:data
                 columns: [
                     {
                         title: '文章标题',
-                        key: 'title',
-                        align: 'center',
-                    },
-                    {
-                        title: '文章地址',
-                        key: 'url',
-                        align: 'center'
-                    },
-                    {
-                        title: '阅读数',
-                        key: 'read',
-                        align: 'center'
-                    },
-                    {
-                        title: '发布日期',
-                        key: 'date',
-                        sortable: true,
-                        align: 'center'
-                    },
-                    {
-                        title: '操作',
-                        key: 'action',
-                        width: 120,
-                        fixed: 'right',
+                        key: 'contentTitle',
                         align: 'center',
                         render: (h, params) => {
-                            return h('div', [
-                                h('Button', {
-                                    props: {
-                                        type: 'text',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        color: '#5cadff'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.edit(params.index, 1)
-                                        }
+                            return h('span', {
+                                on: {
+                                    click: () => {
+                                        // 这里通常做路由跳转，弹窗显示，发送请求等
+                                        window.open(params.row.contentUrl)
                                     }
-                                }, '详情'),
-                                h('Button', {
-                                    props: {
-                                        type: 'text',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        color: '#5cadff'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.edit(params.index)
-                                        }
-                                    }
-                                }, '编辑')
-                            ])
+                                }
+                            }, params.row.bookTitle);
                         }
+                    },
+                    {
+                        title: '文章链接',
+                        key: 'contentUrl',
+                        align: 'center',
                     }
                 ]
             }
@@ -282,30 +198,26 @@
             },
             remove(index) {
             },
-            edit(index, type) {
+
+            edit(index) {
                 this.editModal = true
                 this.currIndex = index
-                if (type) {//详情
-                    this.editModal = false
-                    window.open(this.listData[index].url)
-                } else {
-                    if (index === -1) { // 新增
-                        this.imageReady = false
-                        this.file = []
-                        this.formData = new FormData()
-                        this.wechat = {
-                            seq: '',
-                            title: '',
-                            url: '',
-                            imgUrl: '',
-                            date: '',
-                            read: 0
-                        }
-                    } else { // 编辑
-                        this.wechat = this.listData[index]
+                if (index === -1) { // 新增
+                    this.imageReady = false
+                    this.file = []
+                    this.formData = new FormData()
+                    this.content= {
+                            bookId:this.$route.query,
+                            contentId:'',
+                            contentTitle: '',
+                            contentUrl: ''
                     }
+                } else { // 编辑
+                    this.content = this.listData[index]
                 }
-
+            },
+            openBook(bookId){
+                alert(bookId)
             },
             /**
              * 数据导出
@@ -337,9 +249,11 @@
              * 去除上传文件
              **/
             handleRemove() {
+                this.content.contentUrl = ""
+                this.content.contentTitle = ""
                 this.imageReady = false
                 this.file.splice(0, 1)
-                this.$refs.imgUpload.clearFiles()
+                this.$refs.fileUpload.clearFiles()
             },
 
             /**
@@ -362,6 +276,7 @@
                 } else {
                     this.file.push(file)
                     this.formData.append("file", file)
+                    this.content.contentTitle = this.file[0].name.split(".")[0]
                 }
                 // false代表不上传到action的地址，true的话会报错，因为action地址是瞎写的，action地址不写会报错。
                 return false;
@@ -377,18 +292,18 @@
                 }
                 if (imgId) {
                     this.formData.append("imgId", imgId)
-                    this.$api.replaceWechatImage(this.formData).then(res => {
+                    this.$api.replaceBookImage(this.formData).then(res => {
                         if (res.status == 0) {
-                            this.wechat.imgUrl = res.data.imageUrl
-                            this.wechat.imgId = res.data.imageId
+                            this.content.contentUrl = res.data.imageUrl
+                            this.content.contentId = res.data.imageId
                             this.imageReady = true
                         }
                     })
                 } else {
-                    this.$api.uploadWechatImage(this.formData).then(res => {
+                    this.$api.uploadBookImage(this.formData).then(res => {
                         if (res.status == 0) {
-                            this.wechat.imgUrl = res.data.imageUrl
-                            this.wechat.imgId = res.data.imageId
+                            this.content.contentUrl = res.data.imageUrl
+                            this.content.contentId = res.data.imageId
                             this.imageReady = true
                         }
                     })
@@ -403,10 +318,10 @@
                 return window.URL.createObjectURL(file);
             },
             /**
-             * 微信文章列表初始化查询查询
+             * 列表初始化查询查询
              * */
             initSearch() {
-                this.$api.initWechatArticleList(this.condition).then(res => {
+                this.$api.initContentList(this.condition).then(res => {
                     if (res.status == 0) {
                         this.listData = res.data.records
                         this.condition.total = res.data.total
@@ -414,12 +329,12 @@
                 })
             },
             /**
-             * 修改微信信息
+             * 修改书籍信息
              **/
-            uptWechatInfo() {
+            uptBookInfo() {
                 //先校验信息完整性
-                if (this.$refs['wechatForm'].validate()) {
-                    this.$api.updateWechatArticle(this.wechat).then(res => {
+                if (this.$refs['bookForm'].validate()) {
+                    this.$api.updateDailyInfo(this.daily).then(res => {
                         if (res.status == 0) {
                             this.$Message.success('修改成功')
                             this.editModal = false
@@ -429,15 +344,34 @@
                 }
             },
             /**
-             * 新增微信信息
+             * 新增书籍信息
              **/
-            addWechatInfo() {
+            addBookInfo() {
                 //先校验信息完整性
-                if (this.$refs['wechatForm'].validate()) {
-                    this.$api.insertWechatArticle(this.wechat).then(res => {
+                if (this.$refs['bookForm'].validate()) {
+                    this.$api.insertBookInfo(this.content).then(res => {
                         if (res.status == 0) {
                             this.$Message.success('保存成功')
                             this.editModal = false
+                            this.initSearch()
+                        }
+                    })
+                }
+            },
+            publish(index) {
+                let obj = this.listData[index]
+                let data = {seq: obj.seq}
+                if (obj.status == "0") {
+                    this.$api.publishDaily(data).then(res => {
+                        if (res.status === 0) {
+                            this.$Message.success("发布成功！")
+                            this.initSearch()
+                        }
+                    })
+                } else {
+                    this.$api.cancelDaily(data).then(res => {
+                        if (res.status === 0) {
+                            this.$Message.success("下架成功！")
                             this.initSearch()
                         }
                     })
@@ -507,5 +441,28 @@
         margin: 0 2px;
     }
 
-</style>
+    .icon_lists {
+        width: 500px;
+        height: 300px;
+    }
 
+    .icon_lists li {
+        float: left;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        list-style: none !important;
+    }
+
+    /* 清除浮动 */
+    .ks-clear:after, .clear:after {
+        content: '\20';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .ks-clear, .clear {
+        *zoom: 1;
+    }
+</style>

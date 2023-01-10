@@ -23,7 +23,7 @@ public class CommonTask {
     }
 
     /**
-     * 小程序首页信息同步接口(热搜)更新周期：3小时
+     * 小程序首页信息同步接口(热搜)更新周期：3小时1
      */
     @Scheduled(cron = "0 0 */3 * * *")
     public void getKeywordsInfoTask() {

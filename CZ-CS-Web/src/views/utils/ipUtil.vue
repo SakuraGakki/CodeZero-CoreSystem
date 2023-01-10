@@ -2,6 +2,7 @@
   <div>
     <br>
     <div style="margin-left: 40px"><h2>在线ip地址查询</h2></div>
+    <div style="width: 100%;text-align: center"><span style="color:#f5222d;font-size: 24px">由于跨域问题，IP查询工具请将本站地址https改为http后访问使用！！</span></div>
     <br><br>
     <Row type="flex" justify="space-around">
       <Col span="20">

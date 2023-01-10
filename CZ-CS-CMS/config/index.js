@@ -9,7 +9,7 @@ var config = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    baseServerUrl: 'https://www.codezer0.cn:8000',
+    baseServerUrl: 'http://www.codezer0.cn:8000',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.

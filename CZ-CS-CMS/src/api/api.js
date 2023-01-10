@@ -226,6 +226,22 @@ export function initDailyList(data){
   })
 }
 
+export function initBookList(data){
+  return fetch({
+    url:'/cms/book/queryBookList',
+    method:'post',
+    data:data
+  })
+}
+
+export function initContentList(data){
+  return fetch({
+    url:'/cms/book/queryBookContentByBookId',
+    method:'post',
+    data:data
+  })
+}
+
 export function replaceDailyImage(data){
   return fetch({
     url:'/cms/daily/dailyImageReplace',
@@ -242,6 +258,22 @@ export function uploadDailyImage(data){
   })
 }
 
+export function replaceBookImage(data){
+  return fetch({
+    url:'/cms/book/bookImageReplace',
+    method:'post',
+    data:data
+  })
+}
+
+export function uploadBookImage(data){
+  return fetch({
+    url:'/cms/book/bookImageUpload',
+    method:'post',
+    data:data
+  })
+}
+
 export function updateDailyInfo(data){
   return fetch({
     url:'/cms/daily/uptDailyInfo',
@@ -253,6 +285,14 @@ export function updateDailyInfo(data){
 export function insertDailyInfo(data){
   return fetch({
     url:'/cms/daily/addDailyInfo',
+    method:'post',
+    data:data
+  })
+}
+
+export function insertBookInfo(data){
+  return fetch({
+    url:'/cms/book/insertBook',
     method:'post',
     data:data
   })
@@ -307,7 +347,12 @@ const apiList = {
   insertDailyInfo,
   updateDailyInfo,
   publishDaily,
-  cancelDaily
+  cancelDaily,
+  insertBookInfo,
+  initBookList,
+  replaceBookImage,
+  uploadBookImage,
+  initContentList
 }
 
 export default apiList

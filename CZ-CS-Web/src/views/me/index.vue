@@ -15,7 +15,7 @@
         </Timeline-item>
         <Timeline-item color="green">
           <p class="time">2021年9月30日</p>
-          <p class="content">留言板功能上线(2021年10月26日公安备案需要该功能已删)</p>
+          <p class="content">留言板功能上线</p>
         </Timeline-item>
         <Timeline-item color="green">
           <p class="time">2021年10月12日</p>
@@ -35,7 +35,11 @@
         </Timeline-item>
         <Timeline-item color="green">
           <p class="time">2021年10月26日</p>
-          <p class="content">服务器及域名备案通过，www.codezer0.cn上线</p>
+          <p class="content">服务器及域名备案通过</p>
+        </Timeline-item>
+        <Timeline-item color="green">
+          <p class="time">2021年12月28日</p>
+          <p class="content">证书颁发，https://www.codezer0.cn上线</p>
         </Timeline-item>
         <Timeline-item>
           <p class="time">未来</p>
@@ -162,7 +166,7 @@
         city:"",
         poem1:"",
         poem2:"",
-        headerImgSrc:"https://www.codezer0:8011/images/avator.jpeg",
+        headerImgSrc:"https://www.codezer0.cn:8011/images/avator.jpeg",
         wechatArticleList:[],
         dynamicList:[]
       }
